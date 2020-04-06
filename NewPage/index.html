@@ -73,7 +73,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="" />
+                            <img class="img-fluid" src="assets/img/portfolio/PingPong/PingPong.png" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -129,11 +129,11 @@
                 <!-- About Section Content-->
                 <div class="row">
                     <div class="col-lg-4 ml-auto"><p class="lead">Tu napisze coś o sobie i będzie gituwa jeszcze troche czasu...</p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">Tu napisze coś o sobie i będzie gituwa jeszcze troche czasu...</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/"><i class="fas fa-download mr-2"></i>Jeszcze nie wiem co tu ale fajnie wygląda</a>
+                    
+                    <div class="col-lg-4 mr-auto">
+                        <img class="img-fluid rounded mb-5" src="assets/img/about/MyFace.jpg" alt="">
+                        <p class="lead">Tu napisze coś o sobie i będzie gituwa jeszcze troche czasu...</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -190,7 +190,8 @@
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">Poland<br />Toruń</p>
+                        <p class="lead mb-0">Poland, Kuyavian-Pomeranian<br />87-200 Wąbrzeźno</p>
+						<p class="lead mb-0">ul. Hallera 13/17<br /></p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
@@ -200,7 +201,11 @@
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">Login as Kivi</h4>
-                        <p class="lead mb-0">*tu bedzie button do logowania*</p>
+                        <!-- About Section Button-->
+                        <div class="text-center mt-4">
+                            <a class="btn btn-xl btn-outline-light" data-toggle="modal" data-target="#loginModal">Login</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -208,6 +213,7 @@
         <!-- Copyright Section-->
         <section class="copyright py-4 text-center text-white">
             <div class="container"><small>Copyright © Jakub Kuziemski 2020</small></div>
+			<div class="container"><small>Graphics © <a href="https://www.instagram.com/priestoov/">Joanna Butkiewicz</a> 2020</small></div>
         </section>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
@@ -242,7 +248,7 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 2-->
+        <!-- Portfolio Modal PingPong-->
         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
@@ -254,16 +260,25 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Ping Pong Led Clock</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/PingPong/PingPong.png" alt="" /><!-- Portfolio Modal - Text-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/PingPong/Clock1.jpg" alt="">
+									
+									<video class="img-fluid rounded mb-5" controls>
+									<source src="assets/img/portfolio/PingPong/ClockAnimations.mp4" type="video/mp4">
+									<source src="movie.ogg" type="video/ogg">
+									Your browser does not support the video tag.
+									</video>
+									
+									<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    
+									<button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
                         </div>
@@ -379,6 +394,34 @@
                                     </div>
                                     <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="" /><!-- Portfolio Modal - Text-->
                                     <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Modal-->
+        <div class="portfolio-modal modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Login</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
