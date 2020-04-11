@@ -164,7 +164,7 @@ a {
   background-color: transparent;
 }
 a:hover {
-  color: #117964;
+  color: #805122;
   text-decoration: underline;
 }
 
@@ -478,6 +478,11 @@ mark,
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+
+.vid-fluid {
+  max-width: 100%;
+  height: 25rem;
 }
 
 .img-thumbnail {
@@ -10095,12 +10100,12 @@ h3 {
   font-size: 1.25rem;
 }
 .masthead .masthead-avatar {
-  width: 15rem;
+  width: 20rem;
 }
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
+    padding-top: calc(1rem + 104px);
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
@@ -10125,7 +10130,7 @@ h3 {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+  background-color: #45d3ffdd;
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
