@@ -480,6 +480,11 @@ mark,
   height: auto;
 }
 
+.img-fluid-ara {
+  max-width: 40%;
+  height: auto;
+}
+
 .vid-fluid {
   max-width: 100%;
   height: 25rem;
