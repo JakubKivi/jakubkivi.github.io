@@ -4002,6 +4002,12 @@ input[type=button].btn-block {
 }
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
+
+}
+.navbar-brand-ico{
+  padding-right: 1rem;
+  height: 5rem;
+  with:auto;
 }
 
 .navbar-nav {
@@ -10108,9 +10114,10 @@ h3 {
   width: 20rem;
 }
 
+
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(1rem + 104px);
+    padding-top: calc(2rem + 108px);
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {

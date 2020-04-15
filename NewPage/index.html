@@ -10,8 +10,13 @@
         <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-		<link rel="shortcut icon" href="assets/img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" /
+        <link rel="icon" href="assets/img/favicon.svg">>
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="assets/img/favicon/site.webmanifest">
+		
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -19,7 +24,11 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Kivi</a><button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+            	<a class="navbar-brand js-scroll-trigger" href="#page-top">
+	            	<img class="navbar-brand-ico js-scroll-trigger" href="#page-top" src="assets/img/ico.png" alt="" />
+	                Kivi
+                </a>
+                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 						<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a></li>
@@ -251,8 +260,8 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/lamp.svg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">The Music Reactive Lamp base on a DFRobot's analog sound sensor and an atmega328, connected to a ws2812 RGB LED strip. Depending on noise level, the LEDs turn on and turn off or change colors. If music is quiet, the lamp shines in blue. After volume increases, lamp shine red, and if it is red for too long it smoothly change color to green. The volume level required to turn red is adjustable by a potentiometer(in case I want to use it both in a domesticity and in a party). Everything is set up on my prototype board. A frame of the lamp is made by a jar sticked by a bath mat. The control unit is cased, and can be powered by USB or DC input up to 12V. Three diodes shows, if power is plugged, if the logic part is powered, and if the atmega works properly.
-                                    Below you can see photos of the working stage and the inside of the case, but yhe main thing is video that shows the Music Reactive Lamp working. Enjoy!</p>
+                                    <p class="mb-5">The Music Reactive Lamp bases on a DFRobot's analog sound sensor and an atmega328, connected to a ws2812 RGB LED strip. Depending on a noise level, the LEDs turn on and turn off or change colors. If music is quiet, the lamp shines in blue. After volume increases, lamp shines red, and if it is red for too long it smoothly changes to green. The volume level required to turn red is adjustable with a potentiometer (in case I want to use it both, in a domesticity and at a party). Everything is set up on my prototype board. A frame of the lamp is made with a jar plastered with a bath mat. The control unit is cased, and can be powered with USB or DC input, up to 12V. Three diodes shows, whether power is plugged, whether the logic part is powered, and whether the atmega works properly.
+                                    Below you can see photos of the working stage and the inside of the case, but the main thing is the video that shows the Music Reactive Lamp working. Enjoy!</p>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
@@ -315,7 +324,7 @@
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/PingPong/Clock1.jpg" alt="">
 									
 									
-									<p class="mb-5">The display is made of ping pong balls(actually halves of them), backlighted by ws2812 diodes. Often, it shows a actual time, which is loaded from DS1307 timer. The module has a small battery so even if a power is off, it knows what time is it. The display can show simple animations also(see videos). I even tried to program a simple game (google dinosour game), but it is still in progress. Everything is controlled by a atmega328. Controller box has 3 buttons to change modes(actual time, animations, timer, game), colors or brightness. In the end, I want it to be connected with "<a href="" data-dismiss="modal" data-toggle="modal" data-target="#jackModal">Jack</a>"(another in progress project, see in portfolio).
+									<p class="mb-5">The display is made with ping pong balls(actually halves of them), backlighted with ws2812 diodes. Often, it shows an actual time, which is loaded from DS1307 timer. The module has a small battery, so even if power is off, it knows what time it is. The display can show simple animations also (watch videos). I even tried to program a simple game (google dinosour game), but it is still in progress. Everything is controlled by an atmega328. Controller box has 3 buttons changing modes (the actual time, animations, a timer, dino-game), colors or brightness. In the end, I want it to be connected with "<a href="" data-dismiss="modal" data-toggle="modal" data-target="#jackModal">Jack</a>".
 									</p>
 									<button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
@@ -449,7 +458,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/zasi/zasi.svg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">This project is actually more electronic/mechanic, than programming (it is only connected to a bigger programming project). I have made this power supply unit by working two old computer power supllies over. I have used one of them to make voltages(-12V, 3,3V, 5V, 12V), the socond one I have bowelled and used only frame, which I have cutted with my grinder. The power supply has banana plugs, screw connectors and speaker connectors. The most important feature is adjustable (with potentiometer) voltage, made with LM2569. I have also made a small fan (with a on/off option), to blow out smokes during soldering. Whole power supply can be turned on/off manually or with "<a href="" data-dismiss="modal" data-toggle="modal" data-target="#jackModal">Jack</a>".</p>
+                                    <p class="mb-5">This project is actually more electronic/mechanical, than programming (it is only connected to a bigger programming project). I have made this power supply unit by working two old computer power supllies over. I have used one of them to make voltages(-12V, 3,3V, 5V, 12V), the socond one I have bowelled and used only a frame, which I have cut with my grinder. The power supply has banana plugs, screw connectors and speaker connectors. The most important feature is adjustable (with potentiometer) voltage, made with LM2569. I have also made a small fan (with a switch), to blow out smokes during soldering. Whole power supply can be turned on/off manually or with "<a href="" data-dismiss="modal" data-toggle="modal" data-target="#jackModal">Jack</a>".</p>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
