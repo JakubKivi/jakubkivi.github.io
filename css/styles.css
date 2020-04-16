@@ -489,8 +489,8 @@ mark,
   width: auto;
 }
 .img-fluid-jack{
-  max-height: 20%;
-  width: auto;
+  max-width: 40%;
+  height: auto;
 }
 
 .vid-fluid {
