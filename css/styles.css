@@ -485,7 +485,11 @@ mark,
   height: auto;
 }
 .img-fluid-zasi{
-  max-height: 30%;
+  max-height: 20%;
+  width: auto;
+}
+.img-fluid-jack{
+  max-height: 20%;
   width: auto;
 }
 

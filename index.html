@@ -146,8 +146,10 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead">Tu napisze coś o sobie i będzie gituwa jeszcze troche czasu...</p></div>
-                    
+                    <div class="col-lg-4 ml-auto">
+                        <p class="lead">My name is Jakub Kuziemski, but that obviously is on the top of the page. I am 19 yo roboticist... I mean, I wanna be someday. For the time being I am in graduation class in secondary school, and everything what you can see in my portfolio is just a hobbistic great fun. After matura exam I want to study automatic control and robotics at <a  href="https://www.pw.edu.pl/engpw" style="color: #805122">Warsaw univeristy of technology</a>. I know of C++ (and arduino C/C++ variation) very well, including SFML graphic library. As you can see I know the ropes, to web programming, enought to make this website. I have also programmed something in  Willingly I will participate in bigger project (contact section). </p>
+                        <img class="img-fluid rounded mb-5" src="assets/img/about/ourFace.jpg" alt="">
+                    </div>
                     <div class="col-lg-4 mr-auto">
                         <img class="img-fluid rounded mb-5" src="assets/img/about/MyFace.jpg" alt="">
                         <p class="lead">Tu napisze coś o sobie i będzie gituwa jeszcze troche czasu...</p>
@@ -230,8 +232,8 @@
         </footer>
         <!-- Copyright Section-->
         <section class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Jakub Kuziemski 2020</small></div>
-			<div class="container"><small>Graphics © <a href="https://www.instagram.com/priestoov/">Joanna Butkiewicz</a> 2020</small></div>
+            <div class="container"><small>Copyright © 2020 Jakub Kuziemski</small></div>
+			<div class="container"><small>Graphics author <a href="https://www.instagram.com/priestoov/">Joanna Butkiewicz</a></small></div>
         </section>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
@@ -259,9 +261,25 @@
                                 		</a>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/lamp.svg" alt="" /><!-- Portfolio Modal - Text-->
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/1.jpg" alt="" /><!-- Portfolio Modal - Text-->
                                     <p class="mb-5">The Music Reactive Lamp bases on a DFRobot's analog sound sensor and an atmega328, connected to a ws2812 RGB LED strip. Depending on a noise level, the LEDs turn on and turn off or change colors. If music is quiet, the lamp shines in blue. After volume increases, lamp shines red, and if it is red for too long it smoothly changes to green. The volume level required to turn red is adjustable with a potentiometer (in case I want to use it both, in a domesticity and at a party). Everything is set up on my prototype board. A frame of the lamp is made with a jar plastered with a bath mat. The control unit is cased, and can be powered with USB or DC input, up to 12V. Three diodes shows, whether power is plugged, whether the logic part is powered, and whether the atmega works properly.
                                     Below you can see photos of the working stage and the inside of the case, but the main thing is the video that shows the Music Reactive Lamp working. Enjoy!</p>
+                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
+                                    src="https://www.youtube.com/embed/CakBRejQ1KU">>
+                                    </iframe>
+                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
+                                    src="https://www.youtube.com/embed/IsOpIA3cJoo">>
+                                    </iframe>
+                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
+                                    src="https://www.youtube.com/embed/c6nH270sDiY">>
+                                    </iframe>
+                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
+                                    src="https://www.youtube.com/embed/-fSQcshL2B0">>
+                                    </iframe>
+
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/2.jpg" alt="" />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/3.jpg" alt="" />
+
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
@@ -286,11 +304,17 @@
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/webKivi" target="_blank">
+                                            <i class="fab fa-fw fa-github"></i>
+                                        </a>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/jack/jack.svg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Tekst o Jacku</p>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid-jack rounded mb-5" src="assets/img/portfolio/jack/1.jpg" alt="" /><!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">Jack is my biggest project so far. My main goal is to create my own home assistant controlling sockets, lights, and also most of my previous projects. Its to long to read, just watch video and see my first demonstration model. Everything is in a working stage, but I am planning to end Jack this summer.</p>
+                                    
+                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
+                                    src="https://www.youtube.com/embed/JsVWjif12rM">>
+                                    </iframe>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
@@ -497,7 +521,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image--><img class="img-fluid-ara rounded mb-5" src="assets/img/portfolio/ara/1.png" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">ARA is a C++ game, made by a group of friends during winter holiday in 2019 as a challange to make a game in only two weeks. It's a turn-based game simmilar to chess seemingly, but has huge twists, like different figures' moves, removal of the map or two moves each turn. The rules might be strange and tricky, at first, but after a few games they start to make sense, and you have a lot of fun playing the game. After winter holiday my friends practiclally abandoned the game projects. I am adding new graphics made by, of course, our graphic designer, and still, when I have some free time I am making some improvements. Hope that game will be fully playable and downloadable at the end of 2020.</p>
+                                    <p class="mb-5">ARA is a C++ and SFML game, made by a group of friends during winter holiday in 2019 as a challange to make a game in only two weeks. It's a turn-based game simmilar to chess seemingly, but has huge twists, like different figures' moves, removal of the map or two moves each turn. The rules might be strange and tricky, at first, but after a few games they start to make sense, and you have a lot of fun playing the game. After winter holiday my friends practiclally abandoned the game projects. I am adding new graphics made by, of course, our graphic designer, and still, when I have some free time I am making some improvements. Hope that game will be fully playable and downloadable at the end of 2020.</p>
                                     <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
 									src="https://www.youtube.com/embed/eQDRGEyHn6w">>
 									</iframe>
@@ -564,8 +588,18 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/grzes/grzes.svg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/grzes/2.jpg" alt="" /><!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">Grzesiek is my first project. With him, I have falled in love with robotics, electronics, and programming. There were actually 2 versons of the robot. First one I have made in 2017 for the end of my middle school (I have this on my diploma). There is nothing to boast about, becouse I was 16 and code is crap for me now. But videos are cute and memorable. Second version of Grzesiek was abandoned (stripped and cased), but I hope that one day I will have enought time for him.
+                                    <br><br>
+                                    The very first version of Grzesiek below, and the last above.
+                                    </p>
+                                    
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/grzes/1.jpg" alt="" />
+
+                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
+                                    src="https://www.youtube.com/embed/sQb5kxLiFd0">>
+                                    </iframe>
+
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
