@@ -484,6 +484,10 @@ mark,
   max-width: 40%;
   height: auto;
 }
+.img-fluid-zasi{
+  max-height: 10%;
+  width: auto;
+}
 
 .vid-fluid {
   max-width: 100%;
