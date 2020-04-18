@@ -41,6 +41,12 @@
       offset: 80
     });
   
+    //attemp to stop videos after closing modal
+    $("#modal").on("hide",function(){
+      var leg=$('.vid-fluid').attr("src");
+      $('.videoPlayer').attr("src",leg);
+    });
+
     // Collapse Navbar
     var navbarCollapse = function() {
       if ($("#mainNav").offset().top > 100) {
