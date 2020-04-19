@@ -1,3 +1,6 @@
  - youtube video does not pause when modal is closed. 
  - bigger gap beetween first and second item when zoomed (phone version especially)
  - power supply bug
+ - send button has wrong color
+ - music lamp, shallow got banned
+ - return key on smartphone does not close modal
