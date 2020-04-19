@@ -4,3 +4,4 @@
  - music lamp, shallow got banned
  - return key on smartphone does not close modal
  - login does not work
+ - favicon does not work
