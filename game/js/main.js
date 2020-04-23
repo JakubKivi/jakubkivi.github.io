@@ -4,6 +4,18 @@ $(window).ready(function(){
     update();
 });
 
+function createArray(length) {
+    var arr = new Array(length || 0),
+        i = length;
+
+    if (arguments.length > 1) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        while(i--) arr[length-1 - i] = createArray.apply(this, args);
+    }
+
+    return arr;
+}
+
 class Screen{
     init(cnv){
         this.canvas = cnv;
@@ -42,17 +54,28 @@ var blackFieldHovered = new Image;
 blackFieldHovered.src="img/blackFieldHovered.png";
 var specialFieldHovered = new Image;
 specialFieldHovered.src="img/specialFieldHovered.png";
+var blackPawn = new Image;
+blackPawn.src="img/blackPawn.png";
+var whitePawn = new Image;
+whitePawn.src="img/whitePawn.png";
 
 var hovered = {
     x: -1,
     y: -1
 };
 
-var size=11;
+var size=9;
 
 var mouseX=9999999;
 var mouseY=9999999;
 var MouseCord;
+
+var fieldSize;
+var center;
+var startCord;
+var isMobile;
+
+var fig= createArray(100, 100);
 
 function cursorPos(e) {
     e = e || window.event;
@@ -76,9 +99,6 @@ function cursorPos(e) {
         }
     }
 }
-var fieldSize;
-var center;
-var startCord;
 
 function renderMap(size){
     for(i=0; i<size; i++){
@@ -102,8 +122,13 @@ function renderMap(size){
         }
     }   
 }
-function click(e){
-    
+
+function putFiguresonMap(){
+    if()
+}
+
+function renderFig(){
+
 }
 
 function drawHovered(){
@@ -125,6 +150,10 @@ function drawHovered(){
                 s.ctx.drawImage(blackFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
         }
     }
+}
+
+function click(e){
+    
 }
 
 function start(){
@@ -159,6 +188,10 @@ function start(){
         x: center.x-(Math.trunc(size/2)*fieldSize),
         y: center.y-(Math.trunc(size/2)*fieldSize)
     };
+
+    isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    putFiguresonMap():
 }
 
 function update(){
@@ -168,11 +201,28 @@ function update(){
     s.ctx.clearRect(0, 0, s.w(), s.h());
     
     renderMap(size);
-    if(typeof mouseCord!= 'undefined')drawHovered();
+    renderFig();
+    if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
 
-    s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
+    if(!isMobile)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
 }
 
 window.onresize = function(){
-    /* tu może będzie kod */
+    s.init(document.getElementById("game"));
+    if(s.w()>s.h()){
+        fieldSize = s.h()/size;
+    }else{
+
+        fieldSize = s.w()/size;
+    }
+    center = {
+        x: (s.w()-fieldSize)/2,
+        y: (s.h()-fieldSize)/2
+    };
+    startCord = {
+        x: center.x-(Math.trunc(size/2)*fieldSize),
+        y: center.y-(Math.trunc(size/2)*fieldSize)
+    };
+    mouseX=-1000;
+    mouseY=-1000;
 }
