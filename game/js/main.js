@@ -65,8 +65,13 @@ var hovered = {
     x: -1,
     y: -1
 };
-var gameName='Brandubh';
-var size=7; //by default
+var clicked = {
+    x:0,
+    y:0
+};
+
+var gameName='Tablut'; // Brandubh, Tablut
+var size=0; //by default
 var margin =100;
 
 var mouseX=9999999;
@@ -221,7 +226,16 @@ function drawHovered(){
 }
 
 function click(e){
-    
+    if(clicked.x==0 && clicked.y==0){
+        clicked.x=mouseCord.x;
+        clicked.y=mouseCord.y;
+    }else{
+        var buf=field[clicked.x][clicked.y];
+        field[clicked.x][clicked.y]=0;
+        field[mouseCord.x][mouseCord.y]=buf;
+        clicked.x=0;
+        clicked.y=0;
+    }
 }
 
 function start(){
