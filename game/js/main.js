@@ -124,7 +124,9 @@ function renderMap(size){
 }
 
 function putFiguresonMap(){
-    if()
+   if(size==7){
+    
+   }
 }
 
 function renderFig(){
