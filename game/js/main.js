@@ -26,7 +26,7 @@ class Screen{
     }
 
     get FPS(){
-        return 10;
+        return 20;
     }
 
     w(){
@@ -107,8 +107,7 @@ function cursorPos(e) {
                     mouseCord = {
                         x: i,
                         y: j
-                    }
-                    console.log(field[mouseCord.x][mouseCord.y]);       
+                    }     
                     found=true;
                 }
             }
@@ -281,10 +280,12 @@ function start(){
     if(gameName=='Brandubh'){
         size=7;
         winCondition='corner';
+        moveThroughtThrone='disabled';
     }
     else if(gameName=='Tablut'){
         size=9;
         winCondition='edge';
+        moveThroughtThrone='disabled';
     }
     
 
