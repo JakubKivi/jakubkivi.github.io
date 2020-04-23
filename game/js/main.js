@@ -58,13 +58,16 @@ var blackPawn = new Image;
 blackPawn.src="img/blackPawn.png";
 var whitePawn = new Image;
 whitePawn.src="img/whitePawn.png";
+var king = new Image;
+king.src="img/king.png";
 
 var hovered = {
     x: -1,
     y: -1
 };
-
-var size=9;
+var gameName='Brandubh';
+var size=7; //by default
+var margin =100;
 
 var mouseX=9999999;
 var mouseY=9999999;
@@ -75,7 +78,7 @@ var center;
 var startCord;
 var isMobile;
 
-var fig= createArray(100, 100);
+var field= createArray(100, 100);
 
 function cursorPos(e) {
     e = e || window.event;
@@ -123,14 +126,77 @@ function renderMap(size){
     }   
 }
 
-function putFiguresonMap(){
-   if(size==7){
+function clearFigures(){
+    for(i=1; i<100; i++){
+        for(j=1; j<100; j++){
+            field[i][j]=0;
+        }
+    }
+};
 
+function putFiguresonMap(){
+    function mirroring(){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if(field[i][j]==1){
+                    field[size-i+1][size-j+1]=1;
+                    field[i][size-j+1]=1;
+                    field[size-i+1][j]=1;
+                }
+                if(field[i][j]==2){
+                    field[size-i+1][size-j+1]=2;
+                    field[i][size-j+1]=2;
+                    field[size-i+1][j]=2;
+                }
+            }
+        }
+    }
+   if(gameName=='Brandubh'){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if(j==4){
+                    if(i<3||i>5)field[i][j]=1;
+                    else field[i][j]=2;
+                }
+                if(i==4){
+                    if(j<3||j>5)field[i][j]=1;
+                    else field[i][j]=2;
+                }
+                if((i==3 && j==1) || (j==3 && i==1))field[i][j]=1;
+            }
+        }
    }
+   if(gameName=='Tablut'){
+        for(i=1; i<=parseInt(size/2)+1; i++){
+            for(j=1; j<=parseInt(size/2)+1; j++){
+                if(j==5){
+                    if(i<3||i>5)field[i][j]=1;
+                    else field[i][j]=2;
+                }
+                if(i==5){
+                    if(j<3||j>5)field[i][j]=1;
+                    else field[i][j]=2;
+                }
+                if((i==4 && j==1) || (j==4 && i==1))field[i][j]=1;
+            }
+        }
+   }
+   mirroring();
+   field[parseInt(size/2)+1][parseInt(size/2)+1]=3;
+   field[1][1]=4;
+   field[1][size]=4;
+   field[size][1]=4;
+   field[size][size]=4;
 }
 
 function renderFig(){
-
+    for(i=1; i<=size; i++){
+        for(j=1; j<=size; j++){
+            if(field[i][j]==1)s.ctx.drawImage(blackPawn, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+            if(field[i][j]==2)s.ctx.drawImage(whitePawn, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+            if(field[i][j]==3)s.ctx.drawImage(king, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+        }
+    }
 }
 
 function drawHovered(){
@@ -159,6 +225,10 @@ function click(e){
 }
 
 function start(){
+    if(gameName=='Brandubh')size=7;
+    else if(gameName=='Tablut')size=9;
+    
+
     s.init(document.getElementById("game"));
 
     if (document.attachEvent) document.attachEvent('mousemove', cursorPos);
@@ -177,10 +247,10 @@ function start(){
     }
 
     if(s.w()>s.h()){
-        fieldSize = s.h()/size;
+        fieldSize = (s.h()-margin)/size;
     }else{
 
-        fieldSize = s.w()/size;
+        fieldSize = (s.w-margin)/size;
     }
     center = {
         x: (s.w()-fieldSize)/2,
@@ -192,7 +262,7 @@ function start(){
     };
 
     isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
+    clearFigures();
     putFiguresonMap();
 }
 
@@ -203,19 +273,18 @@ function update(){
     s.ctx.clearRect(0, 0, s.w(), s.h());
     
     renderMap(size);
-    renderFig();
     if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
-
+    renderFig();
     if(!isMobile)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
 }
 
 window.onresize = function(){
     s.init(document.getElementById("game"));
     if(s.w()>s.h()){
-        fieldSize = s.h()/size;
+        fieldSize = (s.h()-margin)/size;
     }else{
 
-        fieldSize = s.w()/size;
+        fieldSize = (s.w()-margin)/size;
     }
     center = {
         x: (s.w()-fieldSize)/2,
