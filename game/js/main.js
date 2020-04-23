@@ -26,7 +26,7 @@ class Screen{
     }
 
     get FPS(){
-        return 60;
+        return 10;
     }
 
     w(){
@@ -70,8 +70,15 @@ var clicked = {
     y:0
 };
 
-var gameName='Tablut'; // Brandubh, Tablut
+var gameName='Brandubh'; // Brandubh, Tablut
 var size=0; //by default
+var winCondition='corner'; //edge, corner
+var killingKing='enable';
+var moveThroughtThrone='enable';
+var weaponlessKing='disable';
+var ableToBackToThrone='enable';
+
+
 var margin =100;
 
 var mouseX=9999999;
@@ -83,7 +90,7 @@ var center;
 var startCord;
 var isMobile;
 
-var field= createArray(100, 100);
+var field= createArray(100, 100);  //1 - black, 2 - white, 3 - king, 4 - obstacle
 
 function cursorPos(e) {
     e = e || window.event;
@@ -100,7 +107,8 @@ function cursorPos(e) {
                     mouseCord = {
                         x: i,
                         y: j
-                    }       
+                    }
+                    console.log(field[mouseCord.x][mouseCord.y]);       
                     found=true;
                 }
             }
@@ -111,10 +119,10 @@ function cursorPos(e) {
 function renderMap(size){
     for(i=0; i<size; i++){
         for(j=0; j<size; j++){
-            if(i==0&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
-            else if(i==size-1&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
-            else if(i==0&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
-            else if(i==size-1&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+            if(winCondition=='corner' && i==0&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+            else if(winCondition=='corner' && i==size-1&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+            else if(winCondition=='corner' && i==0&&j==size-1)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
+            else if(winCondition=='corner' && i==size-1&&j==0)s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
             else if(i==parseInt(size/2)&&j==parseInt(size/2))s.ctx.drawImage(specialField, startCord.x+(i*fieldSize), startCord.y+(j*fieldSize), fieldSize, fieldSize);
             else if(i%2==0){
                 if(j%2==0)
@@ -167,7 +175,6 @@ function putFiguresonMap(){
                     if(j<3||j>5)field[i][j]=1;
                     else field[i][j]=2;
                 }
-                if((i==3 && j==1) || (j==3 && i==1))field[i][j]=1;
             }
         }
    }
@@ -188,10 +195,10 @@ function putFiguresonMap(){
    }
    mirroring();
    field[parseInt(size/2)+1][parseInt(size/2)+1]=3;
-   field[1][1]=4;
-   field[1][size]=4;
-   field[size][1]=4;
-   field[size][size]=4;
+   if(winCondition=='corner')field[1][1]=4;
+   if(winCondition=='corner')field[1][size]=4;
+   if(winCondition=='corner')field[size][1]=4;
+   if(winCondition=='corner')field[size][size]=4;
 }
 
 function renderFig(){
@@ -206,10 +213,10 @@ function renderFig(){
 
 function drawHovered(){
     if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
-        if(mouseCord.x==1&&mouseCord.y==1)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
-        else if(mouseCord.x==size&&mouseCord.y==size)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
-        else if(mouseCord.x==1&&mouseCord.y==size)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
-        else if(mouseCord.x==size&&mouseCord.y==1)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
+        if(winCondition=='corner' && mouseCord.x==1&&mouseCord.y==1)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
+        else if(winCondition=='corner' && mouseCord.x==size&&mouseCord.y==size)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
+        else if(winCondition=='corner' && mouseCord.x==1&&mouseCord.y==size)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
+        else if(winCondition=='corner' && mouseCord.x==size&&mouseCord.y==1)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
         else if(mouseCord.x==parseInt(size/2)+1&&mouseCord.y==parseInt(size/2)+1)s.ctx.drawImage(specialFieldHovered, startCord.x+((mouseCord.x-1)*fieldSize), startCord.y+((mouseCord.y-1)*fieldSize), fieldSize, fieldSize);
         else if(mouseCord.x%2==0){
             if(mouseCord.y%2==0)
@@ -225,22 +232,60 @@ function drawHovered(){
     }
 }
 
+function move(){
+    var buf=field[clicked.x][clicked.y];
+    field[clicked.x][clicked.y]=0;
+    field[mouseCord.x][mouseCord.y]=buf;
+    clicked.x=0;
+    clicked.y=0;
+}
+
+function canMove(x,y,tx,ty){
+    if(x!=tx&&y!=ty)return false;
+    if(x==tx){
+        if(ty>y){
+            for(i=y+1; i<=ty; i++){
+                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3)return false;
+                if(moveThroughtThrone=='disabled');
+            }
+        }
+    }
+    return true;
+}
+
 function click(e){
-    if(clicked.x==0 && clicked.y==0){
-        clicked.x=mouseCord.x;
-        clicked.y=mouseCord.y;
-    }else{
-        var buf=field[clicked.x][clicked.y];
-        field[clicked.x][clicked.y]=0;
-        field[mouseCord.x][mouseCord.y]=buf;
-        clicked.x=0;
-        clicked.y=0;
+    if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
+        if(clicked.x==0 && clicked.y==0){
+            if(field[mouseCord.x][mouseCord.y]==1 || field[mouseCord.x][mouseCord.y]==2 || field[mouseCord.x][mouseCord.y]==3){
+                clicked.x=mouseCord.x;
+                clicked.y=mouseCord.y;
+            }else{
+                clicked.x=0;
+                clicked.y=0;
+            }
+        }else if(field[clicked.x][clicked.y]==1 || field[clicked.x][clicked.y]==2 || field[clicked.x][clicked.y]==3){
+            if(clicked.x!=mouseCord.x || clicked.y!=mouseCord.y){
+                if(canMove(clicked.x, clicked.y, mouseCord.x, mouseCord.y))move();
+            }else{
+                clicked.x=mouseCord.x;
+                clicked.y=mouseCord.y;
+            }
+        }else{
+            clicked.x=0;
+            clicked.y=0;
+        }
     }
 }
 
 function start(){
-    if(gameName=='Brandubh')size=7;
-    else if(gameName=='Tablut')size=9;
+    if(gameName=='Brandubh'){
+        size=7;
+        winCondition='corner';
+    }
+    else if(gameName=='Tablut'){
+        size=9;
+        winCondition='edge';
+    }
     
 
     s.init(document.getElementById("game"));
@@ -264,7 +309,7 @@ function start(){
         fieldSize = (s.h()-margin)/size;
     }else{
 
-        fieldSize = (s.w-margin)/size;
+        fieldSize = (s.w()-margin)/size;
     }
     center = {
         x: (s.w()-fieldSize)/2,
