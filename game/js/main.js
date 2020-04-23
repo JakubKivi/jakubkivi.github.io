@@ -125,7 +125,7 @@ function renderMap(size){
 
 function putFiguresonMap(){
    if(size==7){
-    
+
    }
 }
 
@@ -193,7 +193,7 @@ function start(){
 
     isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    putFiguresonMap():
+    putFiguresonMap();
 }
 
 function update(){
