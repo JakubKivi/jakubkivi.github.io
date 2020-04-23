@@ -60,6 +60,13 @@ var whitePawn = new Image;
 whitePawn.src="img/whitePawn.png";
 var king = new Image;
 king.src="img/king.png";
+var blackPawnClicked = new Image;
+blackPawnClicked.src="img/blackPawnClicked.png";
+var whitePawnClicked = new Image;
+whitePawnClicked.src="img/whitePawnClicked.png";
+var kingClicked = new Image;
+kingClicked.src="img/kingClicked.png";
+
 
 var hovered = {
     x: -1,
@@ -77,7 +84,6 @@ var killingKing='enable';
 var moveThroughtThrone='enable';
 var weaponlessKing='disable';
 var ableToBackToThrone='enable';
-
 
 var margin =100;
 
@@ -203,9 +209,15 @@ function putFiguresonMap(){
 function renderFig(){
     for(i=1; i<=size; i++){
         for(j=1; j<=size; j++){
-            if(field[i][j]==1)s.ctx.drawImage(blackPawn, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
-            if(field[i][j]==2)s.ctx.drawImage(whitePawn, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
-            if(field[i][j]==3)s.ctx.drawImage(king, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+            if(i==clicked.x&&j==clicked.y){
+                if(field[i][j]==1)s.ctx.drawImage(blackPawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+                else if(field[i][j]==2)s.ctx.drawImage(whitePawnClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+                else if(field[i][j]==3)s.ctx.drawImage(kingClicked, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+            }else{
+                if(field[i][j]==1)s.ctx.drawImage(blackPawn, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+                else if(field[i][j]==2)s.ctx.drawImage(whitePawn, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+                else if(field[i][j]==3)s.ctx.drawImage(king, startCord.x+((i-1)*fieldSize), startCord.y+((j-1)*fieldSize), fieldSize, fieldSize);
+            }
         }
     }
 }
@@ -233,7 +245,8 @@ function drawHovered(){
 
 function move(){
     var buf=field[clicked.x][clicked.y];
-    field[clicked.x][clicked.y]=0;
+    if(buf==3)field[clicked.x][clicked.y]=5;
+    else field[clicked.x][clicked.y]=0;
     field[mouseCord.x][mouseCord.y]=buf;
     clicked.x=0;
     clicked.y=0;
@@ -241,11 +254,29 @@ function move(){
 
 function canMove(x,y,tx,ty){
     if(x!=tx&&y!=ty)return false;
+    if(field[clicked.x][clicked.y]!=3 && field[mouseCord.x][mouseCord.y]==5)return false;
     if(x==tx){
         if(ty>y){
             for(i=y+1; i<=ty; i++){
                 if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3)return false;
-                if(moveThroughtThrone=='disabled');
+                if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
+            }
+        }else if(ty<y){
+            for(i=y-1; i>=ty; i--){
+                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3)return false;
+                if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
+            }
+        }
+    }else if(y==ty){
+        if(tx>x){
+            for(i=x+1; i<=tx; i++){
+                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3)return false;
+                if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
+            }
+        }else if(tx<x){
+            for(i=x-1; i>=tx; i--){
+                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3)return false;
+                if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
             }
         }
     }
@@ -265,14 +296,21 @@ function click(e){
         }else if(field[clicked.x][clicked.y]==1 || field[clicked.x][clicked.y]==2 || field[clicked.x][clicked.y]==3){
             if(clicked.x!=mouseCord.x || clicked.y!=mouseCord.y){
                 if(canMove(clicked.x, clicked.y, mouseCord.x, mouseCord.y))move();
+                else{
+                    clicked.x=0;
+                    clicked.y=0;
+                }
             }else{
-                clicked.x=mouseCord.x;
-                clicked.y=mouseCord.y;
+                clicked.x=0;
+                clicked.y=0;
             }
         }else{
             clicked.x=0;
             clicked.y=0;
         }
+    }else{
+        clicked.x=0;
+        clicked.y=0;
     }
 }
 
@@ -280,12 +318,12 @@ function start(){
     if(gameName=='Brandubh'){
         size=7;
         winCondition='corner';
-        moveThroughtThrone='disabled';
+        moveThroughtThrone='enable';
     }
     else if(gameName=='Tablut'){
         size=9;
         winCondition='edge';
-        moveThroughtThrone='disabled';
+        moveThroughtThrone='enable';
     }
     
 
