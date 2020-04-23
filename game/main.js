@@ -46,6 +46,9 @@ function start(){
     if (document.attachEvent) document.attachEvent('mousemove', cursorPos);
     else document.addEventListener('mousemove', cursorPos);
 
+    if (document.attachEvent) document.attachEvent('onclick', click);
+    else document.addEventListener('click', click);
+
     whiteField.onload = function(){
     }
     blackField.onload = function(){
