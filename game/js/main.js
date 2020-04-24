@@ -66,6 +66,7 @@ var whitePawnClicked = new Image;
 whitePawnClicked.src="img/whitePawnClicked.png";
 var kingClicked = new Image;
 kingClicked.src="img/kingClicked.png";
+var sound = new Audio('sound/sound.wav');
 
 
 var hovered = {
@@ -95,10 +96,14 @@ var fieldSize;
 var center;
 var startCord;
 var isMobile;
+var firstClick=1;
+var tourNr=0;
+var player=1;
 
 var field= createArray(100, 100);  //1 - black, 2 - white, 3 - king, 4 - obstacle
 
 function cursorPos(e) {
+
     e = e || window.event;
 
     mouseX = e.pageX;
@@ -113,7 +118,8 @@ function cursorPos(e) {
                     mouseCord = {
                         x: i,
                         y: j
-                    }     
+                    }
+                    //console.log(field[mouseCord.x][mouseCord.y]);     
                     found=true;
                 }
             }
@@ -243,40 +249,54 @@ function drawHovered(){
     }
 }
 
+function remove(){
+    var o;
+    player==1?o=2:o=1;
+
+    if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==player)field[mouseCord.x+1][mouseCord.y]=0;
+    if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==player)field[mouseCord.x-1][mouseCord.y]=0;
+    if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==player)field[mouseCord.x][mouseCord.y+1]=0;
+    if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==player)field[mouseCord.x][mouseCord.y-1]=0;
+
+}
+
 function move(){
     var buf=field[clicked.x][clicked.y];
-    if(buf==3)field[clicked.x][clicked.y]=5;
+    if(buf==3 && clicked.x==parseInt(size/2)+1 && clicked.y==parseInt(size/2)+1)field[clicked.x][clicked.y]=5;
     else field[clicked.x][clicked.y]=0;
     field[mouseCord.x][mouseCord.y]=buf;
+    remove();
     clicked.x=0;
     clicked.y=0;
+    player==1?player=2:player=1;
+    sound.play();
 }
 
 function canMove(x,y,tx,ty){
     if(x!=tx&&y!=ty)return false;
-    if(field[clicked.x][clicked.y]!=3 && field[mouseCord.x][mouseCord.y]==5)return false;
+    if(field[clicked.x][clicked.y]!=3 && (field[mouseCord.x][mouseCord.y]==5||field[mouseCord.x][mouseCord.y]==4))return false;
     if(x==tx){
         if(ty>y){
             for(i=y+1; i<=ty; i++){
-                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3)return false;
+                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3 || field[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
             }
         }else if(ty<y){
             for(i=y-1; i>=ty; i--){
-                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3)return false;
+                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3 || field[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
             }
         }
     }else if(y==ty){
         if(tx>x){
             for(i=x+1; i<=tx; i++){
-                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3)return false;
-                if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
+                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3 || field[i][y]==4)return false;
+                if(moveThroughtThrone=='disabled' && field[i][y]==5)return false;
             }
         }else if(tx<x){
             for(i=x-1; i>=tx; i--){
-                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3)return false;
-                if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
+                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3 || field[i][y]==4)return false;
+                if(moveThroughtThrone=='disabled' && field[i][y]==5)return false;
             }
         }
     }
@@ -284,9 +304,22 @@ function canMove(x,y,tx,ty){
 }
 
 function click(e){
+    if(firstClick){
+        var audio = new Audio('sound/music.mp3');
+        audio.play();
+        firstClick=0;
+        console.log('wlanczam');
+        audio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+    }
     if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
         if(clicked.x==0 && clicked.y==0){
-            if(field[mouseCord.x][mouseCord.y]==1 || field[mouseCord.x][mouseCord.y]==2 || field[mouseCord.x][mouseCord.y]==3){
+            if(field[mouseCord.x][mouseCord.y]==1 && player==1){
+                clicked.x=mouseCord.x;
+                clicked.y=mouseCord.y;
+            }else if((field[mouseCord.x][mouseCord.y]==2 || field[mouseCord.x][mouseCord.y]==3) && player==2){
                 clicked.x=mouseCord.x;
                 clicked.y=mouseCord.y;
             }else{
@@ -315,6 +348,7 @@ function click(e){
 }
 
 function start(){
+    
     if(gameName=='Brandubh'){
         size=7;
         winCondition='corner';
@@ -369,6 +403,8 @@ function update(){
          update();  
     }, 1000 / s.FPS);
     s.ctx.clearRect(0, 0, s.w(), s.h());
+
+    s.ctx.fillRect(0, 0, s.w(), s.h());
     
     renderMap(size);
     if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
@@ -395,3 +431,4 @@ window.onresize = function(){
     mouseX=-1000;
     mouseY=-1000;
 }
+
