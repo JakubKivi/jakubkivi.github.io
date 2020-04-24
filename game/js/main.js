@@ -78,13 +78,15 @@ var clicked = {
     y:0
 };
 
-var gameName='Brandubh'; // Brandubh, Tablut
-var size=0; //by default
-var winCondition='corner'; //edge, corner
-var killingKing='enable';
-var moveThroughtThrone='enable';
-var weaponlessKing='disable';
-var ableToBackToThrone='enable';
+var gameName='Tablut';           // Brandubh, Tablut
+var size=0;                      //by default
+var winCondition='corner';       //edge, corner
+var moveThroughtThrone='enable'; //enable, disable
+var weaponlessKing='disable';    //enable, disable
+var ableToBackToThrone='enable'; //enable, disable
+var throneIsKilling='both';      //both, attackersOnly
+var killingKingCondition='two';  //two, four
+var throneProtecting='disable';  //enable, disable 
 
 var margin =100;
 
@@ -99,6 +101,7 @@ var isMobile;
 var firstClick=1;
 var tourNr=0;
 var player=1;
+var win=0;
 
 var field= createArray(100, 100);  //1 - black, 2 - white, 3 - king, 4 - obstacle
 
@@ -253,18 +256,81 @@ function remove(){
     var o;
     player==1?o=2:o=1;
 
+    //simple killing figures
     if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==player)field[mouseCord.x+1][mouseCord.y]=0;
-    if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==player)field[mouseCord.x-1][mouseCord.y]=0;
-    if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==player)field[mouseCord.x][mouseCord.y+1]=0;
-    if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==player)field[mouseCord.x][mouseCord.y-1]=0;
+    else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==player)field[mouseCord.x-1][mouseCord.y]=0;
+    else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==player)field[mouseCord.x][mouseCord.y+1]=0;
+    else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==player)field[mouseCord.x][mouseCord.y-1]=0;
 
+    if(throneIsKilling=='both'){
+        if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==5)field[mouseCord.x+1][mouseCord.y]=0;
+        else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==5)field[mouseCord.x-1][mouseCord.y]=0;
+        else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==5)field[mouseCord.x][mouseCord.y+1]=0;
+        else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==5)field[mouseCord.x][mouseCord.y-1]=0;
+    }
+    if(winCondition=='corner'){
+        if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==4)field[mouseCord.x+1][mouseCord.y]=0;
+        else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==4)field[mouseCord.x-1][mouseCord.y]=0;
+        else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==4)field[mouseCord.x][mouseCord.y+1]=0;
+        else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==4)field[mouseCord.x][mouseCord.y-1]=0;
+    }
+    if(weaponlessKing=='disable'){
+        if(field[mouseCord.x+1][mouseCord.y]==o && field[mouseCord.x+2][mouseCord.y]==3)field[mouseCord.x+1][mouseCord.y]=0;
+        else if(field[mouseCord.x-1][mouseCord.y]==o && field[mouseCord.x-2][mouseCord.y]==3)field[mouseCord.x-1][mouseCord.y]=0;
+        else if(field[mouseCord.x][mouseCord.y+1]==o && field[mouseCord.x][mouseCord.y+2]==3)field[mouseCord.x][mouseCord.y+1]=0;
+        else if(field[mouseCord.x][mouseCord.y-1]==o && field[mouseCord.x][mouseCord.y-2]==3)field[mouseCord.x][mouseCord.y-1]=0;
+    }
+}
+
+function removeKing(){
+    if(killingKingCondition=='two'){
+            if(field[mouseCord.x+1][mouseCord.y]==3 && field[mouseCord.x+2][mouseCord.y]==1){
+                if(mouseCord.x+1==parseInt(size/2)+1 && mouseCord.y==parseInt(size/2)+1){
+                    if(field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
+                }else win=1;
+            }
+            else if(field[mouseCord.x-1][mouseCord.y]==3 && field[mouseCord.x-2][mouseCord.y]==1){
+                if(mouseCord.x-1==parseInt(size/2)+1 && mouseCord.y==parseInt(size/2)+1){
+                    if(field[mouseCord.x-1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+                }else win=1;
+            }
+            else if(field[mouseCord.x][mouseCord.y+1]==3 && field[mouseCord.x][mouseCord.y+2]==1){
+                if(mouseCord.x==parseInt(size/2)+1 && mouseCord.y+1==parseInt(size/2)+1){
+                    if(field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y+1]==1)win=1;
+                }else win=1;
+            }
+            else if(field[mouseCord.x][mouseCord.y-1]==3 && field[mouseCord.x][mouseCord.y-2]==1){
+                if(mouseCord.x==parseInt(size/2)+1 && mouseCord.y-1==parseInt(size/2)+1){
+                    if(field[mouseCord.x+1][mouseCord.y-1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+                }else win=1;
+            }
+    }else if(killingKingCondition=='four'){
+            if(field[mouseCord.x+1][mouseCord.y]==3   && (field[mouseCord.x+2][mouseCord.y]==1 || mouseCord.x+2>size) &&
+               field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
+            else if(field[mouseCord.x-1][mouseCord.y]==3   && (field[mouseCord.x-2][mouseCord.y]==1 || mouseCord.x-2<1) &&
+                    field[mouseCord.x-1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+            else if(field[mouseCord.x][mouseCord.y+1]==3   && (field[mouseCord.x][mouseCord.y+2]==1 || mouseCord.y+2>size) &&
+                    field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y+1]==1)win=1;
+            else if(field[mouseCord.x][mouseCord.y-1]==3   && (field[mouseCord.x][mouseCord.y-2]==1 || mouseCord.y-2<1) &&
+                    field[mouseCord.x+1][mouseCord.y-1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+    }
+}
+function escaping(){
+    if(winCondition=="edge" && (mouseCord.x==size||mouseCord.y==size||mouseCord.x==1||mouseCord.y==1))win=2;
+    if(winCondition=="corner" && (mouseCord.x==1&&mouseCord.y==1 || mouseCord.x==1&&mouseCord.y==size||
+                                  mouseCord.x==size&&mouseCord.y==1 || mouseCord.x==size&&mouseCord.y==size))win=2;
+    console.log('wlazlem');
 }
 
 function move(){
+    if(field[clicked.x][clicked.y]==3)escaping();
     var buf=field[clicked.x][clicked.y];
     if(buf==3 && clicked.x==parseInt(size/2)+1 && clicked.y==parseInt(size/2)+1)field[clicked.x][clicked.y]=5;
     else field[clicked.x][clicked.y]=0;
     field[mouseCord.x][mouseCord.y]=buf;
+    if(player==1 &&(field[mouseCord.x+1][mouseCord.y]==3 || field[mouseCord.x-1][mouseCord.y]==3 ||
+                    field[mouseCord.x][mouseCord.y+1]==3 || field[mouseCord.x][mouseCord.y-1]==3)
+    )removeKing();
     remove();
     clicked.x=0;
     clicked.y=0;
@@ -278,24 +344,28 @@ function canMove(x,y,tx,ty){
     if(x==tx){
         if(ty>y){
             for(i=y+1; i<=ty; i++){
-                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3 || field[x][i]==4)return false;
+                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3)return false;
+                if(field[x][y]!=3 && field[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
             }
         }else if(ty<y){
             for(i=y-1; i>=ty; i--){
-                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3 || field[x][i]==4)return false;
+                if(field[x][i]==1 || field[x][i]==2 || field[x][i]==3)return false;
+                if(field[x][y]!=3 && field[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && field[x][i]==5)return false;
             }
         }
     }else if(y==ty){
         if(tx>x){
             for(i=x+1; i<=tx; i++){
-                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3 || field[i][y]==4)return false;
+                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3)return false;
+                if(field[x][y]!=3 && field[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && field[i][y]==5)return false;
             }
         }else if(tx<x){
             for(i=x-1; i>=tx; i--){
-                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3 || field[i][y]==4)return false;
+                if(field[i][y]==1 || field[i][y]==2 || field[i][y]==3)return false;
+                if(field[x][y]!=3 && field[x][i]==4)return false;
                 if(moveThroughtThrone=='disabled' && field[i][y]==5)return false;
             }
         }
@@ -308,7 +378,6 @@ function click(e){
         var audio = new Audio('sound/music.mp3');
         audio.play();
         firstClick=0;
-        console.log('wlanczam');
         audio.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
@@ -353,11 +422,17 @@ function start(){
         size=7;
         winCondition='corner';
         moveThroughtThrone='enable';
+        throneIsKilling='both';
+        killingKingCondition='two'; 
+        throneProtecting='disable';
     }
     else if(gameName=='Tablut'){
         size=9;
         winCondition='edge';
         moveThroughtThrone='enable';
+        hroneIsKilling='both';
+        killingKingCondition='four'; 
+        throneProtecting='enable';
     }
     
 
@@ -399,6 +474,10 @@ function start(){
 }
 
 function update(){
+    if(win){
+        console.log('haha');
+        win=0;
+    }
     setTimeout(function(){
          update();  
     }, 1000 / s.FPS);
