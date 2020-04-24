@@ -78,7 +78,7 @@ var clicked = {
     y:0
 };
 
-var gameName='Tablut';           // Brandubh, Tablut
+var gameName='Brandubh';           // Brandubh, Tablut
 var size=0;                      //by default
 var winCondition='corner';       //edge, corner
 var moveThroughtThrone='enable'; //enable, disable
@@ -87,6 +87,7 @@ var ableToBackToThrone='enable'; //enable, disable
 var throneIsKilling='both';      //both, attackersOnly
 var killingKingCondition='two';  //two, four
 var throneProtecting='disable';  //enable, disable 
+var fourToKillOnThrone='enable'; //enable, disable
 
 var margin =100;
 
@@ -284,6 +285,7 @@ function remove(){
 
 function removeKing(){
     if(killingKingCondition=='two'){
+        if(field[parseInt(size/2)+1][parseInt(size/2)+1]!=3 && fourToKillOnThrone=='enable'){
             if(field[mouseCord.x+1][mouseCord.y]==3 && field[mouseCord.x+2][mouseCord.y]==1){
                 if(mouseCord.x+1==parseInt(size/2)+1 && mouseCord.y==parseInt(size/2)+1){
                     if(field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
@@ -304,6 +306,16 @@ function removeKing(){
                     if(field[mouseCord.x+1][mouseCord.y-1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
                 }else win=1;
             }
+        }else{
+            if(field[mouseCord.x+1][mouseCord.y]==3   && (field[mouseCord.x+2][mouseCord.y]==1 || mouseCord.x+2>size) &&
+               field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
+            else if(field[mouseCord.x-1][mouseCord.y]==3   && (field[mouseCord.x-2][mouseCord.y]==1 || mouseCord.x-2<1) &&
+                    field[mouseCord.x-1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+            else if(field[mouseCord.x][mouseCord.y+1]==3   && (field[mouseCord.x][mouseCord.y+2]==1 || mouseCord.y+2>size) &&
+                    field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x-1][mouseCord.y+1]==1)win=1;
+            else if(field[mouseCord.x][mouseCord.y-1]==3   && (field[mouseCord.x][mouseCord.y-2]==1 || mouseCord.y-2<1) &&
+                    field[mouseCord.x+1][mouseCord.y-1]==1 && field[mouseCord.x-1][mouseCord.y-1]==1)win=1;
+        }
     }else if(killingKingCondition=='four'){
             if(field[mouseCord.x+1][mouseCord.y]==3   && (field[mouseCord.x+2][mouseCord.y]==1 || mouseCord.x+2>size) &&
                field[mouseCord.x+1][mouseCord.y+1]==1 && field[mouseCord.x+1][mouseCord.y-1]==1)win=1;
@@ -425,14 +437,16 @@ function start(){
         throneIsKilling='both';
         killingKingCondition='two'; 
         throneProtecting='disable';
+        fourToKillOnThrone='enable';
     }
     else if(gameName=='Tablut'){
         size=9;
         winCondition='edge';
         moveThroughtThrone='enable';
         hroneIsKilling='both';
-        killingKingCondition='four'; 
+        killingKingCondition='two'; 
         throneProtecting='enable';
+        fourToKillOnThrone='enable';
     }
     
 
