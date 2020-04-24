@@ -66,7 +66,13 @@ var whitePawnClicked = new Image;
 whitePawnClicked.src="img/whitePawnClicked.png";
 var kingClicked = new Image;
 kingClicked.src="img/kingClicked.png";
+var clickToStart = new Image;
+clickToStart.src="img/pressToStart.png";
+var clickToStartH = new Image;
+clickToStartH.src="img/pressToStartH.png";
+
 var sound = new Audio('sound/sound.wav');
+
 
 
 var hovered = {
@@ -99,10 +105,11 @@ var fieldSize;
 var center;
 var startCord;
 var isMobile;
-var firstClick=1;
 var tourNr=0;
 var player=1;
 var win=0;
+var mainMenu=0;
+var firstBoard=1;
 
 var field= createArray(100, 100);  //1 - black, 2 - white, 3 - king, 4 - obstacle
 
@@ -386,31 +393,39 @@ function canMove(x,y,tx,ty){
 }
 
 function click(e){
-    if(firstClick){
-        var audio = new Audio('sound/music.mp3');
-        audio.play();
-        firstClick=0;
-        audio.addEventListener('ended', function() {
+    if(firstBoard==1){
+        if(mouseY > (s.h()-clickToStart.height)/2 && mouseY < (s.h()-clickToStart.height)/2 + clickToStart.height){
+            firstBoard=0;
+            var audio = new Audio('sound/music.mp3');
+            audio.play();
+            audio.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
         }, false);
-    }
-    if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
-        if(clicked.x==0 && clicked.y==0){
-            if(field[mouseCord.x][mouseCord.y]==1 && player==1){
-                clicked.x=mouseCord.x;
-                clicked.y=mouseCord.y;
-            }else if((field[mouseCord.x][mouseCord.y]==2 || field[mouseCord.x][mouseCord.y]==3) && player==2){
-                clicked.x=mouseCord.x;
-                clicked.y=mouseCord.y;
-            }else{
-                clicked.x=0;
-                clicked.y=0;
-            }
-        }else if(field[clicked.x][clicked.y]==1 || field[clicked.x][clicked.y]==2 || field[clicked.x][clicked.y]==3){
-            if(clicked.x!=mouseCord.x || clicked.y!=mouseCord.y){
-                if(canMove(clicked.x, clicked.y, mouseCord.x, mouseCord.y))move();
-                else{
+        }
+    }else if(mainMenu==1){
+        mainMenu=0;
+    }else{
+        if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
+            if(clicked.x==0 && clicked.y==0){
+                if(field[mouseCord.x][mouseCord.y]==1 && player==1){
+                    clicked.x=mouseCord.x;
+                    clicked.y=mouseCord.y;
+                }else if((field[mouseCord.x][mouseCord.y]==2 || field[mouseCord.x][mouseCord.y]==3) && player==2){
+                    clicked.x=mouseCord.x;
+                    clicked.y=mouseCord.y;
+                }else{
+                    clicked.x=0;
+                    clicked.y=0;
+                }
+            }else if(field[clicked.x][clicked.y]==1 || field[clicked.x][clicked.y]==2 || field[clicked.x][clicked.y]==3){
+                if(clicked.x!=mouseCord.x || clicked.y!=mouseCord.y){
+                    if(canMove(clicked.x, clicked.y, mouseCord.x, mouseCord.y))move();
+                    else{
+                        clicked.x=0;
+                        clicked.y=0;
+                    }
+                }else{
                     clicked.x=0;
                     clicked.y=0;
                 }
@@ -422,9 +437,6 @@ function click(e){
             clicked.x=0;
             clicked.y=0;
         }
-    }else{
-        clicked.x=0;
-        clicked.y=0;
     }
 }
 
@@ -498,10 +510,18 @@ function update(){
     s.ctx.clearRect(0, 0, s.w(), s.h());
 
     s.ctx.fillRect(0, 0, s.w(), s.h());
-    
-    renderMap(size);
-    if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
-    renderFig();
+    if(firstBoard==1){
+        
+        if(mouseY > (s.h()-clickToStart.height)/2 && mouseY < (s.h()-clickToStart.height)/2 + clickToStart.height)
+            s.ctx.drawImage(clickToStartH, 0, (s.h()-clickToStartH.height)/2, s.w(), clickToStartH.height);
+        else s.ctx.drawImage(clickToStart, 0, (s.h()-clickToStart.height)/2, s.w(), clickToStart.height);
+    }else if(mainMenu==1){
+
+    }else {
+        renderMap(size);
+        if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
+        renderFig();
+    }
     if(!isMobile)s.ctx.drawImage(cursor, mouseX, mouseY, fieldSize*0.75, fieldSize*0.75);
 }
 
