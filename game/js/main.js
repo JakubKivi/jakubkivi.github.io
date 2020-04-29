@@ -70,6 +70,10 @@ var clickToStart = new Image;
 clickToStart.src="img/pressToStart.png";
 var clickToStartH = new Image;
 clickToStartH.src="img/pressToStartH.png";
+var whiteWin = new Image;
+whiteWin.src="img/whiteWin.png";
+var blackWin = new Image;
+blackWin.src="img/blackWin.png";
 
 var sound = new Audio('sound/sound.wav');
 
@@ -84,7 +88,7 @@ var clicked = {
     y:0
 };
 
-var gameName='Brandubh';           // Brandubh, Tablut
+var gameName='Tablut';           // Brandubh, Tablut
 var size=0;                      //by default
 var winCondition='corner';       //edge, corner
 var moveThroughtThrone='enable'; //enable, disable
@@ -169,7 +173,7 @@ function clearFigures(){
     }
 };
 
-function putFiguresonMap(){
+function putFiguresOnMap(){
     function mirroring(){
         for(i=1; i<=parseInt(size/2)+1; i++){
             for(j=1; j<=parseInt(size/2)+1; j++){
@@ -338,7 +342,6 @@ function escaping(){
     if(winCondition=="edge" && (mouseCord.x==size||mouseCord.y==size||mouseCord.x==1||mouseCord.y==1))win=2;
     if(winCondition=="corner" && (mouseCord.x==1&&mouseCord.y==1 || mouseCord.x==1&&mouseCord.y==size||
                                   mouseCord.x==size&&mouseCord.y==1 || mouseCord.x==size&&mouseCord.y==size))win=2;
-    console.log('wlazlem');
 }
 
 function move(){
@@ -405,6 +408,10 @@ function click(e){
         }
     }else if(mainMenu==1){
         mainMenu=0;
+    }else if(win!=0){
+        clearFigures();
+        putFiguresOnMap();
+        win=0;
     }else{
         if(mouseX>startCord.x && mouseY>startCord.y && mouseX<(startCord.x+(size*fieldSize)) && mouseY<(startCord.y+(size*fieldSize))){
             if(clicked.x==0 && clicked.y==0){
@@ -455,8 +462,8 @@ function start(){
         size=9;
         winCondition='edge';
         moveThroughtThrone='enable';
-        hroneIsKilling='both';
-        killingKingCondition='two'; 
+        throneIsKilling='both';
+        killingKingCondition='four'; 
         throneProtecting='enable';
         fourToKillOnThrone='enable';
     }
@@ -469,15 +476,6 @@ function start(){
 
     if (document.attachEvent) document.attachEvent('onclick', click);
     else document.addEventListener('click', click);
-
-    whiteField.onload = function(){
-    }
-    blackField.onload = function(){
-    }
-    specialField.onload = function(){
-    }
-    cursor.onload = function(){
-    }
 
     if(s.w()>s.h()){
         fieldSize = (s.h()-margin)/size;
@@ -496,14 +494,10 @@ function start(){
 
     isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     clearFigures();
-    putFiguresonMap();
+    putFiguresOnMap();
 }
 
 function update(){
-    if(win){
-        console.log('haha');
-        win=0;
-    }
     setTimeout(function(){
          update();  
     }, 1000 / s.FPS);
@@ -517,6 +511,20 @@ function update(){
         else s.ctx.drawImage(clickToStart, 0, (s.h()-clickToStart.height)/2, s.w(), clickToStart.height);
     }else if(mainMenu==1){
 
+    }else if(win==1){
+        renderMap(size);
+        renderFig();
+        s.ctx.save();
+        s.ctx.globalAlpha=0.85;
+        s.ctx.drawImage(blackWin, 0, 0, s.w(), s.h());
+        s.ctx.restore();
+    }else if(win==2){
+        renderMap(size);
+        renderFig();
+        s.ctx.save();
+        s.ctx.globalAlpha=0.85;
+        s.ctx.drawImage(whiteWin, 0, 0, s.w(), s.h());
+        s.ctx.restore();
     }else {
         renderMap(size);
         if(!isMobile)if(typeof mouseCord!= 'undefined')drawHovered();
