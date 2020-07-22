@@ -1,3 +1,5 @@
+
+
 /*!
     * Start Bootstrap - Freelancer v6.0.0 (https://startbootstrap.com/themes/freelancer)
     * Copyright 2013-2020 Start Bootstrap
@@ -13,6 +15,7 @@
       if(window.location.href.indexOf(modalToOpen) != -1) {
           $(modalToOpen).modal("show");
       }
+
     });
 
 
@@ -52,12 +55,6 @@
     $('body').scrollspy({
       target: '#mainNav',
       offset: 80
-    });
-  
-    //attemp to stop videos after closing modal
-    $("#modal").on("hide",function(){
-      var leg=$('.vid-fluid').attr("src");
-      $('.videoPlayer').attr("src",leg);
     });
 
     // Collapse Navbar
