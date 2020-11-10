@@ -6,7 +6,7 @@ var FPS = 5;
 /* Updating the hash state creates a new entry
  * in the web browser's history. The latest entry in the web browser's
  * history is "modal.html#modalClosed". */
-window.location.hash = closedModalHashStateId;
+if(window.location.hash != "#contact")window.location.hash = closedModalHashStateId;
 
 
 var chosenModal = document.getElementById('mod');
