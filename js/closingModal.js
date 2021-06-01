@@ -28,10 +28,35 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
   })
 })
 
+$(document).ready(function() {
+    $('.modal').each(function() {
+        $this = $(this);
+        $this.on('shown.bs.modal', function() {
+            //toggleVideo('playVideo', $(this));
+        });
+
+        $this.on('hidden.bs.modal', function(){
+           toggleVideo('pauseVideo', $(this));
+        })
+   });
+
+    function toggleVideo(state, div) {
+        var iframe = div.find("iframe")[0].contentWindow;
+        iframe.postMessage('{"event":"command","func":"' + state + '","args":""}', '*');
+    }
+});  
+
 document.addEventListener("keydown", ({key}) => {
     if (key === "Escape"&&window.location.hash == openModalHashStateId){
         window.location.hash = closedModalHashStateId;
     }
+})
+
+document.querySelectorAll('.close').forEach(item => {
+  item.addEventListener('click', event => {
+    window.location.hash = closedModalHashStateId;
+
+  })
 })
 
 function handleBackPress(event) {
@@ -49,5 +74,8 @@ function toCloseModal(){
 
 	if(window.location.hash==closedModalHashStateId){
 		$('.modal').modal('hide');
+        $('.yvideo').each(function(){
+            $(this).stopVideo();
+        });
 	}
 }
