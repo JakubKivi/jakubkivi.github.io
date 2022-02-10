@@ -48,6 +48,28 @@ body::-webkit-scrollbar-thumb:hover{
 .navbar-custom{
     background-color: #69e16d;
 }
+.navbar-text-color{ 
+    color: #442B66;
+    text-shadow: -1px 1px 2px #0004;
+    font-weight: 600;
+}
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat; }
+
+.flag-icon {
+  position: relative;
+  display: inline-block;
+  width: 1.3333333333em;
+  line-height: 1em; }
+  .flag-icon:before {
+    content: " "; }
+  .flag-icon.flag-icon-squared {
+    width: 1em; }
+
+.flag-icon-gbr {
+    background-image: url(../assets/img/gbr.svg); }
 
 .wave-navbar {
     position: fixed;
@@ -76,17 +98,12 @@ body::-webkit-scrollbar-thumb:hover{
     fill: #69e16d;
 }
 
-.navbar-text-color{ 
-    color: #442B66;
-    text-shadow: -1px 1px 2px #0004;
-    font-weight: 600;
-}
-
 /*==============  HEADER  =============*/
 
 
 .header-custom{
     height: 100vh;
+    text-align: center;
 }
 
 .avatar{
@@ -134,6 +151,37 @@ body::-webkit-scrollbar-thumb:hover{
   font-size: 3vh;
 }
 
+/* Arrow & Hover Animation */
+#more-arrows {
+  width: 75px;
+  height: 65px;
+}
+#more-arrows:hover{
+  cursor: pointer;
+}
+#more-arrows:hover polygon {
+
+  fill: #FFF;
+  transition: all 0.5s ease-out;
+}
+#more-arrows:hover polygon.arrow-bottom {
+  transform: translateY(-18px);
+}
+#more-arrows:hover polygon.arrow-top {
+  transform: translateY(18px);
+}
+  
+polygon {
+  fill: #FFF;
+  transition: all .5s ease-out;    
+} 
+.arrow-middle {
+  opacity: 0.75;
+}
+.arrow-top {
+  opacity: 0.5
+}
+ 
 .blob{
     position:  absolute;
     left: -5%;
