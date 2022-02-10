@@ -1,6 +1,9 @@
+/*==============  GLOBAL  =============*/
+
 body{
     font-family: 'Josefin Sans', sans-serif;
     color: #fff;
+    overflow-x: hidden;
 }
 
 p{
@@ -8,9 +11,47 @@ p{
     text-align: justify;
 }
 
+
+.font-bold-custom{
+    font-weight: 600;
+}
+
+/*==============  SCROLLBAR  =============*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #b44459;
+    position: fixed;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c4534a;
+  border-radius: 12px;
+}
+/* Hover */
+body::-webkit-scrollbar-thumb:hover{
+  background: #cc683a;
+}
+/*body::-webkit-scrollbar:hover{
+  width: 18px;
+  transition: 2s;                   <======  TO DO
+}
+*/
+
+/*==============  NAVBAR  =============*/
+.navbar-custom{
+    background-color: #69e16d;
+}
+
 .wave-navbar {
     position: fixed;
-    top: 56px;
+    top: 54px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -25,20 +66,14 @@ p{
 
 .wave-navbar svg {
     position: relative;
+    left: -5%;
     display: block;
-    width: calc(100% + 1.3px);
+    width: 110%;
     height: 25px;
 }
 
 .wave-navbar .shape-fill {
-    fill: #F6971F;
-}
-
-
-
-.navbar-custom{
-    background-color: #F6971F;
-
+    fill: #69e16d;
 }
 
 .navbar-text-color{ 
@@ -47,24 +82,19 @@ p{
     font-weight: 600;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 7px;
-}
+/*==============  HEADER  =============*/
 
-/* Track */
-::-webkit-scrollbar-track {
-    background-color: #557A2B;
-}
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #96C93C;
-  border-radius: 10px;
+.header-custom{
+    height: 100vh;
 }
 
 .avatar{
-    width: 20rem;
+    height: 40vh;
+}
+
+.header-text-custom{
+    font-size: 7vh;
 }
 
 .divider-custom {
@@ -78,9 +108,9 @@ p{
   width: 100%;
   max-width: 5rem;
   height: 0.15rem;
-  background-color: #805122;
+  background-color: white;
   border-radius: 1rem;
-  border-color: #805122 !important;
+  border-color: white !important;
 }
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
@@ -90,40 +120,44 @@ p{
 }
 .divider-custom .divider-custom-icon {
   color: #805122 !important;
-  font-size: 3rem;
+  font-size: 5vh;
 }
 .divider-custom.divider-light .divider-custom-line {
-  color: #F6971F;
-}
-.divider-custom.divider-light .divider-custom-icon {
-  color: #F6971F;
+  color:  white;
 }
 
-.font-bold-custom{
-    font-weight: 600;
+.fa-kiwi-bird{
+   color: white;
 }
 
-.header-custom{
-    font-size: 2.75rem;
-}
-
-.subheader-custom {
-  font-size: 1.25rem;
-}
-
-.kiwi-bird{
-    color: #F6971F;
+.subheader-text-custom {
+  font-size: 3vh;
 }
 
 .blob{
     position:  absolute;
+    left: -5%;
     top: 50px;
     z-index: -1;
-    width: 99.99%;
+    width: 110%;
+    height: 105%;
 }
 
+/*----smartphones--*/
 
+@media only screen and (max-width: 768px) {
+    .header-text-custom{
+        font-size: 5vh;
+    }
+    .subheader-text-custom {
+      font-size: 2vh;
+    }
+    .divider-custom .divider-custom-icon {
+      font-size: 3vh;
+    }
+}
 
+/*==============  PORTFOLIO  =============*/
 
 .lorem{
     margin-top: 300px;
