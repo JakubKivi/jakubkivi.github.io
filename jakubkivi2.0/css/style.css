@@ -1,7 +1,7 @@
-/*==============  GLOBAL  =============*/
+    /*==============  GLOBAL  =============*/
 
 body{
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;font-family: 'Josefin Sans', sans-serif;
     color: #fff;
     overflow-x: hidden;
 }
@@ -9,11 +9,6 @@ body{
 p{
     margin: 20px 100px 0px 100px;
     text-align: justify;
-}
-
-
-.font-bold-custom{
-    font-weight: 600;
 }
 
 /*==============  SCROLLBAR  =============*/
@@ -48,11 +43,25 @@ body::-webkit-scrollbar-thumb:hover{
 .navbar-custom{
     background-color: #69e16d;
 }
-.navbar-text-color{ 
-    color: #442B66;
+
+.nav-item-custom{
+    color: #3e3366;
     text-shadow: -1px 1px 2px #0004;
-    font-weight: 600;
+    font-weight: 900;
+    transition: 0.5s;
+
+    height: 40px;
+    line-height: 40px; /* same as height! */
 }
+
+.nav-item-custom:hover{
+    color: #60356c;
+}
+
+.navbar-selected-custom{
+    font-size: 30px;
+}
+
 .flag-icon {
   background-size: contain;
   background-position: 50%;
@@ -71,9 +80,18 @@ body::-webkit-scrollbar-thumb:hover{
 .flag-icon-gbr {
     background-image: url(../assets/img/gbr.svg); }
 
+.navbar-toggler-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(68, 43, 102, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler-custom.navbar-toggler {
+  border-width: 1.5px;
+  border-color: #442B66;
+}
+
 .wave-navbar {
     position: fixed;
-    top: 54px;
+    top: 56px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -82,7 +100,7 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .wave-navbar-collpase-unfold {
-    top: 176px;
+    top: 257px;
     transition: 0.38s;
 }
 
