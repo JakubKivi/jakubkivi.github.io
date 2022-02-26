@@ -1,16 +1,17 @@
 var navBtn = document.getElementById("navBut");
 var wave = document.getElementById("wave-navbar-collapse");
 
-var fold = false;
+var navbarFold = false;
+
 
 navBtn.onclick =function(){
-	if(!fold){
+	if(!navbarFold){
 		wave.classList.add("wave-navbar-collpase-unfold");
-		fold=true;
+		navbarFold=true;
 	}
 	else{
 		wave.classList.remove("wave-navbar-collpase-unfold");
-		fold=false;
+		navbarFold=false;
 	}
 }
 
@@ -81,7 +82,7 @@ navStart.onclick =function(){
   activeNav.classList.remove("helper-custom");
   
   wave.classList.remove("wave-navbar-collpase-unfold");
-  fold=false;
+  navbarFold=false;
 }
 
 var navAbout = document.getElementById("navAbout");
@@ -92,7 +93,7 @@ navAbout.onclick =function(){
   activeNav.classList.remove("helper-custom");
 
   wave.classList.remove("wave-navbar-collpase-unfold");
-  fold=false;
+  navbarFold=false;
 }
 
 var navPortfolio = document.getElementById("navPortfolio");
@@ -103,7 +104,7 @@ navPortfolio.onclick =function(){
   activeNav.classList.remove("helper-custom");
   
   wave.classList.remove("wave-navbar-collpase-unfold");
-  fold=false;
+  navbarFold=false;
 }
 
 var navContact = document.getElementById("navContact");
@@ -114,7 +115,7 @@ navContact.onclick =function(){
   activeNav.classList.remove("helper-custom");
   
   wave.classList.remove("wave-navbar-collpase-unfold");
-  fold=false;
+  navbarFold=false;
 }                              ////TO DO: Change it to get by class and loop through all instances
 
 const sections = document.querySelectorAll("section");

@@ -11,6 +11,18 @@ p{
     text-align: justify;
 }
 
+.wave-divider{
+  
+  /* width: 110%;
+  height: 5%;
+/*  */
+  position: absolute;
+  left: -5%;  
+  z-index: -1;
+  width: 110%;
+  height: 105%; 
+}
+
 /*==============  SCROLLBAR  =============*/
 
 /* width */
@@ -100,7 +112,7 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .wave-navbar-collpase-unfold {
-    top: 257px;
+    top: 256px;
     transition: 0.38s;
 }
 
@@ -228,7 +240,3 @@ polygon {
 }
 
 /*==============  PORTFOLIO  =============*/
-
-.lorem{
-    margin-top: 300px;
-}
