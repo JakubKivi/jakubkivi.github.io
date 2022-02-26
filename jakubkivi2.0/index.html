@@ -48,21 +48,21 @@
   </button>
   <div class="collapse navbar-collapse"  id="navbarNav">
     <ul class="navbar-nav ml-auto mr-auto navbar-text-color">
-    	<li class="nav-item navbar-selected-custom"
+    	<li class="nav-item navbar-selected-custom start" id="navStart" 
     	onmouseover="hover(this)" onmouseout="hoverOff(this)">
-        <a class="nav-link nav-item-custom" href="#">Start</a>
+        <a class="nav-link nav-item-custom" href="#start" data-toggle="collapse" data-target=".navbar-collapse.show">Start</a>
       </li>
-      <li class="nav-item"
+      <li class="nav-item about" id="navAbout"
       onmouseover="hover(this)" onmouseout="hoverOff(this)">
-        <a class="nav-link nav-item-custom js-scroll-trigger" href="#about">O mnie</a>
+        <a class="nav-link nav-item-custom" href="#about" data-toggle="collapse" data-target=".navbar-collapse.show">O mnie</a>
       </li>
-      <li class="nav-item"
+      <li class="nav-item portfolio" id="navPortfolio"
       onmouseover="hover(this)" onmouseout="hoverOff(this)">
-        <a class="nav-link nav-item-custom" href="#">Portfolio</a>
+        <a class="nav-link nav-item-custom" href="#portfolio" data-toggle="collapse" data-target=".navbar-collapse.show">Portfolio</a>
       </li>
-      <li class="nav-item"
+      <li class="nav-item contact" id="navContact"
       onmouseover="hover(this)" onmouseout="hoverOff(this)">
-        <a class="nav-link nav-item-custom" href="#">Kontakt</a>
+        <a class="nav-link nav-item-custom" href="#contact" data-toggle="collapse" data-target=".navbar-collapse.show">Kontakt</a>
       </li>
       <li class="nav-item">
         <a class="nav-link nav-item-custom" href="#">
@@ -111,7 +111,7 @@
 </svg>
 
 
-<header class="header-custom">
+<section class="header-custom" id="start">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
         <img class="mb-3 mt-4 avatar" src="assets/img/avatar.svg" alt="" />
@@ -135,9 +135,9 @@
 			</svg>
 		</a>
 	</div>
-</header>	
+</section>	
 
-<section class="page-section text-white mb-0" id="about">
+<section class="page-section text-white mb-5" id="about">
   <div class="container">
     <!-- About Section Heading-->
     <h2 class="page-section-heading text-center text-uppercase text-white">O mnie</h2>
@@ -149,23 +149,74 @@
       <div class="divider-custom-line"></div>
     </div>
     <!-- About Section Content-->
-    <div class="row">
+    <div class="row mb-5">
     	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
+    	<br><br>
+    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
+		</div>
+		<div class="arrows-container" id="headerArrow">
+	  	<a href="#portfolio">
+				<svg id="more-arrows">
+				  <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+				  <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+				  <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+				</svg>
+			</a>
 		</div>
 	</div>
 </section>
 
-<p class="lorem">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
+<section class="page-section text-white mb-5" id="portfolio">
+  <div class="container">
+    <!-- About Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-white">Porfolio</h2>
+    <!-- <h6 class="text-center text-uppercase text-white">Ostatnia aktualizacja: Jeszcze nie xD</h6> -->
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+			<div class="divider-custom-icon "><i class="fas fa-kiwi-bird"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <!-- About Section Content-->
+    <div class="row mb-5"">
+    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
+    	<br><br>
+    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
+		</div>
+		<div class="arrows-container" id="headerArrow">
+	  	<a href="#contact">
+				<svg id="more-arrows">
+				  <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+				  <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+				  <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</section>
 
-In sit amet ante elit. Sed ut rhoncus lorem. Pellentesque auctor turpis a nulla posuere accumsan. Vivamus pulvinar vel risus a dignissim. Sed vel finibus mi. Integer consequat, lectus auctor suscipit dictum, nibh justo suscipit arcu, a pharetra neque eros a nisi. Maecenas dignissim leo urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eu mauris nisi. Vivamus lacinia condimentum ex ut mollis. Ut quam ante, eleifend at felis id, faucibus eleifend libero.
+<section class="page-section text-white mb-5" id="contact">
+  <div class="container">
+    <!-- About Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-white">Kontakt</h2>
+    <!-- <h6 class="text-center text-uppercase text-white">Ostatnia aktualizacja: Jeszcze nie xD</h6> -->
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+			<div class="divider-custom-icon "><i class="fas fa-kiwi-bird"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <!-- About Section Content-->
+    <div class="row">
+    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
+    	<br><br>
+    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
 
-Quisque ullamcorper justo quam, et sollicitudin enim dignissim sit amet. Donec at hendrerit felis. Donec convallis, tellus eget laoreet congue, neque leo ultrices lacus, vel tristique leo libero in orci. Ut felis libero, blandit eu mauris vel, fermentum iaculis massa. In hac habitasse platea dictumst. Etiam ac maximus ligula. Integer est magna, consequat in sapien eu, auctor rhoncus ligula. Aliquam sagittis eleifend massa, sit amet lacinia lorem molestie eget. Quisque cursus hendrerit tortor sed porttitor.In sit amet ante elit. Sed ut rhoncus lorem. Pellentesque auctor turpis a nulla posuere accumsan. Vivamus pulvinar vel risus a dignissim. Sed vel finibus mi. Integer consequat, lectus auctor suscipit dictum, nibh justo suscipit arcu, a pharetra neque eros a nisi. Maecenas dignissim leo urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eu mauris nisi. Vivamus lacinia condimentum ex ut mollis. Ut quam ante, eleifend at felis id, faucibus eleifend libero.
-
-Quisque ullamcorper justo quam, et sollicitudin enim dignissim sit amet. Donec at hendrerit felis. Donec convallis, tellus eget laoreet congue, neque leo ultrices lacus, vel tristique leo libero in orci. Ut felis libero, blandit eu mauris vel, fermentum iaculis massa. In hac habitasse platea dictumst. Etiam ac maximus ligula. Integer est magna, consequat in sapien eu, auctor rhoncus ligula. Aliquam sagittis eleifend massa, sit amet lacinia lorem molestie eget. Quisque cursus hendrerit tortor sed porttitor.
-
-Vivamus pulvinar fermentum nibh a efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus sit amet faucibus purus. Fusce semper porta varius. Donec nec accumsan diam. Suspendisse gravida viverra ex varius congue. Quisque viverra, velit non consequat vehicula, ex orci scelerisque erat, a egestas ex leo id ante. Quisque non diam vitae arcu placerat sodales dignissim vel lacus. Phasellus efficitur imperdiet pharetra. Nulla mattis libero eu augue vestibulum, vel porttitor tellus scelerisque. Quisque sed erat dignissim, congue tortor sit amet, sagittis purus. Quisque sit amet interdum lorem, sit amet efficitur orci. Nulla a maximus risus. Duis eleifend nulla at egestas rutrum.
-</p>
+    	<br><br>
+    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque mauris nec rutrum aliquam. Donec interdum risus sed sem tincidunt euismod. Aliquam magna metus, dictum sit amet dignissim a, vestibulum at quam. Maecenas feugiat sem elit, in tempus nibh malesuada id. Sed sollicitudin, nibh sit amet tristique fringilla, dolor sapien euismod sapien, eu rutrum elit erat a urna. Praesent in sapien ante. Sed dui sem, auctor in nisl ultricies, aliquam posuere urna. Praesent id massa ut lorem sollicitudin pharetra. Nullam ullamcorper euismod porta.
+		</div>
+	</div>
+</section>
 
 </body>
 </html>

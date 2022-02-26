@@ -189,6 +189,10 @@ body::-webkit-scrollbar-thumb:hover{
   transform: translateY(18px);
 }
   
+.arrows-container{
+    text-align: center;
+}
+
 polygon {
   fill: #FFF;
   transition: all .5s ease-out;    
