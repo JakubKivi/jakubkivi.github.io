@@ -2,7 +2,7 @@ var navBtn = document.getElementById("navBut");
 var wave = document.getElementById("wave-navbar-collapse");
 
 var navbarFold = false;
-
+var moving = false;
 
 navBtn.onclick =function(){
 	if(!navbarFold){
@@ -21,7 +21,6 @@ function hover(element)
   activeNav.classList.add("helper-custom");
   activeNav.classList.remove("navbar-selected-custom");
   element.classList.add("navbar-selected-custom");
-
 }
 
 function hoverOff(element)
@@ -44,15 +43,13 @@ $(document).ready(function(){
       event.preventDefault();
 
       var hash = this.hash;
+      moving = true;
 
       $('html, body').animate({
-        scrollTop: $(hash).offset().top-120
+        scrollTop: $(hash).offset().top-100
       }, 600, function(){
-   
-        //window.location.hash = hash;
-        // var activeNav = document.getElementsByClassName("navbar-selected-custom").item(0);
-        // activeNav.classList.remove("navbar-selected-custom");
-        // this.parentElement.classList.add("navbar-selected-custom");
+        moving = false;
+        scrollCustom();
       });
     }
   });
@@ -61,17 +58,14 @@ $(document).ready(function(){
       event.preventDefault();
 
       var hash = this.hash;
-
+      moving = true;
       $('html, body').animate({
-        scrollTop: $(hash).offset().top-120
+        scrollTop: $(hash).offset().top-100
       }, 600, function(){
-   
-        //window.location.hash = hash;
+        moving = false;
+        scrollCustom();
       });
-    
   });
-
-
 });
 
 var navStart = document.getElementById("navStart");
@@ -120,25 +114,29 @@ navContact.onclick =function(){
 
 const sections = document.querySelectorAll("section");
 const navLi = document.querySelectorAll("nav div ul li");
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-      current = section.getAttribute("id");
-    }
-  });
+window.addEventListener("scroll", () => scrollCustom());
 
-  navLi.forEach((li) => {
-    if(li.classList.contains("helper-custom")){
-      li.classList.remove("helper-custom");
-    }
-    if(li.classList.contains("navbar-selected-custom")){
-      li.classList.remove("navbar-selected-custom");
-    }
-    if (li.classList.contains(current)) {
-      li.classList.add("navbar-selected-custom");
-    }
-  });
-});
+function scrollCustom(){
+  {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
+    });
+  
+    navLi.forEach((li) => {
+      if(li.classList.contains("helper-custom")){
+        li.classList.remove("helper-custom");
+      }
+      if(li.classList.contains("navbar-selected-custom")){
+        li.classList.remove("navbar-selected-custom");
+      }
+      if (li.classList.contains(current) && !moving) {
+        li.classList.add("navbar-selected-custom");
+      }
+    });
+  }
+}

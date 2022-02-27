@@ -1,9 +1,37 @@
-    /*==============  GLOBAL  =============*/
+/*==============  GLOBAL  =============*/
+
+:root {
+  --gradient-color-1: #69e16d;
+  --gradient-color-2: #96c93c;  
+  --gradient-color-3: #b1b121;
+  --gradient-color-4: #c3981c;
+  --gradient-color-5: #cc7f29;
+  --gradient-color-6: #cc683a;
+  --gradient-color-7: #c4534a;
+  --gradient-color-8: #b44459;
+  --gradient-color-9: #9d3b64;
+  --gradient-color-10: #81376b;
+  --gradient-color-11: #60356c;
+  --gradient-color-12: #3e3366;
+
+  --main-font-color: #fff;
+
+  --navbar-bg-color: var(--gradient-color-1);
+  --navbar-text-color: var(--gradient-color-12);
+  --navbar-text-color-hover: var(--gradient-color-11);
+
+  --loading-icon-color: var(--gradient-color-1);
+  --loading-border-color: var(--gradient-color-1);
+  --loading-bar-color: var(--gradient-color-9);
+  --loading-bg-color: var(--gradient-color-12);
+
+}
 
 body{
     font-family: 'Josefin Sans', sans-serif;font-family: 'Josefin Sans', sans-serif;
-    color: #fff;
+    color: var(--main-font-color);
     overflow-x: hidden;
+    background-color: var(--gradient-color-12);
 }
 
 p{
@@ -32,18 +60,18 @@ p{
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background-color: #b44459;
+    background-color: var(--gradient-color-8);
     position: fixed;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #c4534a;
+  background: var(--gradient-color-7);
   border-radius: 12px;
 }
 /* Hover */
 body::-webkit-scrollbar-thumb:hover{
-  background: #cc683a;
+  background: var(--gradient-color-6);
 }
 /*body::-webkit-scrollbar:hover{
   width: 18px;
@@ -53,11 +81,11 @@ body::-webkit-scrollbar-thumb:hover{
 
 /*==============  NAVBAR  =============*/
 .navbar-custom{
-    background-color: #69e16d;
+    background-color: var(--navbar-bg-color);
 }
 
 .nav-item-custom{
-    color: #3e3366;
+    color: var(--navbar-text-color);
     text-shadow: -1px 1px 2px #0004;
     font-weight: 900;
     transition: 0.5s;
@@ -67,7 +95,7 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .nav-item-custom:hover{
-    color: #60356c;
+    color: var(--navbar-text-color-hover);
 }
 
 .navbar-selected-custom{
@@ -98,7 +126,7 @@ body::-webkit-scrollbar-thumb:hover{
 
 .navbar-toggler-custom.navbar-toggler {
   border-width: 1.5px;
-  border-color: #442B66;
+  border-color: var(--gradient-color-12);
 }
 
 .wave-navbar {
@@ -109,6 +137,7 @@ body::-webkit-scrollbar-thumb:hover{
     overflow: hidden;
     line-height: 0;
     transition: 0.35s;
+    z-index: 2;
 }
 
 .wave-navbar-collpase-unfold {
@@ -125,7 +154,7 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 .wave-navbar .shape-fill {
-    fill: #69e16d;
+    fill: var(--navbar-bg-color);
 }
 
 /*==============  HEADER  =============*/
@@ -155,9 +184,9 @@ body::-webkit-scrollbar-thumb:hover{
   width: 100%;
   max-width: 5rem;
   height: 0.15rem;
-  background-color: white;
+  background-color: var(--main-font-color);
   border-radius: 1rem;
-  border-color: white !important;
+  border-color: var(--main-font-color) !important;
 }
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
@@ -166,15 +195,14 @@ body::-webkit-scrollbar-thumb:hover{
   margin-left: 1rem;
 }
 .divider-custom .divider-custom-icon {
-  color: #805122 !important;
   font-size: 5vh;
 }
 .divider-custom.divider-light .divider-custom-line {
-  color:  white;
+  color:  var(--main-font-color);
 }
 
 .fa-kiwi-bird{
-   color: white;
+   color: var(--main-font-color);
 }
 
 .subheader-text-custom {
@@ -191,7 +219,7 @@ body::-webkit-scrollbar-thumb:hover{
 }
 #more-arrows:hover polygon {
 
-  fill: #FFF;
+  fill: var(--main-font-color);
   transition: all 0.5s ease-out;
 }
 #more-arrows:hover polygon.arrow-bottom {
@@ -206,7 +234,7 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 polygon {
-  fill: #FFF;
+  fill: var(--main-font-color);
   transition: all .5s ease-out;    
 } 
 .arrow-middle {
@@ -238,5 +266,203 @@ polygon {
       font-size: 3vh;
     }
 }
+/*==============  ABOUT  =============*/
+
+.about-custom{
+  border-radius: 100px;
+}
+
+.card-custom{
+  border: none;
+  text-align: center;
+  background-color: #0000;
+}
+
+.btn-about-custom{
+  background-color: var(--gradient-color-9);
+  color: var(--main-font-color);
+  text-decoration: none;
+}
+
+.btn-about-custom:hover{
+  background-color: var(--gradient-color-10);
+  color: var(--main-font-color);
+  text-decoration: none;
+}
+
+.card-header-custom{
+  background-color: var(--gradient-color-12);
+  border-radius: 5px !important;
+  border: none;
+}
+
+.card-header-custom:hover{
+  cursor: pointer;
+}
+
+.card-body-custom{
+  background-color: var(--gradient-color-12);
+  border-radius: 5px !important;
+}
+
+
+/* =============  SKILLS  ================== */
+
+.progress {
+  width: 100px;
+  height: 100px !important;
+  float: left;
+  line-height: 100px;
+  background: none;
+  margin: 10px;
+  box-shadow: none;
+  position: relative;
+}
+
+.progress:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid var(--loading-border-color);
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1
+}
+
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 8px;
+  border-style: solid;
+  position: absolute;
+  top: 0
+}
+
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.progress .progress-right {
+  right: 0;
+}
+
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  animation: loading-3 1s linear forwards;
+}
+
+.progress .progress-value {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: var(--loading-bg-color);
+  font-size: 40px;
+  color: var(--loading-icon-color);
+  line-height: 100px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 5%
+}
+
+.progress .progress-bar {
+  border-color: var(--loading-bar-color);
+}
+
+.progress.lvl1 .progress-right .progress-bar {
+  animation: loading-1 2s linear forwards;
+} 
+.progress.lvl2 .progress-right .progress-bar {
+  animation: loading-2 2s linear forwards;
+} 
+.progress.lvl3 .progress-right .progress-bar {
+  animation: loading-3 2s linear forwards;
+}
+.progress.lvl4 .progress-left .progress-bar {
+  animation: loading-4 1s linear forwards 1s;
+} 
+.progress.lvl5 .progress-left .progress-bar {
+  animation: loading-5 1s linear forwards 1s;
+} 
+
+@keyframes loading-1 {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg)
+  }
+
+  100% {
+      -webkit-transform: rotate(36deg);
+      transform: rotate(36deg)
+  }
+}
+
+@keyframes loading-2 {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg)
+  }
+
+  100% {
+      -webkit-transform: rotate(108deg);
+      transform: rotate(108deg)
+  }
+}
+@keyframes loading-3 {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg)
+  }
+
+  100% {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg)
+  }
+}
+@keyframes loading-4 {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg)
+  }
+
+  100% {
+      -webkit-transform: rotate(72deg);
+      transform: rotate(72deg)
+  }
+}
+@keyframes loading-5 {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg)
+  }
+
+  100% {
+      -webkit-transform: rotate(144deg);
+      transform: rotate(144deg)
+  }
+}
+
+
 
 /*==============  PORTFOLIO  =============*/
