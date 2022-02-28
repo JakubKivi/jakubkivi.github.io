@@ -349,7 +349,7 @@ polygon {
   border-width: 0.5vw;
   border-style: solid;
   position: absolute;
-  top: 0
+  top: 0;
 }
 
 .progress .progress-left .progress-bar {
@@ -390,7 +390,11 @@ polygon {
 }
 
 .progress .progress-value-iconify{
-  top: 0%;
+  top: 4%;
+}
+
+.progress-text{
+  color: var(--gradient-color-1);
 }
 
 .progress .progress-bar {
