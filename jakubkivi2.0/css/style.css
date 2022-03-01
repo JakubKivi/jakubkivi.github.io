@@ -27,6 +27,11 @@
 
 }
 
+.display-none{
+  display: none;
+  transition: 1s;
+}
+
 body{
     font-family: 'Josefin Sans', sans-serif;font-family: 'Josefin Sans', sans-serif;
     color: var(--main-font-color);
@@ -307,6 +312,12 @@ polygon {
 
 
 /* =============  SKILLS  ================== */
+
+.checkbox-container{
+  width: 100%;
+  align: center;
+}
+
 .progress-container{
 
   float: left;
@@ -473,7 +484,5 @@ polygon {
       transform: rotate(144deg)
   }
 }
-
-
 
 /*==============  PORTFOLIO  =============*/

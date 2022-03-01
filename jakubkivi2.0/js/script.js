@@ -140,3 +140,19 @@ function scrollCustom(){
     });
   }
 }
+
+function checkboxNames()
+{
+  var texts = document.getElementsByClassName("progress-text");
+  console.log( {texts});
+  if (document.getElementById('checkboxNames').checked) 
+  {
+    for(var i=0; i< texts.length; i++){
+      texts.item(i).classList.remove("display-none");
+    }
+  } else {
+    for(var i=0; i< texts.length; i++){
+      texts.item(i).classList.add("display-none");
+    }
+  }
+}

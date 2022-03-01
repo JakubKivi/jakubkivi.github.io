@@ -44,6 +44,9 @@
 
 	<link href="css/style.css" rel="stylesheet" />
 
+	<!-- SASS -->
+	<link href="css/sass/style.css" rel="stylesheet" />
+
 	<title>Jakub Kivi</title>
 </head>
 <body onload="start()">
@@ -152,15 +155,43 @@
     <!-- About Section Content-->
 	<div id="accordion" class="mb-5 about-custom">
 		<div class="card card-custom">
-		  <div class="card-header card-header-custom"data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		  <div class="card-header card-header-custom mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 			<h5 class="mb-0 btn btn-link btn-about-custom">
 				Umiejętności	
 			</h5>
 		  </div>
 	  
 		  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-			<div class="card-body card-body-custom">
-
+			<div class="card-body card-body-custom mt-0">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="column-md-2">
+							<label class="checkbox ml-auto mr-auto mb-0 mt-0">
+								<input type="checkbox" id="checkboxNames"  onclick="checkboxNames();"/>
+								<svg viewBox="0 0 21 18">
+									<symbol id="tick-path" viewBox="0 0 21 18" xmlns="http://www.w3.org/2000/svg">
+										<path d="M5.22003 7.26C5.72003 7.76 7.57 9.7 8.67 11.45C12.2 6.05 15.65 3.5 19.19 1.69" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+									</symbol>
+									<defs>
+										<mask id="tick">
+											<use class="tick mask" href="#tick-path" />
+										</mask>
+									</defs>
+									<use class="tick" href="#tick-path" stroke="currentColor" />
+									<path fill="white" mask="url(#tick)" d="M18 9C18 10.4464 17.9036 11.8929 17.7589 13.1464C17.5179 15.6054 15.6054 17.5179 13.1625 17.7589C11.8929 17.9036 10.4464 18 9 18C7.55357 18 6.10714 17.9036 4.85357 17.7589C2.39464 17.5179 0.498214 15.6054 0.241071 13.1464C0.0964286 11.8929 0 10.4464 0 9C0 7.55357 0.0964286 6.10714 0.241071 4.8375C0.498214 2.39464 2.39464 0.482143 4.85357 0.241071C6.10714 0.0964286 7.55357 0 9 0C10.4464 0 11.8929 0.0964286 13.1625 0.241071C15.6054 0.482143 17.5179 2.39464 17.7589 4.8375C17.9036 6.10714 18 7.55357 18 9Z" />
+								</svg>
+								<svg class="lines" viewBox="0 0 11 11">
+									<path d="M5.88086 5.89441L9.53504 4.26746" />
+									<path d="M5.5274 8.78838L9.45391 9.55161" />
+									<path d="M3.49371 4.22065L5.55387 0.79198" />
+								</svg>
+							</label>
+							<p class="checkbox-text ml-auto mr-auto mt-1 mb-2">
+								Pokaż nazwy
+							</p>
+						</div>
+					</div>
+				</div>
 				<div class="row d-flex justify-content-center">
 					<div class="progres-containter">
 						<div class="progress-text">
@@ -175,7 +206,6 @@
 							</span>
 							<div class="progress-value">
 								<i class="fa-brands fa-html5"></i>
-								<p>HTML</p>
 							</div>
 						</div>
 					</div>
@@ -195,6 +225,10 @@
 							</div>
 						</div>
 					</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							JavaScript
+						</div>
 					<div class="progress lvl5">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -206,6 +240,11 @@
 							<i class="fab fa-js-square"></i>
 						</div>
 					</div>
+					</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							PHP
+						</div>
 					<div class="progress lvl1">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -217,6 +256,11 @@
 							<i class="fa-brands fa-php"></i>
 						</div>
 					</div>
+					</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							SQL
+						</div>
 					<div class="progress lvl5">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -228,6 +272,27 @@
 							<i class="fa-solid fa-database"></i>
 						</div>
 					</div>
+				</div>
+				<div class="progres-containter">
+					<div class="progress-text">
+						Sass
+					</div>
+					<div class="progress lvl1"> 
+						<span class="progress-left"> 
+							<span class="progress-bar"></span> 
+						</span> 
+						<span class="progress-right"> 
+							<span class="progress-bar"></span> 
+						</span>
+						<div class="progress-value">
+							<i class="devicon-sass-original"></i>
+						</div>
+					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							git
+						</div>
 					<div class="progress lvl5">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -239,6 +304,11 @@
 							<i class="fa-brands fa-git-alt"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							C++
+						</div>
 					<div class="progress lvl5">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -250,6 +320,11 @@
 							<i class="devicon-cplusplus-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Python
+						</div>
 					<div class="progress lvl3">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -261,6 +336,11 @@
 							<i class="fa-brands fa-python"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							C
+						</div>
 					<div class="progress lvl4">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -272,6 +352,11 @@
 							<i class="devicon-c-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							C#
+						</div>
 					<div class="progress lvl3">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -283,6 +368,11 @@
 							<i class="devicon-csharp-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Java
+						</div>
 					<div class="progress lvl1">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -294,6 +384,11 @@
 							<i class="devicon-java-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Node.js
+						</div>
 					<div class="progress lvl1">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -305,6 +400,11 @@
 							<i class="devicon-nodejs-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Linux
+						</div>
 					<div class="progress lvl2">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -316,6 +416,11 @@
 							<i class="devicon-linux-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							RaspberryPi
+						</div>
 					<div class="progress lvl2">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -327,6 +432,11 @@
 							<i class="devicon-raspberrypi-line"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Arduino
+						</div>
 					<div class="progress lvl5">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -338,6 +448,11 @@
 							<i class="devicon-arduino-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Unity
+						</div>
 					<div class="progress lvl3">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -349,6 +464,11 @@
 							<i class="devicon-unity-original"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							SFML
+						</div>
 					<div class="progress lvl5">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -360,6 +480,11 @@
 							<span class="iconify" data-icon="simple-icons:sfml"></span>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Bootstrap
+						</div>
 					<div class="progress lvl3">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -371,6 +496,11 @@
 							<i class="devicon-bootstrap-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							MatLab
+						</div>
 					<div class="progress lvl2">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -382,6 +512,11 @@
 							<i class="devicon-matlab-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							jQuery
+						</div>
 					<div class="progress lvl2">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -393,6 +528,11 @@
 							<i class="devicon-jquery-plain"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Qt
+						</div>
 					<div class="progress lvl2">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -404,6 +544,11 @@
 							<i class="devicon-qt-original"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Outsystems
+						</div>
 					<div class="progress lvl4">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -415,6 +560,11 @@
 							<i class="fa fa-o"></i>
 						</div>
 					</div>
+				</div>
+					<div class="progres-containter">
+						<div class="progress-text">
+							Construct
+						</div>
 					<div class="progress lvl5">	
 						<span class="progress-left"> 
 							<span class="progress-bar"></span> 
@@ -426,6 +576,7 @@
 							<span class="iconify" data-icon="simple-icons:construct3"></span>
 						</div>
 					</div>
+				</div>
 				</div>
 			</div>
 		  </div>
