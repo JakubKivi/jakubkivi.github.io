@@ -315,7 +315,7 @@ polygon {
 
 .checkbox-container{
   width: 100%;
-  align: center;
+  text-align: center;
 }
 
 .progress-container{
