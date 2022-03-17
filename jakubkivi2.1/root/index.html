@@ -1,3 +1,7 @@
+---
+---
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,10 +46,10 @@
 
 	<!-- CSS -->
 
-	<link href="css/style.css" rel="stylesheet" />
+	<link href="../css/style.css" rel="stylesheet" />
 
 	<!-- SASS -->
-	<link href="css/sass/style.css" rel="stylesheet" />
+	<link href="../css/sass/style.css" rel="stylesheet" />
 
 	<title>Jakub Kivi</title>
 </head>
@@ -123,7 +127,7 @@
 <section class="header-custom" id="start">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
-        <img class="mb-3 mt-4 avatar" src="assets/img/avatar.svg" alt="" />
+        <img class="mb-3 mt-4 avatar" src="../assets/img/avatar.svg" alt="" />
         <!-- Masthead Heading-->
         <p class="mb-0 ml-0 mr-0 h1 text-center font-bold-custom text-uppercase header-text-custom">Jakub "Kivi" Kuziemski</p>
         <!-- Icon Divider-->
@@ -167,7 +171,7 @@
 					<div class="row justify-content-center">
 						<div class="column-md-2">
 							<label class="checkbox ml-auto mr-auto mb-0 mt-0">
-								<input type="checkbox" id="checkboxNames"  onclick="checkboxNames();"/>
+								<input type="checkbox" id="checkboxNames"  onclick="checkboxNames();" checked/>
 								<svg viewBox="0 0 21 18">
 									<symbol id="tick-path" viewBox="0 0 21 18" xmlns="http://www.w3.org/2000/svg">
 										<path d="M5.22003 7.26C5.72003 7.76 7.57 9.7 8.67 11.45C12.2 6.05 15.65 3.5 19.19 1.69" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -192,215 +196,232 @@
 						</div>
 					</div>
 				</div>
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						
+						{% include skill.html text='HTML' iconClass='fa-html5' value='4'%}
+
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									CSS
+								</div>
+								<div class="progress lvl3"> 
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="fa-brands fa-css3-alt"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									JavaScript
+								</div>
+								<div class="progress lvl5">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="fab fa-js-square"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									PHP
+								</div>
+								<div class="progress lvl1">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="fa-brands fa-php"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									SQL
+								</div>
+								<div class="progress lvl5">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="fa-solid fa-database"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									Sass
+								</div>
+								<div class="progress lvl1"> 
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="devicon-sass-original"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									git
+								</div>
+								<div class="progress lvl5">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="fa-brands fa-git-alt"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									C++
+								</div>
+								<div class="progress lvl5">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="devicon-cplusplus-plain"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									Python
+								</div>
+								<div class="progress lvl3">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="fa-brands fa-python"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									C
+								</div>
+								<div class="progress lvl4">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="devicon-c-plain"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									C#
+								</div>
+								<div class="progress lvl3">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="devicon-csharp-plain"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column-md-1">
+							<div class="progres-containter">
+								<div class="progress-text">
+									Java
+								</div>
+								<div class="progress lvl1">	
+									<span class="progress-left"> 
+										<span class="progress-bar"></span> 
+									</span> 
+									<span class="progress-right"> 
+										<span class="progress-bar"></span> 
+									</span>
+									<div class="progress-value">
+										<i class="devicon-java-plain"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<br><br><br><br><br><br>
+
 				<div class="row d-flex justify-content-center">
-					<div class="progres-containter">
-						<div class="progress-text">
-							HTML
-						</div>
-						<div class="progress lvl3"> 
-							<span class="progress-left"> 
-								<span class="progress-bar"></span> 
-							</span> 
-							<span class="progress-right"> 
-								<span class="progress-bar"></span> 
-							</span>
-							<div class="progress-value">
-								<i class="fa-brands fa-html5"></i>
-							</div>
-						</div>
-					</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							CSS
-						</div>
-						<div class="progress lvl3"> 
-							<span class="progress-left"> 
-								<span class="progress-bar"></span> 
-							</span> 
-							<span class="progress-right"> 
-								<span class="progress-bar"></span> 
-							</span>
-							<div class="progress-value">
-								<i class="fa-brands fa-css3-alt"></i>
-							</div>
-						</div>
-					</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							JavaScript
-						</div>
-					<div class="progress lvl5">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="fab fa-js-square"></i>
-						</div>
-					</div>
-					</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							PHP
-						</div>
-					<div class="progress lvl1">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="fa-brands fa-php"></i>
-						</div>
-					</div>
-					</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							SQL
-						</div>
-					<div class="progress lvl5">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="fa-solid fa-database"></i>
-						</div>
-					</div>
-				</div>
-				<div class="progres-containter">
-					<div class="progress-text">
-						Sass
-					</div>
-					<div class="progress lvl1"> 
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="devicon-sass-original"></i>
-						</div>
-					</div>
-				</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							git
-						</div>
-					<div class="progress lvl5">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="fa-brands fa-git-alt"></i>
-						</div>
-					</div>
-				</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							C++
-						</div>
-					<div class="progress lvl5">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="devicon-cplusplus-plain"></i>
-						</div>
-					</div>
-				</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							Python
-						</div>
-					<div class="progress lvl3">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="fa-brands fa-python"></i>
-						</div>
-					</div>
-				</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							C
-						</div>
-					<div class="progress lvl4">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="devicon-c-plain"></i>
-						</div>
-					</div>
-				</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							C#
-						</div>
-					<div class="progress lvl3">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="devicon-csharp-plain"></i>
-						</div>
-					</div>
-				</div>
-					<div class="progres-containter">
-						<div class="progress-text">
-							Java
-						</div>
-					<div class="progress lvl1">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="devicon-java-plain"></i>
-						</div>
-					</div>
-				</div>
 					<div class="progres-containter">
 						<div class="progress-text">
 							Node.js
 						</div>
-					<div class="progress lvl1">	
-						<span class="progress-left"> 
-							<span class="progress-bar"></span> 
-						</span> 
-						<span class="progress-right"> 
-							<span class="progress-bar"></span> 
-						</span>
-						<div class="progress-value">
-							<i class="devicon-nodejs-plain"></i>
+						<div class="progress lvl1">	
+							<span class="progress-left"> 
+								<span class="progress-bar"></span> 
+							</span> 
+							<span class="progress-right"> 
+								<span class="progress-bar"></span> 
+							</span>
+							<div class="progress-value">
+								<i class="devicon-nodejs-plain"></i>
+							</div>
 						</div>
 					</div>
-				</div>
 					<div class="progres-containter">
 						<div class="progress-text">
 							Linux
@@ -677,5 +698,5 @@
 </html>
 
 <!-- JS -->
-<script src="js/script.js"></script>
-<script src="js/animations.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/animations.js"></script>
