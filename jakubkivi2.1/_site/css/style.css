@@ -21,15 +21,21 @@
   --navbar-text-color-hover: var(--gradient-color-11);
 
   --loading-icon-color: var(--gradient-color-1);
-  --loading-border-color: var(--gradient-color-1);
-  --loading-bar-color: var(--gradient-color-9);
-  --loading-bg-color: var(--gradient-color-12);
+  --loading-border-color: var(--gradient-color-9);
+  --loading-bar-color: var(--gradient-color-1);
+  --loading-bg-color: var(--gradient-color-11);
 
 }
 
 .display-none{
-  display: none;
-  transition: 1s;
+  visibility: hidden;
+  opacity: 0;
+  transition: display 0s, opacity 0.5s linear;
+}
+
+@keyframes slide {
+  from {max-height: 0;}
+  to {max-height: 500px;}
 }
 
 body{
@@ -318,11 +324,22 @@ polygon {
   text-align: center;
 }
 
+.owl-custom{
+  background-color: var(--gradient-color-11);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.owl-custom .item-custom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 .progress {
-  width: 60px;
-  height: 60px !important;
+  width: 80px;
+  height: 80px !important;
   line-height: 10px;
   background: none;
   margin: 4px;
@@ -362,6 +379,7 @@ polygon {
 
 .progress .progress-left .progress-bar {
   left: 100%;
+  top: 0px;
   border-top-right-radius: 80px;
   border-bottom-right-radius: 80px;
   border-left: 0;
@@ -388,17 +406,17 @@ polygon {
   height: 90%;
   border-radius: 50%;
   background: var(--loading-bg-color);
-  font-size: 20px;
+  font-size: 40px;
   color: var(--loading-icon-color);
   line-height: 20px;
   text-align: center;
   position: absolute;
-  top: 32%;
+  top: 24%;
   left: 5%
 }
 
 .progress .progress-value-iconify{
-  top: 32%;
+  top: 20%;
 }
 
 .progress-text{

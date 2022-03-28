@@ -156,3 +156,41 @@ function checkboxNames()
     }
   }
 }
+
+$('.owl-carousel').owlCarousel({
+  loop:false,
+  autoplay:true,
+  autoplayTimeout: 5000,
+  autoplayHoverPause: true,
+  autoplaySpeed: 2000,
+
+  dotsSpeed: 600,
+
+
+  //nav:false,
+  //center:true,
+  startPosition:0,
+  //freeDrag:true,
+  responsive:{
+      0:{
+          items:3,
+          dotsEach:3
+      },
+      300:{
+          items:3,
+          dotsEach:3
+      },
+      600:{
+          items:5,
+          dotsEach:5
+      },
+      1000:{
+          items:7,
+          dotsEach:7
+      },
+      1400:{
+          items:9,
+          dotsEach:9
+      }
+  }
+})
