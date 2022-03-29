@@ -1,0 +1,74 @@
+:root {
+    --gradient-color-1: #69e16d;
+    --gradient-color-2: #96c93c;  
+    --gradient-color-3: #b1b121;
+    --gradient-color-4: #c3981c;
+    --gradient-color-5: #cc7f29;
+    --gradient-color-6: #cc683a;
+    --gradient-color-7: #c4534a;
+    --gradient-color-8: #b44459;
+    --gradient-color-9: #9d3b64;
+    --gradient-color-10: #81376b;
+    --gradient-color-11: #60356c;
+    --gradient-color-12: #3e3366;
+  
+    --main-font-color: #fff;
+  
+    --navbar-bg-color: var(--gradient-color-1);
+    --navbar-text-color: var(--gradient-color-12);
+    --navbar-text-color-hover: var(--gradient-color-11);
+  
+    --loading-icon-color: var(--gradient-color-1);
+    --loading-border-color: var(--gradient-color-9);
+    --loading-bar-color: var(--gradient-color-1);
+    --loading-bg-color: var(--gradient-color-12);
+  
+  }
+  
+  @keyframes slide {
+    from {max-height: 0;}
+    to {max-height: 500px;}
+  }
+  
+  body{
+      font-family: 'Josefin Sans', sans-serif;font-family: 'Josefin Sans', sans-serif;
+      color: var(--main-font-color);
+      overflow-x: hidden;
+      background-color: var(--gradient-color-12);
+  }
+  
+  p{
+      margin: 20px 100px 0px 100px;
+      text-align: justify;
+  }
+  
+  .wave-divider{
+    position: absolute;
+    left: -5%;  
+    z-index: -1;
+    width: 110%;
+    height: 105%; 
+  }
+
+
+/*==============  SCROLLBAR  =============*/
+
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--gradient-color-8);
+  position: fixed;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: var(--gradient-color-7);
+border-radius: 12px;
+  &:hover{
+    background: var(--gradient-color-6);
+  }
+}

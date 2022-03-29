@@ -157,10 +157,62 @@ function checkboxNames()
   }
 }
 
+var rad = document.aboutForm.btn;
+var prev = null;
+
+for (var i = 0; i < rad.length; i++) {
+    rad[i].addEventListener('change', function() {
+      
+      var all = document.getElementsByClassName("item-custom");
+      var web = document.getElementsByClassName("web");
+      var robo = document.getElementsByClassName("robo");
+      var game = document.getElementsByClassName("game");
+      var tools = document.getElementsByClassName("tools");
+      if (this !== prev) {
+        prev = this;
+        console.log(this.value);
+        for (var i = 0; i < all.length; i++) {
+          all.item(i).classList.add("display-none-skill");
+        }
+        switch (this.value) {
+          case "web":
+            for (var i = 0; i < web.length; i++) {
+              web.item(i).classList.remove("display-none-skill");
+            }
+            $('.owl-carousel').trigger('refresh.owl.carousel');
+            break;
+          case "robo":
+            for (var i = 0; i < robo.length; i++) {
+              robo.item(i).classList.remove("display-none-skill");
+            }
+            $('.owl-carousel').trigger('refresh.owl.carousel');
+            break;
+          case "game":
+            for (var i = 0; i < game.length; i++) {
+              game.item(i).classList.remove("display-none-skill");
+            }
+            $('.owl-carousel').trigger('refresh.owl.carousel');
+            break;
+          case "tools":
+            for (var i = 0; i < tools.length; i++) {
+              tools.item(i).classList.remove("display-none-skill");
+            }
+            $('.owl-carousel').trigger('refresh.owl.carousel');
+            break;
+          default:
+            for (var i = 0; i < all.length; i++) {
+              all.item(i).classList.remove("display-none-skill");
+            }
+            break;
+        }
+      }
+    });
+}
+
 $('.owl-carousel').owlCarousel({
-  loop:false,
-  autoplay:true,
-  autoplayTimeout: 5000,
+  loop:true,
+  autoplay:false,
+  autoplayTimeout: 2000,
   autoplayHoverPause: true,
   autoplaySpeed: 2000,
 
@@ -173,10 +225,10 @@ $('.owl-carousel').owlCarousel({
   //freeDrag:true,
   responsive:{
       0:{
-          items:3,
-          dotsEach:3
+          items:1,
+          dotsEach:1
       },
-      300:{
+      400:{
           items:3,
           dotsEach:3
       },
@@ -184,11 +236,11 @@ $('.owl-carousel').owlCarousel({
           items:5,
           dotsEach:5
       },
-      1000:{
+      900:{
           items:7,
           dotsEach:7
       },
-      1400:{
+      1200:{
           items:9,
           dotsEach:9
       }
