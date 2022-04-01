@@ -4,7 +4,8 @@
   "description": "<img align=\"left\" width=\"100\" height=\"100\" src=\"assets/img/avatar.svg\">",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx sass --watch jakubkivi2.1\\scss\\style.scss:jakubkivi2.1\\css\\style.css"
   },
   "repository": {
     "type": "git",

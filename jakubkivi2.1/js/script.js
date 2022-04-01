@@ -163,47 +163,57 @@ var prev = null;
 for (var i = 0; i < rad.length; i++) {
     rad[i].addEventListener('change', function() {
       
-      var all = document.getElementsByClassName("item-custom");
-      var web = document.getElementsByClassName("web");
-      var robo = document.getElementsByClassName("robo");
-      var game = document.getElementsByClassName("game");
-      var tools = document.getElementsByClassName("tools");
+      
+      var owls = document.getElementsByClassName("owl-carousel");
+      var all = document.getElementsByClassName("skills-all");
+      var web = document.getElementsByClassName("skills-web");
+      var robo = document.getElementsByClassName("skills-robo");
+      var game = document.getElementsByClassName("skills-game");
+      var tools = document.getElementsByClassName("skills-others");
+      var lang = document.getElementsByClassName("skills-lang");
       if (this !== prev) {
         prev = this;
         console.log(this.value);
-        for (var i = 0; i < all.length; i++) {
-          all.item(i).classList.add("display-none-skill");
+        for (var i = 0; i < owls.length; i++) {
+          owls.item(i).classList.add("display-none-skill");
         }
         switch (this.value) {
+
+          // if (box.classList.contains('hidden')) {
+          //   box.classList.remove('hidden');          //TODO
+          //   setTimeout(function () {
+          //     box.classList.remove('visuallyhidden');
+          //   }, 20);
+          // } else {
+          //   box.classList.add('visuallyhidden');    
+          //   box.addEventListener('transitionend', function(e) {
+          //     box.classList.add('hidden');
+          //   }, {
+          //     capture: false,
+          //     once: true,
+          //     passive: false
+          //   });
+          // }
+
+
+          case "lang":
+            lang.item(0).classList.remove("display-none-skill");
+          break;
           case "web":
-            for (var i = 0; i < web.length; i++) {
-              web.item(i).classList.remove("display-none-skill");
-            }
-            $('.owl-carousel').trigger('refresh.owl.carousel');
-            break;
+            web.item(0).classList.remove("display-none-skill");
+          break;
           case "robo":
-            for (var i = 0; i < robo.length; i++) {
-              robo.item(i).classList.remove("display-none-skill");
-            }
-            $('.owl-carousel').trigger('refresh.owl.carousel');
-            break;
+            robo.item(0).classList.remove("display-none-skill");
+          break;
           case "game":
-            for (var i = 0; i < game.length; i++) {
-              game.item(i).classList.remove("display-none-skill");
-            }
-            $('.owl-carousel').trigger('refresh.owl.carousel');
-            break;
+            game.item(0).classList.remove("display-none-skill");
+          break;
           case "tools":
-            for (var i = 0; i < tools.length; i++) {
-              tools.item(i).classList.remove("display-none-skill");
-            }
-            $('.owl-carousel').trigger('refresh.owl.carousel');
-            break;
+            tools.item(0).classList.remove("display-none-skill");
+          break;
           default:
-            for (var i = 0; i < all.length; i++) {
-              all.item(i).classList.remove("display-none-skill");
-            }
-            break;
+            all.item(0).classList.remove("display-none-skill");
+          break;
         }
       }
     });

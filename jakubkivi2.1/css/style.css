@@ -318,8 +318,11 @@ polygon {
 }
 
 .display-none-skill {
+  display: none !important;
+}
+
+.visually-display-none-skill {
   opacity: 0 !important;
-  transition: 0.5s;
 }
 
 /* ================checkbox============ */

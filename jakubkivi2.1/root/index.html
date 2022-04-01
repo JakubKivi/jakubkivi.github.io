@@ -269,6 +269,10 @@
                         <label for="all">Wszystko</label>
                       </div>
                       <div class="element ml-3">
+                        <input type="radio" id="lang" name="btn" value="lang">
+                        <label for="lang">Języki</label>
+                      </div>
+                      <div class="element ml-3">
                         <input type="radio" id="web" name="btn" value="web">
                         <label for="web">WEB</label>
                       </div>
@@ -282,69 +286,155 @@
                       </div>
                       <div class="element ml-3">
                         <input type="radio" id="tools" name="btn" value="tools">
-                        <label for="tools">Narzędzia</label>
+                        <label for="tools">Inne</label>
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
               <!-- Set up your HTML -->
-              <div class="owl-carousel owl-theme owl-custom mb-3">
+              <div class="owl-carousel owl-theme owl-custom mb-3 skills-all">
 
                 {% include skill.html text='HTML' iconClass='fa-html5'
-                value='4' tag='web'%}
+                value='4'%}
                 {% include skill.html text='CSS' iconClass='fa-css3-alt'
-                value='3' tag='web'%}
+                value='3'%}
                 {% include skill.html text='JS' iconClass='fa-js-square'
-                value='5' tag='web game'%}
+                value='5'%}
                 {% include skill.html text='PHP' iconClass='fa-php'
-                value='1' tag=''%}
+                value='1'%}
                 {% include skill.html text='SQL' iconClass='fas fa-database'
-                value='5' tag='web'%}
+                value='5'%}
                 {% include skill.html text='Sass' iconClass='devicon-sass-original'
-                value='2' tag='web'%}
+                value='2'%}
                 {% include skill.html text='git' iconClass='fa-git-alt'
-                value='5' tag='tools'%}
+                value='5'%}
                 {% include skill.html text='C++' iconClass='devicon-cplusplus-plain'
-                value='5' tag='robo game'%}
+                value='5'%}
                 {% include skill.html text='Python' iconClass='fa-python'
-                value='2' tag='game'%}
+                value='2' %}
                 {% include skill.html text='C' iconClass='devicon-c-plain'
-                value='3' tag='robo'%}
+                value='3' %}
                 {% include skill.html text='C#' iconClass='devicon-csharp-plain'
-                value='2' tag='game'%}
+                value='2' %}
                 {% include skill.html text='Java' iconClass='devicon-java-plain'
                 value='1' tag=''%}
                 {% include skill.html text='Node.js' iconClass='devicon-nodejs-plain'
-                value='1' tag='web'%}
+                value='1' %}
                 {% include skill.html text='Linux' iconClass='devicon-linux-plain'
-                value='2' tag='tools'%}
+                value='2' %}
                 {% include skill.html text='RaspberryPi' iconClass='devicon-raspberrypi-line'
-                value='2' tag='robo'%}
+                value='2' %}
                 {% include skill.html text='Arduino' iconClass='devicon-arduino-plain'
-                value='5' tag='robo'%}
+                value='5' %}
                 {% include skill.html text='Unity' iconClass='devicon-unity-original'
-                value='3' tag='game'%}
+                value='3' %}
                 {% include skill.html text='SFML' iconClass='simple-icons:sfml'
-                value='5' tag='game' ico='true'%}
+                value='5'  ico='true'%}
                 {% include skill.html text='Bootstrap' iconClass='devicon-bootstrap-plain'
-                value='3' tag='web'%}
+                value='3' %}
                 {% include skill.html text='MatLab' iconClass='devicon-matlab-plain'
-                value='2' tag='robo'%}
+                value='2' %}
                 {% include skill.html text='jQuery' iconClass='devicon-jquery-plain'
-                value='2' tag='web'%}
+                value='2' %}
                 {% include skill.html text='Qt' iconClass='devicon-qt-original'
-                value='2' tag='tools'%}
+                value='2' %}
                 {% include skill.html text='Outsystems' iconClass='fa fa-o'
-                value='4' tag='web'%}
+                value='4' %}
                 {% include skill.html text='Construct' iconClass='simple-icons:construct3'
-                value='5' tag='game' ico='true'%}
+                value='5'  ico='true'%}
                 <!-- {% include skill.html text='Json' iconClass='simple-icons:json'
                 value='2' tag='' ico='true'%} -->
                 <!-- {% include skill.html text='YAML' iconClass='file-icons:yaml-alt4'
                 value='2' tag='' ico='true'%} -->
                 {% include skill.html text='Jekyll' iconClass='simple-icons:jekyll'
-                value='4' tag='web' ico='true'%}
+                value='4'  ico='true'%}
+              </div>
+              <div class="owl-carousel owl-theme owl-custom mb-3 skills-lang display-none-skill">
+                {% include skill.html text='HTML' iconClass='fa-html5'
+                value='4'%}
+                {% include skill.html text='CSS' iconClass='fa-css3-alt'
+                value='3'%}
+                {% include skill.html text='JS' iconClass='fa-js-square'
+                value='5'%}
+                {% include skill.html text='PHP' iconClass='fa-php'
+                value='1'%}
+                {% include skill.html text='SQL' iconClass='fas fa-database'
+                value='5'%}
+                {% include skill.html text='C++' iconClass='devicon-cplusplus-plain'
+                value='5'%}
+                {% include skill.html text='Python' iconClass='fa-python'
+                value='2' %}
+                {% include skill.html text='C' iconClass='devicon-c-plain'
+                value='3' %}
+                {% include skill.html text='C#' iconClass='devicon-csharp-plain'
+                value='2' %}
+                {% include skill.html text='Java' iconClass='devicon-java-plain'
+                value='1' tag=''%}
+                {% include skill.html text='MatLab' iconClass='devicon-matlab-plain'
+                value='2' %}
+              </div>
+              <div class="owl-carousel owl-theme owl-custom mb-3 skills-web display-none-skill">
+                {% include skill.html text='HTML' iconClass='fa-html5'
+                value='4' %}
+                {% include skill.html text='CSS' iconClass='fa-css3-alt'
+                value='3' %}
+                {% include skill.html text='JS' iconClass='fa-js-square'
+                value='5' tag='web game'%}
+                {% include skill.html text='PHP' iconClass='fa-php'
+                value='1' tag=''%}
+                {% include skill.html text='SQL' iconClass='fas fa-database'
+                value='5' %}
+                {% include skill.html text='Sass' iconClass='devicon-sass-original'
+                value='2' %}
+                {% include skill.html text='Node.js' iconClass='devicon-nodejs-plain'
+                value='1' %}
+                {% include skill.html text='Bootstrap' iconClass='devicon-bootstrap-plain'
+                value='3' %}
+                {% include skill.html text='jQuery' iconClass='devicon-jquery-plain'
+                value='2' %}
+                {% include skill.html text='Outsystems' iconClass='fa fa-o'
+                value='4' %}
+                {% include skill.html text='Jekyll' iconClass='simple-icons:jekyll'
+                value='4'  ico='true'%}
+              </div>
+              <div class="owl-carousel owl-theme owl-custom mb-3 skills-robo display-none-skill">
+                {% include skill.html text='C++' iconClass='devicon-cplusplus-plain'
+                value='5' tag='robo game'%}
+                {% include skill.html text='C' iconClass='devicon-c-plain'
+                value='3' %}
+                {% include skill.html text='Linux' iconClass='devicon-linux-plain'
+                value='2' %}
+                {% include skill.html text='RaspberryPi' iconClass='devicon-raspberrypi-line'
+                value='2' %}
+                {% include skill.html text='Arduino' iconClass='devicon-arduino-plain'
+                value='5' %}
+                {% include skill.html text='MatLab' iconClass='devicon-matlab-plain'
+                value='2' %}
+              </div>
+              <div class="owl-carousel owl-theme owl-custom mb-3 skills-game display-none-skill">
+                {% include skill.html text='JS' iconClass='fa-js-square'
+                value='5' tag='web game'%}
+                {% include skill.html text='C++' iconClass='devicon-cplusplus-plain'
+                value='5' tag='robo game'%}
+                {% include skill.html text='Python' iconClass='fa-python'
+                value='2' %}
+                {% include skill.html text='C#' iconClass='devicon-csharp-plain'
+                value='2' %}
+                {% include skill.html text='Unity' iconClass='devicon-unity-original'
+                value='3' %}
+                {% include skill.html text='SFML' iconClass='simple-icons:sfml'
+                value='5'  ico='true'%}
+                {% include skill.html text='Construct' iconClass='simple-icons:construct3'
+                value='5'  ico='true'%}
+              </div>
+              <div class="owl-carousel owl-theme owl-custom mb-3 skills-others display-none-skill">
+                {% include skill.html text='git' iconClass='fa-git-alt'
+                value='5'%}
+                {% include skill.html text='Linux' iconClass='devicon-linux-plain'
+                value='2' %}
+                {% include skill.html text='Qt' iconClass='devicon-qt-original'
+                value='2' %}
               </div>
             </div>
           </div>
