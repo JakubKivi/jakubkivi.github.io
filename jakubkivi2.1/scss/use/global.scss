@@ -48,6 +48,13 @@
     position: relative;
   }
 
+  .shadow-custom{
+    text-shadow: -3px 3px 2px #0004;
+  }
+ 
+  .box-shadow-custom{
+    // box-shadow: -2px 2px 2px red;
+  }
 
 /*==============  SCROLLBAR  =============*/
 
@@ -68,5 +75,30 @@ background: var(--gradient-color-7);
 border-radius: 12px;
   &:hover{
     background: var(--gradient-color-6);
+  }
+}
+
+/*==========  Divider =============*/
+.divider-custom{
+  .divider-custom-icon{
+    &:hover{
+      animation: kivi-animation 0.2s linear forwards 3;
+    }
+    text-shadow: -2px 2px 2px #0004;
+  }
+  .divider-custom-line{
+    box-shadow: -2px 2px 2px #0004;
+  }
+}
+@keyframes kivi-animation {
+  0% {
+     -webkit-transform: rotateZ(-15deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(15deg);
+  }
+ 
+  100% {
+    -webkit-transform: rotateZ(-15deg);
   }
 }

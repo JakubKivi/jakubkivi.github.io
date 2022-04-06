@@ -1,11 +1,10 @@
 <div class="item item-custom">
   <div class="column-md-1">
     <div class="progres-containter">
-      <div class="progress-text">
+      <div class="progress-text shadow-custom">
         {{include.text}}
       </div>
       <div class="progress 
-      
         {% if include.value == "1" %}
           lvl1
         {% elsif include.value == "2" %}
@@ -24,7 +23,7 @@
         <span class="progress-right"> 
           <span class="progress-bar"></span> 
         </span>
-        <div class="progress-value 
+        <div class="progress-value shadow-custom 
         {% if include.ico == 'true' %}
           progress-value-iconify
         {% endif %}">

@@ -4,30 +4,44 @@
     border-radius: 100px;
   }
   
-  .card-custom{
-    border: none;
-    text-align: center;
-    background-color: #0000;
-  }
+.card-custom{
+  border: none;
+  text-align: center;
+  background-color: #0000;
+}
+
+.btn-about-custom{
+  border: solid !important;
+  border-width: 2px !important;
+  border-color: var(--gradient-color-10) !important;  
+  box-shadow: -2px 2px 2px #0004;
+  color: var(--main-font-color);
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.btn-about-custom:hover{
+  background-color: var(--gradient-color-10);
+  color: var(--main-font-color);
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.card-header-custom{
+  background-color: var(--gradient-color-12);
+  border-radius: 5px !important;
+  border: none;
+}
   
-  .btn-about-custom{
-    background-color: var(--gradient-color-9);
-    color: var(--main-font-color);
-    text-decoration: none;
+.card-custom{
+  div[aria-expanded="true"]{
+    .btn-about-custom{ 
+      background-color: var(--gradient-color-10);
+    }
   }
-  
-  .btn-about-custom:hover{
-    background-color: var(--gradient-color-10);
-    color: var(--main-font-color);
-    text-decoration: none;
-  }
-  
-  .card-header-custom{
-    background-color: var(--gradient-color-12);
-    border-radius: 5px !important;
-    border: none;
-  }
-  
+}
+
+
   .card-header-custom:hover{
     cursor: pointer;
   }
@@ -36,8 +50,6 @@
     background-color: var(--gradient-color-12);
     border-radius: 5px !important;
   }
-  
-  
   /* =============  SKILLS  ================== */
   
   .display-none{
@@ -68,6 +80,7 @@
   cursor: pointer;
   position: relative;
   -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
   svg {
       display: block;
       position: absolute;
@@ -200,8 +213,7 @@ html {
     justify-content: center;
     transition:0.5s;
   }
-  
-  
+
   .progress {
     width: 80px;
     height: 80px !important;
@@ -221,6 +233,7 @@ html {
     position: absolute;
     top: 2px;
     left: 2px;
+    filter: drop-shadow(-2px 2px 4px #0004);
   }
   
   .progress>span {
@@ -277,7 +290,7 @@ html {
     text-align: center;
     position: absolute;
     top: 24%;
-    left: 5%
+    left: 5%;
   }
   
   .progress .progress-value-iconify{
@@ -287,6 +300,7 @@ html {
   .progress-text{
     color: var(--gradient-color-1);
     transition: 0.5s;
+    filter: drop-shadow(-2px 2px 2px #0004);
   }
   
   .progress .progress-bar {

@@ -49,6 +49,10 @@ p {
   position: relative;
 }
 
+.shadow-custom {
+  text-shadow: -3px 3px 2px #0004;
+}
+
 /*==============  SCROLLBAR  =============*/
 /* width */
 ::-webkit-scrollbar {
@@ -70,6 +74,28 @@ p {
   background: var(--gradient-color-6);
 }
 
+/*==========  Divider =============*/
+.divider-custom .divider-custom-icon {
+  text-shadow: -2px 2px 2px #0004;
+}
+.divider-custom .divider-custom-icon:hover {
+  animation: kivi-animation 0.2s linear forwards 3;
+}
+.divider-custom .divider-custom-line {
+  box-shadow: -2px 2px 2px #0004;
+}
+
+@keyframes kivi-animation {
+  0% {
+    -webkit-transform: rotateZ(-15deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(15deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-15deg);
+  }
+}
 .navbar-custom {
   background-color: var(--navbar-bg-color);
 }
@@ -102,7 +128,15 @@ p {
   position: relative;
   display: inline-block;
   width: 1.3333333333em;
-  line-height: 1em;
+  line-height: 1rem;
+}
+
+.nav-flag {
+  transition: 0.3s;
+}
+.nav-flag:hover {
+  transform: scale(1.4);
+  transition: 0.3s;
 }
 
 .flag-icon:before {
@@ -111,6 +145,10 @@ p {
 
 .flag-icon.flag-icon-squared {
   width: 1em;
+}
+
+.flag-shadow {
+  box-shadow: -2px 2px 2px #0004;
 }
 
 .flag-icon-gbr {
@@ -135,6 +173,7 @@ p {
   line-height: 0;
   transition: 0.35s;
   z-index: 2;
+  filter: drop-shadow(-2px 1px 3px #0004);
 }
 
 .wave-navbar-collpase-unfold {
@@ -161,10 +200,12 @@ p {
 
 .avatar {
   height: 40vh;
+  filter: drop-shadow(-2px 2px 2px #0004);
 }
 
 .header-text-custom {
   font-size: 7vh;
+  text-shadow: -2px 2px 2px #0004;
 }
 
 .divider-custom {
@@ -206,12 +247,14 @@ p {
 
 .subheader-text-custom {
   font-size: 3vh;
+  text-shadow: -2px 2px 2px #0004;
 }
 
 /* Arrow & Hover Animation */
 #more-arrows {
   width: 75px;
   height: 65px;
+  filter: drop-shadow(-2px 2px 2px #0004);
 }
 
 #more-arrows:hover {
@@ -242,10 +285,12 @@ polygon {
 
 .arrow-middle {
   opacity: 0.75;
+  text-shadow: -2px 2px 2px #0004;
 }
 
 .arrow-top {
   opacity: 0.5;
+  text-shadow: -2px 2px 2px #0004;
 }
 
 .blob {
@@ -283,14 +328,19 @@ polygon {
 }
 
 .btn-about-custom {
-  background-color: var(--gradient-color-9);
+  border: solid !important;
+  border-width: 2px !important;
+  border-color: var(--gradient-color-10) !important;
+  box-shadow: -2px 2px 2px #0004;
   color: var(--main-font-color);
   text-decoration: none;
+  transition: 0.5s;
 }
 
 .btn-about-custom:hover {
   background-color: var(--gradient-color-10);
   color: var(--main-font-color);
+  transition: 0.5s;
   text-decoration: none;
 }
 
@@ -298,6 +348,10 @@ polygon {
   background-color: var(--gradient-color-12);
   border-radius: 5px !important;
   border: none;
+}
+
+.card-custom div[aria-expanded=true] .btn-about-custom {
+  background-color: var(--gradient-color-10);
 }
 
 .card-header-custom:hover {
@@ -335,6 +389,7 @@ polygon {
   cursor: pointer;
   position: relative;
   -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.4));
 }
 .checkbox svg {
   display: block;
@@ -481,6 +536,7 @@ html {
   position: absolute;
   top: 2px;
   left: 2px;
+  filter: drop-shadow(-2px 2px 4px #0004);
 }
 
 .progress > span {
@@ -547,6 +603,7 @@ html {
 .progress-text {
   color: var(--gradient-color-1);
   transition: 0.5s;
+  filter: drop-shadow(-2px 2px 2px #0004);
 }
 
 .progress .progress-bar {
@@ -624,10 +681,62 @@ html {
   }
 }
 .slider-container .portfolio-img {
-  width: 100%;
+  width: 25vw;
+  height: 100%;
 }
 .slider-container .portfolio-img img {
   width: 100%;
+}
+.slider-container .year {
+  width: 5vw !important;
+  border-radius: 50px;
+  transform: rotate(90deg);
+}
+.slider-container .year p {
+  background-color: var(--gradient-color-11);
+  border-radius: 10px;
+  padding-top: 10px !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-custom {
+  background-color: var(--gradient-color-1) !important;
+  color: var(--gradient-color-12) !important;
+  font-weight: bold;
+}
+.footer-custom .footer-text-custom .copyright {
+  display: inline-block;
+}
+.footer-custom .footer-text-custom .copyright:hover {
+  cursor: none;
+  animation: rotation-custom 0.3s linear forwards 999;
+}
+@keyframes rotation-custom {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+.footer-custom div section a {
+  color: var(--gradient-color-12) !important;
+  border: solid 2px var(--gradient-color-12);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.footer-custom div section a:hover {
+  background-color: var(--gradient-color-12) !important;
+  border-radius: 5px;
+  transition: 0.5s;
+  color: var(--gradient-color-1) !important;
+}
+
+.bottom-wave-navbar {
+  transform: rotate(180deg);
+  filter: drop-shadow(-2px 1px 3px #0004);
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

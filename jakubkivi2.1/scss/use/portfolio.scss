@@ -1,8 +1,21 @@
 .slider-container{
     .portfolio-img{
-        width: 100%;
+        width: 25vw;
+        height: 100%;
         img{
             width: 100%;
+        }
+    }
+    .year{
+        width: 5vw !important;
+        border-radius: 50px;
+        transform: rotate(90deg);
+        p{
+            background-color: var(--gradient-color-11);
+            border-radius: 10px;
+            padding-top: 10px !important;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
     }
 }

@@ -265,5 +265,6 @@ var slider = tns({
   arrowKeys: true,
   mouseDrag: true,
   autoplay: false,
+  autoWidth: true,
   items: 3
 });
