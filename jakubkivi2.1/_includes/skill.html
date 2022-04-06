@@ -1,30 +1,42 @@
-<div class="column-md-1">
-  <div class="progres-containter">
-    <div class="progress-text">
-      {{include.text}}
-    </div>
-    <div class="progress 
-    
-      {% if include.value == "1" %}
-        lvl1
-      {% elsif include.value == "2" %}
-      lvl2
-      {% elsif include.value == "3" %}
-      lvl3
-      {% elsif include.value == "4" %}
-      lvl4
-      {% elsif include.value == "5" %}
-      lvl5
-      {% endif %}
-    "> 
-      <span class="progress-left"> 
-        <span class="progress-bar"></span> 
-      </span> 
-      <span class="progress-right"> 
-        <span class="progress-bar"></span> 
-      </span>
-      <div class="progress-value">
-        <i class="fa-brands {{include.iconClass}}"></i>
+<div class="item item-custom">
+  <div class="column-md-1">
+    <div class="progres-containter">
+      <div class="progress-text">
+        {{include.text}}
+      </div>
+      <div class="progress 
+      
+        {% if include.value == "1" %}
+          lvl1
+        {% elsif include.value == "2" %}
+        lvl2
+        {% elsif include.value == "3" %}
+        lvl3
+        {% elsif include.value == "4" %}
+        lvl4
+        {% elsif include.value == "5" %}
+        lvl5
+        {% endif %}
+      "> 
+        <span class="progress-left"> 
+          <span class="progress-bar"></span> 
+        </span> 
+        <span class="progress-right"> 
+          <span class="progress-bar"></span> 
+        </span>
+        <div class="progress-value 
+        {% if include.ico == 'true' %}
+          progress-value-iconify
+        {% endif %}">
+          {% if include.ico == 'true' %}
+            <span
+              class="iconify"
+              data-icon="{{include.iconClass}}"
+            ></span>
+          {% else %}
+            <i class="fa-brands {{include.iconClass}}"></i>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>

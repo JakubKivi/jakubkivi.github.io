@@ -156,3 +156,114 @@ function checkboxNames()
     }
   }
 }
+
+var rad = document.aboutForm.btn;
+var prev = null;
+
+for (var i = 0; i < rad.length; i++) {
+    rad[i].addEventListener('change', function() {
+      
+      
+      var owls = document.getElementsByClassName("owl-carousel");
+      var all = document.getElementsByClassName("skills-all");
+      var web = document.getElementsByClassName("skills-web");
+      var robo = document.getElementsByClassName("skills-robo");
+      var game = document.getElementsByClassName("skills-game");
+      var tools = document.getElementsByClassName("skills-others");
+      var lang = document.getElementsByClassName("skills-lang");
+      if (this !== prev) {
+        prev = this;
+        console.log(this.value);
+        for (var i = 0; i < owls.length; i++) {
+          owls.item(i).classList.add("display-none-skill");
+        }
+        switch (this.value) {
+
+          // if (box.classList.contains('hidden')) {
+          //   box.classList.remove('hidden');          //TODO
+          //   setTimeout(function () {
+          //     box.classList.remove('visuallyhidden');
+          //   }, 20);
+          // } else {
+          //   box.classList.add('visuallyhidden');    
+          //   box.addEventListener('transitionend', function(e) {
+          //     box.classList.add('hidden');
+          //   }, {
+          //     capture: false,
+          //     once: true,
+          //     passive: false
+          //   });
+          // }
+
+
+          case "lang":
+            lang.item(0).classList.remove("display-none-skill");
+          break;
+          case "web":
+            web.item(0).classList.remove("display-none-skill");
+          break;
+          case "robo":
+            robo.item(0).classList.remove("display-none-skill");
+          break;
+          case "game":
+            game.item(0).classList.remove("display-none-skill");
+          break;
+          case "tools":
+            tools.item(0).classList.remove("display-none-skill");
+          break;
+          default:
+            all.item(0).classList.remove("display-none-skill");
+          break;
+        }
+      }
+    });
+}
+
+$('.owl-carousel').owlCarousel({
+  loop:false,
+  autoplay:false,
+  autoplayTimeout: 2000,
+  autoplayHoverPause: true,
+  autoplaySpeed: 2000,
+
+  dotsSpeed: 600,
+
+
+  //nav:false,
+  //center:true,
+  startPosition:0,
+  //freeDrag:true,
+  responsive:{
+      0:{
+          items:1,
+          dotsEach:1
+      },
+      400:{
+          items:3,
+          dotsEach:3
+      },
+      600:{
+          items:5,
+          dotsEach:5
+      },
+      900:{
+          items:7,
+          dotsEach:7
+      },
+      1200:{
+          items:9,
+          dotsEach:9
+      }
+  }
+})
+
+
+var slider = tns({
+  container: '.my-slider',
+  controls: false,
+  nav: false,
+  arrowKeys: true,
+  mouseDrag: true,
+  autoplay: false,
+  items: 3
+});
