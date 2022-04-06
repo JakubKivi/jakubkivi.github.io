@@ -220,7 +220,7 @@ for (var i = 0; i < rad.length; i++) {
 }
 
 $('.owl-carousel').owlCarousel({
-  loop:true,
+  loop:false,
   autoplay:false,
   autoplayTimeout: 2000,
   autoplayHoverPause: true,
@@ -256,3 +256,14 @@ $('.owl-carousel').owlCarousel({
       }
   }
 })
+
+
+var slider = tns({
+  container: '.my-slider',
+  controls: false,
+  nav: false,
+  arrowKeys: true,
+  mouseDrag: true,
+  autoplay: false,
+  items: 3
+});
