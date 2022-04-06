@@ -22,6 +22,7 @@
     }
     div section a{
         color: var(--gradient-color-12) !important;
+        box-shadow: -2px 2px 2px #0004;
         border: solid 2px var(--gradient-color-12);
         border-radius: 10px;
         transition: 0.5s;
@@ -34,9 +35,18 @@
     }
 }
 
-.bottom-wave-navbar{
+.wave-footer{
     transform: rotate(180deg);
-    filter: drop-shadow(-2px 1px 3px #0004);
+    // filter: drop-shadow(-2px 1px 3px #0004);
     color: #fff;
-    // height: 50px;
+    svg{
+        height: 30px;
+        position: relative;
+        left: -5%;
+        display: block;
+        width: 110%;
+        .shape-fill{
+            fill: var(--navbar-bg-color);
+        }
+    }
 }

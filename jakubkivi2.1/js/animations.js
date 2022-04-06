@@ -74,6 +74,13 @@ const n = KUTE.fromTo(
   { repeat: 9999, duration: 4000, yoyo: true }
 );
 
+const f = KUTE.fromTo(
+  '#f1',
+  { path: '#f1' },
+  { path: '#f2' },    
+  { repeat: 9999, duration: 4000, yoyo: true }
+);
+
 window.onload = function() {
   ab1.start();
 	ab2.start();
@@ -87,4 +94,5 @@ window.onload = function() {
 	ab10.start();
 	ab11.start();
   n.start();
+  f.start();
 };
