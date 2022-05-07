@@ -2,20 +2,25 @@
     .portfolio-img{
         width: 25vw;
         height: 100%;
+        
+        filter: drop-shadow(-2px 2px 2px #0004);
         img{
             width: 100%;
         }
+        
+    
     }
-    .year{
-        width: 5vw !important;
-        border-radius: 50px;
-        transform: rotate(90deg);
+    .year-inner{
+        height: 100% !important;
         p{
             background-color: var(--gradient-color-11);
+            filter: drop-shadow(-2px 2px 2px #0004);
             border-radius: 10px;
-            padding-top: 10px !important;
-            font-size: 1.5rem;
             font-weight: bold;
+            font-size: 2.6vw;
+            margin: 0 !important;
+            padding: 1vw;
+            height: 100%;
         }
     }
 }

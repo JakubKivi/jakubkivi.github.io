@@ -683,23 +683,49 @@ html {
 .slider-container .portfolio-img {
   width: 25vw;
   height: 100%;
+  filter: drop-shadow(-2px 2px 2px #0004);
 }
 .slider-container .portfolio-img img {
   width: 100%;
 }
-.slider-container .year {
-  width: 5vw !important;
-  border-radius: 50px;
-  transform: rotate(90deg);
+.slider-container .year-inner {
+  height: 100% !important;
 }
-.slider-container .year p {
+.slider-container .year-inner p {
   background-color: var(--gradient-color-11);
+  filter: drop-shadow(-2px 2px 2px #0004);
   border-radius: 10px;
-  padding-top: 10px !important;
-  font-size: 1.5rem;
   font-weight: bold;
+  font-size: 2.6vw;
+  margin: 0 !important;
+  padding: 1vw;
+  height: 100%;
 }
 
+.form-group input {
+  background-color: var(--gradient-color-11) !important;
+  border: none;
+  box-shadow: -2px 2px 2px #0004;
+}
+.form-group input:focus {
+  box-shadow: 0 0 0 0.2rem var(--gradient-color-10);
+}
+.form-group .form-control {
+  color: white;
+}
+.form-group .form-control::placeholder {
+  color: white !important;
+  text-shadow: -3px 3px 2px #0004;
+  opacity: 0.5;
+}
+.form-group textarea {
+  background-color: var(--gradient-color-11) !important;
+  border: none;
+  box-shadow: -2px 2px 2px #0004;
+}
+.form-group textarea:focus {
+  box-shadow: 0 0 0 0.2rem var(--gradient-color-10);
+}
 .footer-custom {
   background-color: var(--gradient-color-1) !important;
   color: var(--gradient-color-12) !important;

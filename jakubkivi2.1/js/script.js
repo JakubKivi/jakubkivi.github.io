@@ -36,6 +36,18 @@ function hoverOff(element)
 
 
 $(document).ready(function(){
+  var texts = document.getElementsByClassName("progress-text");
+  if (document.getElementById('checkboxNames').checked) 
+  {
+    for(var i=0; i< texts.length; i++){
+      texts.item(i).classList.remove("display-none");
+    }
+  } else {
+    for(var i=0; i< texts.length; i++){
+      texts.item(i).classList.add("display-none");
+    }
+  }
+
   $('body').scrollspy({target: ".navbar", offset: 50});   
 
   $("#navbarNav a").on('click', function(event) {
