@@ -705,26 +705,26 @@ html {
 .form-group input {
   background-color: var(--gradient-color-11) !important;
   border: none;
-  box-shadow: -2px 2px 2px #0004;
+  box-shadow: inset -2px 2px 8px #0004;
 }
 .form-group input:focus {
-  box-shadow: 0 0 0 0.2rem var(--gradient-color-10);
+  box-shadow: inset -2px 2px 8px #0004;
 }
 .form-group .form-control {
   color: white;
 }
 .form-group .form-control::placeholder {
   color: white !important;
-  text-shadow: -3px 3px 2px #0004;
+  box-shadow: inset -2px 2px 8px #0004;
   opacity: 0.5;
 }
 .form-group textarea {
   background-color: var(--gradient-color-11) !important;
   border: none;
-  box-shadow: -2px 2px 2px #0004;
+  box-shadow: inset -2px 2px 8px #0004;
 }
 .form-group textarea:focus {
-  box-shadow: 0 0 0 0.2rem var(--gradient-color-10);
+  box-shadow: inset -2px 2px 8px #0004;
 }
 .footer-custom {
   background-color: var(--gradient-color-1) !important;
