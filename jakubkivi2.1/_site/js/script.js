@@ -170,13 +170,11 @@ function checkboxNames()
 }
 
 var rad = document.aboutForm.btn;
-var prev = null;
+var prev = document.aboutForm.btn[0]; 
 
 for (var i = 0; i < rad.length; i++) {
     rad[i].addEventListener('change', function() {
       
-      
-      var owls = document.getElementsByClassName("owl-carousel");
       var all = document.getElementsByClassName("skills-all");
       var web = document.getElementsByClassName("skills-web");
       var robo = document.getElementsByClassName("skills-robo");
@@ -184,47 +182,60 @@ for (var i = 0; i < rad.length; i++) {
       var tools = document.getElementsByClassName("skills-others");
       var lang = document.getElementsByClassName("skills-lang");
       if (this !== prev) {
+        console.log(prev.value);
+        switch (prev.value) {
+          case "lang":
+            lang.item(0).classList.remove("display-skill");
+            lang.item(0).classList.add("display-none-skill");
+          break;
+          case "web":
+            web.item(0).classList.remove("display-skill");
+            web.item(0).classList.add("display-none-skill");
+          break;
+          case "robo":
+            robo.item(0).classList.remove("display-skill");
+            robo.item(0).classList.add("display-none-skill");
+          break;
+          case "game":
+            game.item(0).classList.remove("display-skill");
+            game.item(0).classList.add("display-none-skill");
+          break;
+          case "tools":
+            tools.item(0).classList.remove("display-skill");
+            tools.item(0).classList.add("display-none-skill");
+          break;
+          default:
+            all.item(0).classList.remove("display-skill");
+            all.item(0).classList.add("display-none-skill");
+          break;
+        }
         prev = this;
         console.log(this.value);
-        for (var i = 0; i < owls.length; i++) {
-          owls.item(i).classList.add("display-none-skill");
-        }
+
         switch (this.value) {
-
-          // if (box.classList.contains('hidden')) {
-          //   box.classList.remove('hidden');          //TODO
-          //   setTimeout(function () {
-          //     box.classList.remove('visuallyhidden');
-          //   }, 20);
-          // } else {
-          //   box.classList.add('visuallyhidden');    
-          //   box.addEventListener('transitionend', function(e) {
-          //     box.classList.add('hidden');
-          //   }, {
-          //     capture: false,
-          //     once: true,
-          //     passive: false
-          //   });
-          // }
-
-
           case "lang":
             lang.item(0).classList.remove("display-none-skill");
+            lang.item(0).classList.add("display-skill");
           break;
           case "web":
             web.item(0).classList.remove("display-none-skill");
+            web.item(0).classList.add("display-skill");
           break;
           case "robo":
             robo.item(0).classList.remove("display-none-skill");
+            robo.item(0).classList.add("display-skill");
           break;
           case "game":
             game.item(0).classList.remove("display-none-skill");
+            game.item(0).classList.add("display-skill");
           break;
           case "tools":
             tools.item(0).classList.remove("display-none-skill");
+            tools.item(0).classList.add("display-skill");
           break;
           default:
             all.item(0).classList.remove("display-none-skill");
+            all.item(0).classList.add("display-skill");
           break;
         }
       }
