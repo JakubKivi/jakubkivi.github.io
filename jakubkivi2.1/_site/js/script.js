@@ -309,11 +309,11 @@ var slider = tns({
   controlsPosition:'bottom',
   nav: false,
   arrowKeys: true,
-  mouseDrag: true,
+  mouseDrag: false,
   autoplay: false,
   autoWidth: true,
   loop: false,
   items: 3, 
-  startIndex: 0,
+  startIndex: 999,
   controlsContainer: "#customize-controls"
 });
