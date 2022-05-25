@@ -53,10 +53,9 @@
   /* =============  SKILLS  ================== */
   
 .display-skill{
-  animation: skill-apearing 2s linear;
+  animation: skill-apearing 1s linear;
   visibility: visible !important;
-  padding-left: 1rem !important;
-  padding-top: 1rem !important;
+  padding: 0rem !important;
 
   @keyframes skill-apearing {
     0%{
@@ -75,8 +74,8 @@
 }
 
 
- .display-none-skill{   
-  animation: skill-disapearing 2s linear;
+ .display-none-skill-right{   
+  animation: skill-disapearing 1s linear;
   visibility: hidden;
   height: 0px !important;
   padding: 0rem !important;
@@ -85,28 +84,66 @@
     0%{
       opacity: 1;
       visibility: visible;
-      padding-left: 1rem !important;
-      padding-top: 1rem !important;
+      padding: 2rem !important;
     }
     99%{
       opacity: 0;
       visibility: visible;
-      padding-left: 1rem !important;
-      padding-top: 1rem !important;
+      padding: 2rem !important;
 
     }
     100%{
       opacity: 0;
       visibility: hidden;
-      height: 0px !important;
-      padding-left: 0rem !important;
-      padding-top: 0rem !important;
+    }
+  }
+}
+.display-none{
+  display: none;
+}
+
+.tip-custom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gradient-color-10);
+  font-size: 1.6rem;
+}
+
+.display-none-skill-left{   
+  animation: skill-disapearing 1s linear;
+  visibility: hidden;
+  height: 0px !important;
+  padding: 0rem !important;
+  float: left !important;
+  position: relative !important;
+  top: -150px;
+
+  @keyframes skill-disapearing {
+    0%{
+      opacity: 1;
+      visibility: visible;
+      padding: 2rem !important;
+    }
+    99%{
+      opacity: 0;
+      visibility: visible;
+      padding: 2rem !important;
+
+    }
+    100%{
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }
 
 .owl-custom{
   margin-bottom: 0px !important;
+}
+
+.carousel-placeholder{
+  padding: 2rem 0rem 1rem 0rem !important;
 }
 
   /* ================checkbox============ */

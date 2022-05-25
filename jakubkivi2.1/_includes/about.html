@@ -12,14 +12,15 @@
         <div id="accordion" class="mb-5 about-custom">
             <div class="card card-custom">
                 <div class="card-header card-header-custom mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
+                    aria-expanded="true" aria-controls="collapseOne">
                     <h5 class="mb-0 btn btn-link btn-about-custom shadow-custom">Umiejętności</h5>
                 </div>
 
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body card-body-custom mt-0">
                         <div class="container">
                             <div class="row justify-content-center">
+                                
                                 <div class="column-md-2">
                                     <label class="checkbox ml-auto mr-auto mb-0 mt-0">
                                         <input type="checkbox" id="checkboxNames" onclick="checkboxNames();"/>
@@ -50,31 +51,38 @@
                                         Pokaż nazwy
                                     </p>
                                 </div>
+                                <span class="column-md-2 ml-2 tip-custom" data-toggle="tooltip" data-placement="top" title="All we ever hear from you is blah blah blah
+So, all we ever do is go ja ja ja
+And we don't even care about what they say 'cause it's
+Ja ja ja ja
+Blah blah blah blah">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>   
                                 <div class="column-md-2 radio-custom">
                                     <form name="aboutForm">
                                         <div class="element ml-3 box-shadow-custom">
                                             <input type="radio" id="all" name="btn" value="all" checked="checked">
-                                            <label for="all" class="shadow-custom">Wszystko</label>
+                                            <label for="all" class="shadow-custom mb-1">Wszystko</label>
                                         </div>
                                         <div class="element ml-3 box-shadow-custom">
                                             <input class="box-shadow-custom" type="radio" id="lang" name="btn" value="lang">
-                                            <label for="lang" class="shadow-custom">Języki</label>
+                                            <label for="lang" class="shadow-custom mb-1">Języki</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="web" name="btn" value="web">
-                                            <label for="web" class="shadow-custom">WEB</label>
+                                            <label for="web" class="shadow-custom mb-1">WEB</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="robo" name="btn" value="robo">
-                                            <label for="robo" class="shadow-custom">Robotyka</label>
+                                            <label for="robo" class="shadow-custom mb-1">Robotyka</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="game" name="btn" value="game">
-                                            <label for="game" class="shadow-custom">Gry</label>
+                                            <label for="game" class="shadow-custom mb-1">Gry</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="tools" name="btn" value="tools">
-                                            <label for="tools" class="shadow-custom">Inne</label>
+                                            <label for="tools" class="shadow-custom mb-1">Inne</label>
                                         </div>
                                     </form>
                                 </div>
@@ -82,7 +90,7 @@
                         </div>
                         <div class="carousel-placeholder">
                             <!-- Set up your HTML -->
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-all">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-all display-skill-right">
 
                                 {% include skill.html text='HTML' iconClass='fa-html5'
                                 value='4'%}
@@ -139,7 +147,7 @@
                                 {% include skill.html text='Jekyll' iconClass='simple-icons:jekyll'
                                 value='4' ico='true'%}
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-lang display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-lang display-none-skill-right">
                                 {% include skill.html text='HTML' iconClass='fa-html5'
                                 value='4'%}
                                 {% include skill.html text='CSS' iconClass='fa-css3-alt'
@@ -163,7 +171,7 @@
                                 {% include skill.html text='MatLab' iconClass='devicon-matlab-plain'
                                 value='2' %}
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-web display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-web display-none-skill-right">
                                 {% include skill.html text='HTML' iconClass='fa-html5'
                                 value='4' %}
                                 {% include skill.html text='CSS' iconClass='fa-css3-alt'
@@ -187,7 +195,7 @@
                                 {% include skill.html text='Jekyll' iconClass='simple-icons:jekyll'
                                 value='4' ico='true'%}
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-robo display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-robo display-none-skill-right">
                                 {% include skill.html text='C++' iconClass='devicon-cplusplus-plain'
                                 value='5' tag='robo game'%}
                                 {% include skill.html text='C' iconClass='devicon-c-plain'
@@ -201,7 +209,7 @@
                                 {% include skill.html text='MatLab' iconClass='devicon-matlab-plain'
                                 value='2' %}
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-game display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-game display-none-skill-right">
                                 {% include skill.html text='JS' iconClass='fa-js-square'
                                 value='5' tag='web game'%}
                                 {% include skill.html text='C++' iconClass='devicon-cplusplus-plain'
@@ -217,7 +225,7 @@
                                 {% include skill.html text='Construct' iconClass='simple-icons:construct3'
                                 value='5' ico='true'%}
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-others display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-others display-none-skill-right">
                                 {% include skill.html text='git' iconClass='fa-git-alt'
                                 value='5'%}
                                 {% include skill.html text='Linux' iconClass='devicon-linux-plain'

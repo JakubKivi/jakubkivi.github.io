@@ -365,10 +365,9 @@ polygon {
 
 /* =============  SKILLS  ================== */
 .display-skill {
-  animation: skill-apearing 2s linear;
+  animation: skill-apearing 1s linear;
   visibility: visible !important;
-  padding-left: 1rem !important;
-  padding-top: 1rem !important;
+  padding: 0rem !important;
 }
 @keyframes skill-apearing {
   0% {
@@ -385,8 +384,8 @@ polygon {
   }
 }
 
-.display-none-skill {
-  animation: skill-disapearing 2s linear;
+.display-none-skill-right {
+  animation: skill-disapearing 1s linear;
   visibility: hidden;
   height: 0px !important;
   padding: 0rem !important;
@@ -395,26 +394,63 @@ polygon {
   0% {
     opacity: 1;
     visibility: visible;
-    padding-left: 1rem !important;
-    padding-top: 1rem !important;
+    padding: 2rem !important;
   }
   99% {
     opacity: 0;
     visibility: visible;
-    padding-left: 1rem !important;
-    padding-top: 1rem !important;
+    padding: 2rem !important;
   }
   100% {
     opacity: 0;
     visibility: hidden;
-    height: 0px !important;
-    padding-left: 0rem !important;
-    padding-top: 0rem !important;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.tip-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gradient-color-10);
+  font-size: 1.6rem;
+}
+
+.display-none-skill-left {
+  animation: skill-disapearing 1s linear;
+  visibility: hidden;
+  height: 0px !important;
+  padding: 0rem !important;
+  float: left !important;
+  position: relative !important;
+  top: -150px;
+}
+@keyframes skill-disapearing {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    padding: 2rem !important;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+    padding: 2rem !important;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
 .owl-custom {
   margin-bottom: 0px !important;
+}
+
+.carousel-placeholder {
+  padding: 2rem 0rem 1rem 0rem !important;
 }
 
 /* ================checkbox============ */
@@ -720,8 +756,12 @@ html {
     transform: rotate(144deg);
   }
 }
+.slider-container {
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
 .slider-container .portfolio-img {
-  width: 25vw;
+  width: 20vw;
   height: 100%;
   filter: drop-shadow(-2px 2px 2px #0004);
 }
@@ -736,10 +776,36 @@ html {
   filter: drop-shadow(-2px 2px 2px #0004);
   border-radius: 10px;
   font-weight: bold;
-  font-size: 2.6vw;
+  font-size: 2.2vw;
   margin: 0 !important;
-  padding: 1vw;
+  padding: 0.7vw;
   height: 100%;
+  text-align: center;
+}
+
+.controls {
+  height: 0;
+}
+.controls:focus {
+  outline: none;
+}
+.controls .but {
+  display: inline-block;
+  position: relative;
+  top: 7.5vw;
+}
+.controls .prev {
+  left: -4vw;
+}
+.controls .next {
+  float: right;
+  right: -4vw;
+}
+.controls i {
+  font-size: 3vw;
+}
+.controls .but:hover {
+  cursor: pointer;
 }
 
 .form-group input {

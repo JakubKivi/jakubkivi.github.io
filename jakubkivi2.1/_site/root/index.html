@@ -206,14 +206,15 @@
         <div id="accordion" class="mb-5 about-custom">
             <div class="card card-custom">
                 <div class="card-header card-header-custom mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
+                    aria-expanded="true" aria-controls="collapseOne">
                     <h5 class="mb-0 btn btn-link btn-about-custom shadow-custom">Umiejętności</h5>
                 </div>
 
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body card-body-custom mt-0">
                         <div class="container">
                             <div class="row justify-content-center">
+                                
                                 <div class="column-md-2">
                                     <label class="checkbox ml-auto mr-auto mb-0 mt-0">
                                         <input type="checkbox" id="checkboxNames" onclick="checkboxNames();"/>
@@ -244,31 +245,38 @@
                                         Pokaż nazwy
                                     </p>
                                 </div>
+                                <span class="column-md-2 ml-2 tip-custom" data-toggle="tooltip" data-placement="top" title="All we ever hear from you is blah blah blah
+So, all we ever do is go ja ja ja
+And we don't even care about what they say 'cause it's
+Ja ja ja ja
+Blah blah blah blah">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>   
                                 <div class="column-md-2 radio-custom">
                                     <form name="aboutForm">
                                         <div class="element ml-3 box-shadow-custom">
                                             <input type="radio" id="all" name="btn" value="all" checked="checked">
-                                            <label for="all" class="shadow-custom">Wszystko</label>
+                                            <label for="all" class="shadow-custom mb-1">Wszystko</label>
                                         </div>
                                         <div class="element ml-3 box-shadow-custom">
                                             <input class="box-shadow-custom" type="radio" id="lang" name="btn" value="lang">
-                                            <label for="lang" class="shadow-custom">Języki</label>
+                                            <label for="lang" class="shadow-custom mb-1">Języki</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="web" name="btn" value="web">
-                                            <label for="web" class="shadow-custom">WEB</label>
+                                            <label for="web" class="shadow-custom mb-1">WEB</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="robo" name="btn" value="robo">
-                                            <label for="robo" class="shadow-custom">Robotyka</label>
+                                            <label for="robo" class="shadow-custom mb-1">Robotyka</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="game" name="btn" value="game">
-                                            <label for="game" class="shadow-custom">Gry</label>
+                                            <label for="game" class="shadow-custom mb-1">Gry</label>
                                         </div>
                                         <div class="element ml-3">
                                             <input type="radio" id="tools" name="btn" value="tools">
-                                            <label for="tools" class="shadow-custom">Inne</label>
+                                            <label for="tools" class="shadow-custom mb-1">Inne</label>
                                         </div>
                                     </form>
                                 </div>
@@ -276,7 +284,7 @@
                         </div>
                         <div class="carousel-placeholder">
                             <!-- Set up your HTML -->
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-all">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-all display-skill-right">
 
                                 <div class="item item-custom">
   <div class="column-md-1">
@@ -1033,7 +1041,7 @@
   </div>
 </div>
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-lang display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-lang display-none-skill-right">
                                 <div class="item item-custom">
   <div class="column-md-1">
     <div class="progres-containter">
@@ -1332,7 +1340,7 @@
   </div>
 </div>
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-web display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-web display-none-skill-right">
                                 <div class="item item-custom">
   <div class="column-md-1">
     <div class="progres-containter">
@@ -1636,7 +1644,7 @@
   </div>
 </div>
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-robo display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-robo display-none-skill-right">
                                 <div class="item item-custom">
   <div class="column-md-1">
     <div class="progres-containter">
@@ -1800,7 +1808,7 @@
   </div>
 </div>
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-game display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-game display-none-skill-right">
                                 <div class="item item-custom">
   <div class="column-md-1">
     <div class="progres-containter">
@@ -2001,7 +2009,7 @@
   </div>
 </div>
                             </div>
-                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-others display-none-skill">
+                            <div class="owl-carousel owl-theme owl-custom mb-3 skills-others display-none-skill-right">
                                 <div class="item item-custom">
   <div class="column-md-1">
     <div class="progres-containter">
@@ -2153,13 +2161,103 @@
         <div class="divider-custom-line"></div>
       </div>
       <div class="slider-container mb-3">
+
+        <div class="controls" id="customize-controls" aria-label="Carousel Navigation" tabindex="0">
+          <div class="prev but" data-controls="prev" aria-controls="customize" tabindex="-1">
+              <i class="fas fa-angle-left"></i>
+          </div>
+          <div class="next but" data-controls="next" aria-controls="customize" tabindex="-1">
+              <i class="fas fa-angle-right"></i>          
+          </div>
+        </div>
+
         <div class="my-slider">
+          <div class="year">
+            <div class="year-inner">
+              <p class="">
+                2<br/>
+                0<br/>
+                1<br/>
+                7<br/>
+              </p>
+            </div>
+          </div>
           <div class="portfolio-img">
-            <img src = "../assets/img/portfolio/tafl/tafl.svg" alt="Error: tafl.svg" />
-          </div>    
+            <img src = "../assets/img/portfolio/grzes/grzes.svg" alt="Error: grzes.svg" />
+          </div>
+          <div class="year">
+            <div class="year-inner">
+              <p class="">
+                2<br/>
+                0<br/>
+                1<br/>
+                8<br/>
+              </p>
+            </div>
+          </div>
           <div class="portfolio-img">
             <img src = "../assets/img/portfolio/calk/calk.svg" alt="Error: calk.svg" />
           </div>
+          <div class="year">
+            <div class="year-inner">
+              <p class="">
+                2<br/>
+                0<br/>
+                1<br/>
+                9<br/>
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/zasi/zasi.svg" alt="Error: zasi.svg" />
+          </div>      
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/lamp/lamp.svg" alt="Error: lamp.svg" />
+          </div>  
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/ara/ara.svg" alt="Error: ara.svg" />
+          </div>
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/calk/calk.svg" alt="Error: calk.svg" />
+          </div>
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/wysw/wysw.svg" alt="Error: wysw.svg" />
+          </div>   
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/jack/jack.svg" alt="Error: jack.svg" />
+          </div>  
+          <div class="year">
+            <div class="year-inner">
+              <p class="">
+                2<br/>
+                0<br/>
+                2<br/>
+                0<br/>
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/tafl/tafl.svg" alt="Error: tafl.svg" />
+          </div>  
+          <div class="year">
+            <div class="year-inner">
+              <p class="">
+                2<br/>
+                0<br/>
+                2<br/>
+                1<br/>
+              </p>
+            </div>
+          </div>
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/tafl/kompas.svg" alt="Error: kompas.svg" />
+          </div>  
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/tafl/prezenty.svg" alt="Error: prezenty.svg" />
+          </div>  
+          <div class="portfolio-img">
+            <img src = "../assets/img/portfolio/tafl/bizon.svg" alt="Error: bizon.svg" />
+          </div>  
           <div class="year">
             <div class="year-inner">
               <p class="">
@@ -2169,25 +2267,14 @@
                 2<br/>
               </p>
             </div>
-          </div>
-          <div class="portfolio-img">
-            <img src = "../assets/img/portfolio/ara/ara.svg" alt="Error: ara.svg" />
-          </div>
-          <div class="portfolio-img">
-            <img src = "../assets/img/portfolio/grzes/grzes.svg" alt="Error: grzes.svg" />
-          </div>
-          <div class="portfolio-img">
-            <img src = "../assets/img/portfolio/jack/jack.svg" alt="Error: jack.svg" />
           </div>  
+          
           <div class="portfolio-img">
-            <img src = "../assets/img/portfolio/lamp/lamp.svg" alt="Error: lamp.svg" />
-          </div>  
+            <img src = "../assets/img/portfolio/tafl/stronka_v2.svg" alt="Error: stronka_v2.svg" />
+          </div> 
           <div class="portfolio-img">
-            <img src = "../assets/img/portfolio/wysw/wysw.svg" alt="Error: wysw.svg" />
-          </div>   
-          <div class="portfolio-img">
-            <img src = "../assets/img/portfolio/zasi/zasi.svg" alt="Error: zasi.svg" />
-          </div>      
+            <img src = "../assets/img/portfolio/calk/calk.svg" alt="Error: calk.svg" />
+          </div>
         </div>
       </div>
 
@@ -2201,6 +2288,7 @@
           </svg>
         </a>
       </div>
+    </div>
   </section> <section class="page-section text-white mb-5 shadow-custom" id="contact">
   <div class="container">
     <!-- About Section Heading-->

@@ -155,6 +155,7 @@ function scrollCustom(){
 
 function checkboxNames()
 {
+  console.log('dupa');
   var texts = document.getElementsByClassName("progress-text");
   console.log( {texts});
   if (document.getElementById('checkboxNames').checked) 
@@ -186,27 +187,39 @@ for (var i = 0; i < rad.length; i++) {
         switch (prev.value) {
           case "lang":
             lang.item(0).classList.remove("display-skill");
-            lang.item(0).classList.add("display-none-skill");
+            if(this.value === "all")
+             lang.item(0).classList.add("display-none-skill-left");
+            else
+             lang.item(0).classList.add("display-none-skill-right");
           break;
           case "web":
             web.item(0).classList.remove("display-skill");
-            web.item(0).classList.add("display-none-skill");
+            if(this.value === "all" || this.value === "lang")
+              web.item(0).classList.add("display-none-skill-left");
+            else
+              web.item(0).classList.add("display-none-skill-right");
           break;
           case "robo":
             robo.item(0).classList.remove("display-skill");
-            robo.item(0).classList.add("display-none-skill");
+            if(this.value === "all" || this.value === "lang" ||  this.value === "web")
+              robo.item(0).classList.add("display-none-skill-left");
+            else
+              robo.item(0).classList.add("display-none-skill-right");
           break;
           case "game":
             game.item(0).classList.remove("display-skill");
-            game.item(0).classList.add("display-none-skill");
+            if(this.value == "tools")
+              game.item(0).classList.add("display-none-skill-right");
+            else
+              game.item(0).classList.add("display-none-skill-left");
           break;
           case "tools":
             tools.item(0).classList.remove("display-skill");
-            tools.item(0).classList.add("display-none-skill");
+            tools.item(0).classList.add("display-none-skill-left");
           break;
           default:
             all.item(0).classList.remove("display-skill");
-            all.item(0).classList.add("display-none-skill");
+            all.item(0).classList.add("display-none-skill-right");
           break;
         }
         prev = this;
@@ -214,27 +227,33 @@ for (var i = 0; i < rad.length; i++) {
 
         switch (this.value) {
           case "lang":
-            lang.item(0).classList.remove("display-none-skill");
+            lang.item(0).classList.remove("display-none-skill-right");
+            lang.item(0).classList.remove("display-none-skill-left");
             lang.item(0).classList.add("display-skill");
           break;
           case "web":
-            web.item(0).classList.remove("display-none-skill");
+            web.item(0).classList.remove("display-none-skill-right");
+            web.item(0).classList.remove("display-none-skill-left");
             web.item(0).classList.add("display-skill");
           break;
           case "robo":
-            robo.item(0).classList.remove("display-none-skill");
+            robo.item(0).classList.remove("display-none-skill-right");
+            robo.item(0).classList.remove("display-none-skill-left");
             robo.item(0).classList.add("display-skill");
           break;
           case "game":
-            game.item(0).classList.remove("display-none-skill");
+            game.item(0).classList.remove("display-none-skill-right");
+            game.item(0).classList.remove("display-none-skill-left");
             game.item(0).classList.add("display-skill");
           break;
           case "tools":
-            tools.item(0).classList.remove("display-none-skill");
+            tools.item(0).classList.remove("display-none-skill-right");
+            tools.item(0).classList.remove("display-none-skill-left");
             tools.item(0).classList.add("display-skill");
           break;
           default:
-            all.item(0).classList.remove("display-none-skill");
+            all.item(0).classList.remove("display-none-skill-right");
+            all.item(0).classList.remove("display-none-skill-left");
             all.item(0).classList.add("display-skill");
           break;
         }
@@ -244,15 +263,18 @@ for (var i = 0; i < rad.length; i++) {
 
 $('.owl-carousel').owlCarousel({
   loop:false,
-  autoplay:false,
-  autoplayTimeout: 2000,
+  autoplay:true,
+  autoplayTimeout: 3000,
   autoplayHoverPause: true,
   autoplaySpeed: 2000,
 
   dotsSpeed: 600,
 
 
-  //nav:false,
+  // nav:true,
+  // navText: ["<img src='myprevimage.png'>","<img src='mynextimage.png'>"],
+  // navSpeed: 1000,
+  // dots:false,
   //center:true,
   startPosition:0,
   //freeDrag:true,
@@ -283,11 +305,15 @@ $('.owl-carousel').owlCarousel({
 
 var slider = tns({
   container: '.my-slider',
-  controls: false,
+  controls: true,
+  controlsPosition:'bottom',
   nav: false,
   arrowKeys: true,
   mouseDrag: true,
   autoplay: false,
   autoWidth: true,
-  items: 3
+  loop: false,
+  items: 3, 
+  startIndex: 0,
+  controlsContainer: "#customize-controls"
 });

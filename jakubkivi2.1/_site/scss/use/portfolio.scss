@@ -1,6 +1,8 @@
 .slider-container{
+    padding-left: 4vw;
+    padding-right: 4vw;
     .portfolio-img{
-        width: 25vw;
+        width: 20vw;
         height: 100%;
         
         filter: drop-shadow(-2px 2px 2px #0004);
@@ -17,10 +19,43 @@
             filter: drop-shadow(-2px 2px 2px #0004);
             border-radius: 10px;
             font-weight: bold;
-            font-size: 2.6vw;
+            font-size: 2.2vw;
             margin: 0 !important;
-            padding: 1vw;
+            padding: 0.7vw;
             height: 100%;
+            text-align: center;
         }
+    }
+
+    
+}
+
+.controls {
+    height: 0;
+        
+    &:focus {
+        outline: none;
+    }
+    
+    .but{
+        display: inline-block;
+        position: relative;
+        top: 7.5vw;
+    }
+    .prev{
+        left: -4vw;
+    }
+    .next{
+        float: right;
+        right: -4vw;
+
+    }
+
+    i{
+        font-size: 3vw;
+    }
+
+    .but:hover {
+        cursor: pointer;        
     }
 }
