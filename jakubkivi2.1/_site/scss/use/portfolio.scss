@@ -1,6 +1,5 @@
 .slider-container{
     padding-left: 4vw;
-    padding-right: 4vw;
     .portfolio-img{
         width: 20vw;
         height: 100%;
@@ -30,7 +29,7 @@
     
 }
 
-.controls {
+.slider-container .controls {
     height: 0;
         
     &:focus {
@@ -40,7 +39,7 @@
     .but{
         display: inline-block;
         position: relative;
-        top: 7.5vw;
+        top: 5vw;
     }
     .prev{
         left: -4vw;
@@ -52,7 +51,7 @@
     }
 
     i{
-        font-size: 3vw;
+        font-size: 7vw;
     }
 
     .but:hover {

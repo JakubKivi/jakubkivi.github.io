@@ -758,7 +758,6 @@ html {
 }
 .slider-container {
   padding-left: 4vw;
-  padding-right: 4vw;
 }
 .slider-container .portfolio-img {
   width: 20vw;
@@ -783,28 +782,28 @@ html {
   text-align: center;
 }
 
-.controls {
+.slider-container .controls {
   height: 0;
 }
-.controls:focus {
+.slider-container .controls:focus {
   outline: none;
 }
-.controls .but {
+.slider-container .controls .but {
   display: inline-block;
   position: relative;
-  top: 7.5vw;
+  top: 5vw;
 }
-.controls .prev {
+.slider-container .controls .prev {
   left: -4vw;
 }
-.controls .next {
+.slider-container .controls .next {
   float: right;
   right: -4vw;
 }
-.controls i {
-  font-size: 3vw;
+.slider-container .controls i {
+  font-size: 7vw;
 }
-.controls .but:hover {
+.slider-container .controls .but:hover {
   cursor: pointer;
 }
 
@@ -879,6 +878,25 @@ html {
 }
 .wave-footer svg .shape-fill {
   fill: var(--navbar-bg-color);
+}
+
+.modal-content {
+  background-color: var(--gradient-color-10);
+  color: var(--main-font-color) !important;
+}
+.modal-content .close {
+  padding: 0.5rem 0.8rem;
+  color: var(--main-font-color);
+  margin-left: auto;
+}
+.modal-content .portfolio-modal-title {
+  color: var(--main-font-color) !important;
+}
+.modal-content .divider-custom {
+  margin: 0.2rem 0rem;
+}
+.modal-content i {
+  color: var(--main-font-color) !important;
 }
 
 /*# sourceMappingURL=style.css.map */
