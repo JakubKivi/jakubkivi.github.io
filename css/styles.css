@@ -10232,3 +10232,27 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #402811;
 }
+
+.alert-custom{
+  z-index: 10000;
+  position: fixed;
+  width: 80%;
+  margin-top: 2%;
+  margin-left: 10%;
+  animation: fadeInCustom 1.4s;
+  opacity: 1;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@keyframes fadeInCustom {
+  from {
+    opacity: 0;
+    margin-top: -6%;
+  }
+  to {
+   opacity: 0.85;
+   margin-top: 2%;
+  }
+}

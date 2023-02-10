@@ -1,5 +1,5 @@
 
-
+$('.alert').alert()
 /*!
     * Start Bootstrap - Freelancer v6.0.0 (https://startbootstrap.com/themes/freelancer)
     * Copyright 2013-2020 Start Bootstrap
