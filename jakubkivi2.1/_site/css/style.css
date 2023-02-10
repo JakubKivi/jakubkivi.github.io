@@ -79,7 +79,7 @@ p {
   text-shadow: -2px 2px 2px #0004;
 }
 .divider-custom .divider-custom-icon:hover {
-  animation: kivi-animation 0.2s linear forwards 3;
+  animation: kivi-animation 0.6s linear forwards 3s;
 }
 .divider-custom .divider-custom-line {
   box-shadow: -2px 2px 2px #0004;
@@ -87,9 +87,12 @@ p {
 
 @keyframes kivi-animation {
   0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  33% {
     -webkit-transform: rotateZ(-15deg);
   }
-  50% {
+  66% {
     -webkit-transform: rotateZ(15deg);
   }
   100% {
@@ -897,6 +900,25 @@ html {
 }
 .modal-content i {
   color: var(--main-font-color) !important;
+}
+.modal-content iframe {
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  max-height: 80vh;
+}
+.modal-content p {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0;
+}
+.modal-content a {
+  color: var(--gradient-color-1) !important;
+}
+.modal-content a:hover {
+  color: var(--gradient-color-2) !important;
+  text-decoration: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

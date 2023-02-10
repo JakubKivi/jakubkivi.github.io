@@ -16,7 +16,27 @@
         margin: 0.2rem 0rem;
     }
     i{
-        x`    
-    
+        color: var(--main-font-color) !important;
+    }    
+    iframe{
+        max-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        // height: auto;
+        max-height: 80vh;
+    }
+    p{
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: 0;
+    }
+    a{
+        color: var(--gradient-color-1) !important;
+        &:hover{
+            color: var(--gradient-color-2) !important;
+            text-decoration: none !important; 
+        }
+    }
 }
 
