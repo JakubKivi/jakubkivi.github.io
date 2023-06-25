@@ -1,769 +1,1189 @@
 <!DOCTYPE html>
-<html lang="pl" onload="checkboxNames()">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Jakub &quot;Kivi&quot; Kuziemski&#13;Programista - Elektronik - Robotyk&#13;Prywatna strona młodego robotyka..."/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Jakub &quot;Kivi&quot; Kuziemski&#13;Programmer - Roboticist - Traveller&#13;My private website..."/>
         <meta name="author" content="Jakub Kuziemski" />
         <meta name="keywords" content="Kivi, jakubkivi, JakubKivi, panmcleon, Jakub Kuziemski, CałkaBot">
-        <meta name="google-site-verification" content="sg4xrT04N6B-9qeHgbFZh7PWmvQmOFsEQ6zN1ByLI-k" />
 
         <title>JakubKivi</title>
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/favicon/site.webmanifest">
+        <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#331111">
+
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/c3c832fe60.js" crossorigin="anonymous"></script>
 
         
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-        <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#ffa245">
-        <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
-        <meta name="msapplication-TileColor" content="#ffa245">
-        <meta name="msapplication-config" content="assets/img/favicon/browserconfig.xml">
-        <meta name="theme-color" content="#805122">
-		
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Iconify -->
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
-        <script data-ad-client="ca-pub-2942888802502036" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-03P674TK1D"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <!-- wygenerować ikonki i kolorki potem favicon -->
 
-          gtag('config', 'G-03P674TK1D');
-        </script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- My CSS -->
+        <link rel="stylesheet" href="scss/style.css">
     </head>
-    <body id="page-top">
-        
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-            	<a class="navbar-brand js-scroll-trigger" href="#page-top">
-	            	<img class="navbar-brand-ico js-scroll-trigger" href="#page-top" src="assets/img/ico.png" alt="" />
-	                JakubKivi
-                </a>
-                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-						<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">O mnie</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Kontakt</a></li>
-						<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="en.html">EN</a></li>
-                    </ul>
+    <body>
+        <div class="loading">
+            <section class="start" id="start" data-nav="1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-center starting-right-div">
+                                <div class="align-self-center justify-content-center mx-auto">
+                                    <div class="load-container">
+                                        <div class="load"></div>
+                                        <div class="load"></div>
+                                        <div class="load"></div>
+                                        <div class="load"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-6">
+                        </div>
+                    </div>
                 </div>
+            </section>
+        </div>
+        <div class="background-body"></div>
+        <nav class="navbar navbar-expand-md fixed-top">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav ml-auto mr-auto">
+                    <li class="nav-item-1">
+                        <a class="nav-link text-uppercase active" href="#start" data-nav="1">Start</a>
+                    </li>
+                    <li class="nav-item-2">
+                        <a class="nav-link text-uppercase" href="#about" data-nav="2">About</a>
+                    </li>
+                    <li class="nav-item-3">
+                        <a class="nav-link text-uppercase" href="#portfolio" data-nav="3">Portfolio</a>
+                    </li>
+                    <li class="nav-item-4">
+                        <a class="nav-link text-uppercase" href="#contact" data-nav="4">Contact</a>
+                    </li>
+                </ul>
             </div>
         </nav>
-        <!-- ALERT -->
-        <div class="alert alert-danger alert-dismissible fade show alert-custom" role="alert"  data-dismiss="alert">
-            <strong>Uwaga!</strong> Strona nie jest aktualizowana od bardzo długiego czasu. Informacje mogą być przedawnione i fałszywe. Trwają pracę nad nową wersją strony.
-            <button type="button" class="close" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-          </div>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/avatar.svg" alt="" /><!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Jakub "Kivi" Kuziemski</h1>
+        <div class="no-modal-content">
+            <section class="start" id="start" data-nav="1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-center starting-right-div">
+                                <div class="align-self-center justify-content-center ">
+                                    
+                                    <img src="assets/Me.webp" class="img-me" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-center starting-left-div" >
+                                <div class="align-self-center justify-content-center ">
+                                    <div class="text-uppercase first-line">
+                                        Jakub <text>Kivi</text> Kuziemski
+                                    </div> 
+                                    <div class="text-uppercase second-line">
+                                        <text id="second-line-text">
+                                            
+                                        </text>
+                                        <div class="square" id="squareBlink">
+                                            &#9646;
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="divider-neon"></div>
+
+            <section class="about" id="about" data-nav="2">
+                <div class="about-left" id="about-left">
+                    <div class="about-text-header" id="about-text-header">
+                        <!-- js will place content here -->
+                    </div>
+                    <div class="about-img">
+                        <img class="img-fluid" id="about-img" src="assets/portfolio/calk/1.webp" alt="error">
+                    </div>
+                    <div class="about-text" id="about-text">
+                        <!-- js will place content here -->
+                    </div>
+                    <div onclick="rArrow()" class="arrow">
+                        &#x27A4;
+                    </div>
+                    <div onclick="lArrow()" class="arrow arrow-left">
+                        &#x27A4;
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="about-text-header about-text-header-right">
+                        Quick info
+                        <div class="data-line-date">
+                            Last update: 28.04.2023r
+                        </div>
+                    </div>
+                    
+                    <div class="data-line-header">
+                        Work: 
+                    </div>
+                    <div class="data-line">
+                        <a href="https://www.skillandchill.com/en/" target="_blank">Skill & Chill</a>
+                    </div>
+                    <div class="data-line-header">
+                        School: 
+                    </div>
+                    <div class="data-line">
+                        <a href="https://www.meil.pw.edu.pl/eng" target="_blank">Robotics Warsaw University of Technology</a>
+                    </div>
+                    <div class="data-line-header">
+                        Social media: 
+                    </div>
+                    <div class="data-line">
+                        <a href="https://github.com/JakubKivi" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jakubkivi/" target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Jakub.Kivi.Kuziemski/" target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="data-line-header">
+                        Current personal project: 
+                    </div>
+                    <div class="data-line">
+                        <a href="" target="_blank">This website</a> 
+                    </div>
+                </div>
+            </section>
+
+            <section class="portfolio" id="portfolio" data-nav="3">
+                <div class="row-custom">
+                    <div class="portfolio-col-left">
+                        <div class="portfolio-col">
+                            <div class="box box-left">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col ml-auto">
+                                            <div class="portfolio-text-header ml-auto mr-auto">
+                                                Portfolio
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row portfolio-selector">
+                                        <div class="col-4 col-lg-3 box-box" data-userid="0">
+                                            <div><img src="assets/portfolio/tafl/tafl.svg" alt="">
+                                                </div>
+                                            </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="1">
+                                            <div><img src="assets/portfolio/bzone/bzone.svg" alt="">
+                                                </div>
+                                            </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="2">
+                                            <div><img src="assets/portfolio/robocode/robocode.svg" alt="">
+                                            </div>  
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="3">
+                                            <div><img src="assets/portfolio/pierog/pierog.svg" alt="">
+                                            </div>  
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="4">
+                                            <div><img src="assets/portfolio/jakubkivi/jakubkivi.svg" alt="">
+                                            </div>  
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="5">
+                                            <div><img src="assets/portfolio/calk/calk.svg" alt="">
+                                            </div>  
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="6">
+                                            <div><img src="assets/portfolio/calk/calk2.svg" alt="">
+                                            </div>  
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="7">
+                                            <div><img src="assets/portfolio/ara/ara.svg" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="8">
+                                            <div><img src="assets/portfolio/lamp/lamp.svg" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="9">
+                                            <div><img src="assets/portfolio/pong/pong.svg" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="10">
+                                            <div><img src="assets/portfolio/jack/jack.svg" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="11">
+                                            <div><img src="assets/portfolio/powersup/powersup.svg" alt="">
+                                            </div> 
+                                        </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="12">
+                                            <div><img src="assets/portfolio/grzes/grzes.svg" alt="">
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-col-right">
+                        <div class="portfolio-col">
+                            <div class="box right-box" id="right-column">
+                                <div class="row ml-auto mr-auto w-100">
+                                    <div class="portfolio-text-header ml-auto mr-auto" id="portfolio-title">
+                                        <!-- javascript will place content here -->
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="img-container"  id="portfolio-image">
+                                        <a href="assets/portfolio/calk/1.webp">
+                                            <!-- javascript will place content here -->
+                                        </a>
+                                    </div>
+                                    
+                                    
+                                    <p class="portfolio-text"  id="portfolio-text">
+                                        <!-- javascript will place content here -->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            <section class="contact" id="contact" data-nav="4">
+                <div class="contact-container">
+                    <div class="contact-header">
+                        Contact
+                    </div>
+                    <form action="https://formspree.io/f/mrgjangn" method="POST" />
+                    
+                    <div class="data-line-contact">
+                        <input name="Name" class="input-field" id="name" type="text" placeholder="Name" required="required"
+                        data-validation-required-message="Please enter your name.">
+                        <label class="" id="nameLabel">Name</label>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
+                    <div class="data-line-contact">
+                        <input name="Email" class="input-field" id="email" type="email" placeholder="E-mail"
+                        required="required" data-validation-required-message="Please enter an email.">
+                        <label class="" id="emailLabel">Email</label>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="data-line-contact">
+                        <textarea name="Message" class="input-field" id="message" rows="5" placeholder="Message"
+                            required="required" data-validation-required-message="Please enter a message."></textarea>
+                        <label class="" id="messageLabel">Wiadomość</label>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div id="Sukces"></div>
+                    <div class="button-container">
+                        <button type="submit" class="input-field" id="sendMessageButton">Wyślij</button>
+                    </div>
+                    </form>
+                </div>
+            </section>
+            <div class="footer">
+                <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jakubkivi/" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://github.com/JakubKivi" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <div class="copyright">
+                    <span>©</span>
+                     2023 Jakub Kuziemski
+                     <span class="hidden-button" data-toggle="modal" data-target="#notebook-modal">&#x27A4;</span>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Tafl Modal -->
+        <div class="modal fade" id="portfolio-modal-0" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-0">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">Tafl Games<a href="https://github.com/JakubKivi/Tafl-Games" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>DONE</span>
+                        </div>
+                        <div class="modal-stack">
+                            <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="icomoon-free:html-five"></span>
+                                    <span class="tooltiptext">HTML</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="uiw:css3"></span>
+                                    <span class="tooltiptext">CSS</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="cib:javascript"></span>
+                                    <span class="tooltiptext">Javascript</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            May 2021 - Nov 2022
+                        </div>
+                    </div>
+                </div>
                 
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-kiwi-bird"></i></div>
-                    <div class="divider-custom-line"></div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/tafl/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            Tafl-games are ancient Nordic board games. They are similar to chess, but have many major differences. Because of the big area that it was played in, we have many different variants of the game. I used JavaScript to create a website where you can pick one of them and play according to its rules. There is also a bunch of information about the history and rules of each variant and the whole tafl-games family. You can play with your friend on the same device or you can try to play against a computer, but the minimax algorithm I implemented is really slow when you play on a bigger board or when the situation is more complicated. Hopefully I will have more time in the future to upgrade it.<br><br>
+                            Click <a href="https://jakubkivi.github.io/Tafl-Games" target="_blank">here</a> if you want to play, but it's in Polish only.
+                        </p>
+                        <div class="modal-img-bottom-container">
+                            <img class="modal-img-bottom" src="assets/portfolio/tafl/2.webp" alt="error">
+                        </div>
+                    </div>
                 </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Programista - Elektronik - Robotyk</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+            </div>
+        </div>
+        <!-- Bizon Modal -->
+        <div class="modal fade" id="portfolio-modal-1" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-1">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">BZone<!--<a href="https://github.com/JakubKivi/Tafl-Games" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>--></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
                 </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" id="mod" data-toggle="modal" data-target="#taflModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/tafl/tafl.svg" alt="" />
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>DOING</span>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#calkModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="fa:circle-o"></span>
+                                    <span class="tooltiptext">Outsystems</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="uiw:css3"></span>
+                                    <span class="tooltiptext">CSS</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="cib:javascript"></span>
+                                    <span class="tooltiptext">Javascript</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="tabler:sql"></span>
+                                    <span class="tooltiptext">SQL</span> 
+                                </div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/calk/calk.svg" alt="" />
                         </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#araModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/ara/ara.svg" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#lampModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/lamp/lamp.svg" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#wyswModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/wysw/wysw.svg" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#jackModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/jack/jack.svg" alt="" />
+                        <div class="modal-time">
+                            Nov 2021 - Now
                         </div>
                     </div>
                     
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#zasiModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/zasi/zasi.svg" alt="" />
+                </div>
+                
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/bzone/1.webp" alt="error">
                         </div>
+                        <p class="portfolio-text">
+                            In Skill and Chill I work in a team responsible for “Business Zone”. It is a platform created for automation and optimization of business processes for entrepreneurs. It contains modules related to management, budget planning, sourcing, analyzing suppliers, order accepting and much <a href="https://www.skillandchill.com/en/BusinessZone-procure-to-pay-p2p-budgeting-controling-purchasing-data-analysis" target="_blank">more</a>. <br><br>
+                            I am mainly focused on the Procurement module. It is responsible for the requisition and ordering process. Everything is based on an Outsystems platform. I am making frontend using it, as well as some CSS and JS. For server actions I am also using outsystems and some SQL queries. There are a lot of things I learned already, such as database architectures or development processes, but the most important is probably good programming habits. Most of my previous projects were just for me, and now I can really understand how to work with a team on a really big project.                            
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Robocode Modal -->
+        <div class="modal fade" id="portfolio-modal-2" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-2">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">Robocode<a href="https://github.com/JakubKivi/StudentsGames" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>Finished</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:scratch"></span>
+                                    <span class="tooltiptext">Scratch</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                    <span class="tooltiptext">C++</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                    <span class="tooltiptext">Basics of electronics</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                    <span class="tooltiptext">Arduino</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:construct3"></span>
+                                    <span class="tooltiptext">Construct 3</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="mdi:unity"></span>
+                                    <span class="tooltiptext">Unity</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="mdi:language-python"></span>
+                                    <span class="tooltiptext">Python</span>
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="icomoon-free:html-five"></span>
+                                    <span class="tooltiptext">HTML</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="uiw:css3"></span>
+                                    <span class="tooltiptext">CSS</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="cib:javascript"></span>
+                                    <span class="tooltiptext">Javascript</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Sep 2020 - Feb 2022
+                        </div>                        
+                    </div>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">                            
+                            <img class="img-fluid" src="assets/portfolio/robocode/1.webp" alt="error">                            
+                        </div>
+                        <p class="portfolio-text">
+                            Robocode is an online programming school for kids that I worked in. I was teaching basics of programming in Scratch for younger kids and C++ for older ones, as well as basics of electronics, physics and Arduino in "Robotic course". During "Game dev course" we were working in Construct with younger kids and in Unity with older ones. "Software dev course" was mainly about basic algorithms in python. I also conducted a "web dev course" which was about basics of HTML, CSS and for older kids JS.
+                        	<br><br>
+                        	After a few months of working I became "head teacher" which means that I was responsible for our team of teachers (5-8 people). My duties were making sure we have the best performance during lessons as well as quality of educational materials, contacting with managers and sometimes training our teachers.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Christmas Modal -->
+        <div class="modal fade" id="portfolio-modal-3" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-3">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">Pierogi Game
+                        <!-- <a href="https://github.com/JakubKivi/CalkaBot" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a> -->
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>DONE</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="mdi:unity"></span>
+                                    <span class="tooltiptext">Unity</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Dec 2021
+                        </div>      
                     </div>
                     
-                    <!-- Portfolio Item 7-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#grzesModal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/pierog/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            In 2021, along with my girlfriend we decided to make a game for our friends as a Christmas gift. Of course we started a little bit too late, so it has a kind of "game jam vibe". It's mainly about collecting presents, which give you more time... to collect more presents. At the same time you have to avoid objects that slow you down and collect things that can speed you up.
+
+                        </p>
+                        <div class="video">
+                            <div class="video__youtube" data-youtube>
+                                <img src="https://i.ytimg.com/vi/CIGZBJ9oFWo/maxresdefault.jpg" class="video__placeholder" />
+                                <button class="video__button" data-youtube-button="https://www.youtube.com/embed/CIGZBJ9oFWo"></button>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/grzes/grzes.svg" alt="" />
                         </div>
+                        <!-- <div class="modal-video">
+                            <iframe src="https://www.youtube.com/embed/CIGZBJ9oFWo"></iframe>
+                        </iframe>
+                        </div> -->
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">O mnie</h2>
-                <h6 class="text-center text-uppercase text-white">Ostatnia aktualizacja: 24.11.21</h6>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-6 ml-auto">
-                        <p style="text-align: justify" class="lead">Nazywam się Jakub Kuziemski, znany często, jako "Kivi", ale to jest oczywiście na górze strony. Jestem 20 letnim programistą/robotykiem... To znaczy, chciałbym kiedyś zostać. Na razie jestem studentem drugiego roku, Robotyki i Automatyki na wydziale <a href="https://www.meil.pw.edu.pl" target="_blank" style="color: #805122" >Mechaniki Energetyki i Lotnictwa Politechniki Warszawskiej</a>. Udało mi się już na samym początku dołączyć do <a href="http://knr.meil.pw.edu.pl" target="_blank" style="color: #805122;">Koła Naukowego Robotyków</a>. Za niedługo mam również nadzieję dołączyć do <a href="https://www.ska.pw.edu.pl//" target="_blank" style="color: #805122;">Studienckiego Koła Astronautyczego</a>. Wszystko dlatego, że uważam, że najważniejsze jest doświadczenie i najwięcej uczę się w praktyce.
-
-                        Z tego samego powodu zacząłem pracę jako programista WEB w <a href="https://www.skillandchill.com" target="_blank" style="color: #805122;">Skill & Chill</a>.
-
-                        Poza tym już od ponad roku pracuję na stanowisku starszego nauczyciela (tzw. HeadTeachera) w szkole robotyki <a href="https://robocode.pl" target="_blank" style="color: #805122" >Robocode</a>, gdzie przewodząc zespołem nauczycieli staram się zarazić młodszych swoją pasją do programowania i robotyki. 
-
-                        Wcześniej ukończyłem także klasę universytecką w <a  href="http://orion.loiv.torun.pl" target="_blank" style="color: #805122"> IV Liceum Ogólnokształcącym w Toruniu</a>, a wszystko co można zobaczyć w <a class="js-scroll-trigger" href="#portfolio" style="color: #805122">portfolio</a> jest tylko hobistyczną, dobrą zabawą, którą uskuteczniałem w wolnym czasie wtedy i teraz na studiach &#128516;.<br/><br/>
-
-
-                        Jeżeli chodzi o umiejętności to, uważam, że dobrze znam język C++, dzięki zabawie z biblioteką graficzną SFML, z którą spedziłem kilka długich nocy nad grą <a style="cursor: pointer; color: #805122"  data-toggle="modal" data-target="#araModal" id="mod">ARA</a>, a także wariacje C/C++ występującą w Arduino (widać w pozostałych projektach). Jak można się domyślić, wiem też co nieco o programowaniu webowym (HTML, CSS, JS, PHP, SQL). Ostatnio najwięcej czasu spędzam przy JS, pracując nad grą <a style="cursor: pointer; color: #805122"  data-toggle="modal" data-target="#taflModal" id="mod">Tafl</a>. Programowałem też trochę w pythonie, C, C#, Java, nodeJS i cieszę się na myśl o nauce kolejnych języków i frameworków! Korzystam też czasem z Linuxa, co widać w jednym z projektów w którym używam Raspberry Pi, więc ten system nie jest mi obcy. Jak dało się zauważyć po ilości linków do githuba w portfolio, praca z systemem kontroli wersji też jest dla mnie normą. Zapewne zapomniałem o czymś jeszcze wspomnieć i część projektów jeszcze powstaje, ale na pewno już wiesz jak można zapytać &#128517;. Chętne uczestniczę w większych projektach, więc <a class="js-scroll-trigger" href="#contact" style="color: #805122">skontaktuj się</a> jeśli chcesz. </p>
-                    </div>
-                    <div class="col-lg-6 mr-auto">
-                        <img class="img-fluid rounded mb-5" src="assets/img/about/MyFace.jpg" alt="">
-                        <p style="text-align: justify"  class="lead">W wolnym czasie, kiedy nie pracuję nad nowymi projektami, kocham podróżować. Lubię też jeździć na rolkach czy rowerze, a i pograniem w siatkę w miłym towarzystwie nie wzgardzę. Zdarzyło mi się jeździć na nartach i marzę aby to powtórzyć w tym roku. Poza oczywistym zainteresowaniem grami komputerowymi, lubię też gry planszowe i karciane, ale najbardziej te nastawione na strategie. Dlatego też uwielbiam grać w szachy (ogólnie mam bzika na punkcie gier szachopodobynch), szczególnie z moją dziewczyną. Swoją drogą jest ona świetnym grafikiem (<a style="color: #805122" href="https://tortillon.github.io">sam zobacz</a>) i razem udało nam się stworzyć kilka naprawdę dobrze wyglądających projektów (ARA, Tafl czy w zasadzie strona na którą właśnie patrzysz).<br><br>
-
-                        Pewnie możnaby się rozpisywać jeszcze dużo, ale myślę, że najważniejsze już zostało zawartę. Być może nieco nieskromnie, ale dodam, że jestem ambitnym i ciekawym świata młodym człowiekiem. &#128527;</p>
-                    </div>
-                </div>
             </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Skontaktuj się</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-						<form action="https://formspree.io/panmcleon@gmail.com" method="POST" />
-						<div class="control-group">
-						  <div class="form-group floating-label-form-group controls mb-0 pb-2">
-							<label>Imię</label>
-							<input  name="name" class="form-control" id="name" type="text" placeholder="Imię" required="required" data-validation-required-message="Proszę podać imię.">
-							<p class="help-block text-danger"></p>
-						  </div>
-						</div>
-						<div class="control-group">
-						  <div class="form-group floating-label-form-group controls mb-0 pb-2">
-							<label>Adres e-mail</label>
-							<input name="email" class="form-control" id="email" type="email" placeholder="Adres e-mail" required="required" data-validation-required-message="Prosze podać adres e-mail">
-							<p class="help-block text-danger"></p>
-						  </div>
-						</div>
-						<div class="control-group">
-						  <div class="form-group floating-label-form-group controls mb-0 pb-2">
-							<label>Wiadomość</label>
-							<textarea name="message" class="form-control" id="message" rows="5" placeholder="Wiadomość" required="required" data-validation-required-message="PProszę podać wiadomość."></textarea>
-							<p class="help-block text-danger"></p>
-						  </div>
-						</div>
-						<br>
-						<div id="Sukces"></div>
-						<div class="form-group">
-						  <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Wyślij</button>
-						</div>
-					  </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Lokalizacja</h4>
-                        <p class="lead mb-0">Polska<br />Warszawa</p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">W sieci</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/Jakub.Kivi.Kuziemski/" target="_blank"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/JakubKivi" target="_blank"><i class="fab fa-fw fa-github"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/jakub_kivi/" target="_blank"><i class="fab fa-fw fa-instagram"></i></a>
-                        <br/>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/jakub-kuziemski-6548931a9/" target="_blank"><i class="fab fa-fw fa-linkedin"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/JakubKivi" target="_blank"><i class="fab fa-fw fa-twitter"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">Ciekawe strony</h4>
-                        <!-- About Section Button-->
-                        <div class="text-center mt-4">
-                            <a class="btn btn-xl btn-outline-light" data-toggle="modal" data-target="#loginModal">Sprawdź</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <section class="copyright py-4 text-center text-white">
-            <div class="container"><small><a href="https://github.com/JakubKivi/webKivi/blob/master/LICENSE">Copyright © 2020</a> Jakub Kuziemski</small></div>
-			<div class="container"><small>Autorka grafik <a href="https://www.instagram.com/priestoov/" target="_blank">Joanna Butkiewicz</a></small></div>
-        </section>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-        <div class="scroll-to-top d-lg-none position-fixed">
-            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
         </div>
-        <!-- Portfolio Modals-->
-        <div class="portfolio-modal modal fade" id="taflModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+
+        <!-- Jakubkivi Modal -->
+        <div class="modal fade" id="portfolio-modal-4" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-4">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">My personal website<a href="https://github.com/JakubKivi/jakubkivi.github.io" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
                     </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Szachy wikingów</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/Tafl-Games" target="_blank">
-                                            <i class="fab fa-fw fa-github"></i>
-                                        </a>
-                                        <div class="divider-custom-line"></div>
-                                    </div><h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: Maj 2020</h6>
-                                    <h6 class="text-secondary text-uppercase mb-0">Zakończenie: Wkrótce</h6><br>
-                                    
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/tafl/2.jpg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Projekt nad którym aktualnie pracuje. Niedługo więcej informacji.</p>
-                                    <p class="mb-5">Link do bety: <a href="https://jakubkivi.github.io/Tafl-Games/src/">Wypróbuj</a><br></p>
-                                    
-
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/tafl/1.png" alt="" />
-
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>DONE</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="icomoon-free:html-five"></span>
+                                    <span class="tooltiptext">HTML</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="uiw:css3"></span>
+                                    <span class="tooltiptext">CSS</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="cib:javascript"></span>
+                                    <span class="tooltiptext">Javascript</span> 
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-time">
+                            Sep 2019 - Now 
+                        </div>  
+                    </div>
+                    
+                </div>
+                
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/jakubkivi/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            This website is the 4th iteration, even though the 2nd and 3rd were never published under jakubkivi.github.io. First version of my personal website was mainly based on templates, that is why after a year I decided to do the 2nd version by myself. Later, after using Jekyll in one of my other projects I decided to start over, using this framework. I didn't finish it because of my trip to the US. With a little bit of anger because I still couldn't finish any other version of this website I decided to make it simple and professional and... Start over. This time I used only HTML, SCSS and JS. I have also used bootstrap for a few things "to make it faster" but I have to admit that it made more problems than positives and I regret this decision. Maybe I should make a 5th version then?
+                            <br><br>
+                            Previous versions of this website:  <br>
+                            <a href="#TODO">1st Version</a><br>
+                            <a href="#TODO">2nd and 3rd Version</a><br>
+                        </p>
+                        
+                        <div class="modal-img-bottom-container">
+                            <img class="modal-img-bottom" src="assets/portfolio/jakubkivi/3.webp" alt="error">
+                        </div>
+                        <div class="modal-img-bottom-container">
+                            <img class="modal-img-bottom" src="assets/portfolio/jakubkivi/2.webp" alt="error">
+                        </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
             </div>
         </div>
-        <!-- Lamp Modal -->
-        <div class="portfolio-modal modal fade" id="lampModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+        
+        <!-- Calkabot1.0 Modal -->
+        <div class="modal fade" id="portfolio-modal-5" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-5">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">Całkabot v1.0<a href="https://github.com/JakubKivi/CalkaBot" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
                     </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Muzyczna Lampka</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/" target="_blank">
-                                			<i class="fab fa-fw fa-github"></i>
-                                		</a>
-                                        <div class="divider-custom-line"></div>
-                                    </div><h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: Styczeń 2019</h6>
-                                    <h6 class="text-secondary text-uppercase mb-0">Zakończenie: maj 2019</h6><br>
-                                    
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/1.jpg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lampka Reagująca na muzyke opiera się na analogowym czujniku dźwiękowym firmy DFRobot i atmedze328, podłączonymi do adresowalnych diod RGB ws2812. W zależności od głośności, ledy zapalają się, gasną i zmieniają kolory. Jeśli muzyka jest cicho, lampka świeci się na niebiesko, kiedy głośność rośnie zmienia kolor na czerwony, a jeśli jest czerwona zbyt długo zmienia się płynnie w zielony. Czułość lampki jest ustawiana przez potencjometr (w razie gdybym chciał korzystać, i w domowym zaciszu, i na głośnej imprezie).</p>
-                                    <p class="mb-5">Wszystko jest na mojej płytce prototypowej. Rama lampki jest zrobiona ze słoika obklejonego matą łazienkową. Jednostka sterująca jest zamknieta w pudełku i może być zasilana przez USB albo prądem stałym do 12V. Trzy diody informacyjne pokazują kolejno, czy zasilanie jest podłączone, czy lampka jest włączona, oraz czy atmega działa poprawnie.
-                                    Poniżej można zobaczyć zdjęcia płytki, oraz wnętrze jednostki sterującej, ale najważniejsze to nagranie gdzie lampka faktycznie reaguje na dźwięk. Miłego oglądania!<br></p>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-                                    src="https://www.youtube.com/embed/CakBRejQ1KU?enablejsapi=1?enablejsapi=1">>
-                                    </iframe>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-                                    src="https://www.youtube.com/embed/IsOpIA3cJoo?enablejsapi=1?enablejsapi=1">>
-                                    </iframe>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-                                    src="https://www.youtube.com/embed/c6nH270sDiY?enablejsapi=1?enablejsapi=1">>
-                                    </iframe>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-                                    src="https://www.youtube.com/embed/-fSQcshL2B0?enablejsapi=1?enablejsapi=1">>
-                                    </iframe>
-
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/2.jpg" alt="" />
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/lamp/3.jpg" alt="" />
-
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>DONE</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                    <span class="tooltiptext">C++</span> 
                                 </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                    <span class="tooltiptext">Electronics</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                    <span class="tooltiptext">Arduino</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Apr 2018
+                        </div>  
+                    </div>
+                    
+                </div>
+                
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/calk/2.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            CałkaBot 1.0 is the first robot of CałkaBot series. I made it with my friend <a href="https://github.com/delipl" target="_blank">Deli</a> in highschool for mini sumo competition in Bydgoszcz. <a href="https://en.wikipedia.org/wiki/Robot-sumo" target="_blank">More about minisumo fights</a>, if you don't know what it is. <br>
+                            We have used the most common pololu engines and, like every minisumo robot, IR proximity sensors (for enemies) and transoptors (for the edge of the battlefield). Everything is controlled by the microcontroller atmega328p and motor driver L298n. Frame of the robot is made with copper plates. Our advantage is having 4 wheels and a double front of the robot. When we reach the border, we don't have to turn around, but simply ride backwards which is now a new forward.
+                            <br><br>
+                            As we have noticed during the competition, our robot was pretty good. It was a competition for school students only, so competitors often have had strange problems, like unnoticing an enemy or an edge. We also have had a nasty problem, which was caused by a low experience level in microcontrollers at the time. Now we are kicking ourselves for not adding a filter capacitor beetwen the ground and a resonator, and not adding a resistor from reset to 5V. After a powerful hit, or sometimes even after a quick start, our robot has been restarting himself. But even with this issue we have managed to get to a semifinal group and unlucky we have ended in second place in this group. It was a huge lesson, and as we got new knowledge, we knew that we would do our best to show off a better side next year.
+                        </p>
+                    </div>
+                    <div class="video">
+                        <div class="video__youtube" data-youtube>
+                            <img src="https://i.ytimg.com/vi/9eViPKT_Y0Y/maxresdefault.jpg" class="video__placeholder" />
+                            <button class="video__button" data-youtube-button="https://www.youtube.com/embed/9eViPKT_Y0Y"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Calkabot2 Modal -->
+        <div class="modal fade" id="portfolio-modal-6" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-6">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">Całkabot v2.0<a href="https://github.com/JakubKivi/CalkaBot" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>DONE</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                    <span class="tooltiptext">C++</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                    <span class="tooltiptext">Electronics</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                    <span class="tooltiptext">Arduino</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Apr 2019
+                        </div>  
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/calk/3.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            Our second mini sumo robot we decided to name CałkaBot 2.0 to honor his predecessor. This time we decided to create our own PCB board, and <a href="https://github.com/delipl" target="_blank">Deli</a> did it great. We decided not to change the engines, proximity sensors, and frame. We changed the floor sensor, which was a bad decision (CNY70 were better option). This time, as we have noticed that CałkaBot 1.0 was not heavy enough, we have put some lead on top as an additional weight. Our robot weighs exactly 500g (thats minisumo's max). After a few test fights between our CałkaBots we realized that the new one is better. 	
+                            <br><br>
+	                        During the competition in Bydgoszcz, we spotted a nasty problem. Long story short, when our robot was being hit hard he bobbed, and because of that, he was thinking that an enemy was behind him (mistake during strapping sensors), so he runned of a ring himself, and lost a few battles because of that. We haven't managed to leave a group stage, but our effort has been appreciated by the main sponsor of the competition, so we have won a special prize. CałkaBot 2.0 has fought really well in a few of his fights, so we decided to improve both him, and CałkaBot 1.0, and go to Baltic Robo Battles. There we have met many new people, and gained a lot of experience. We have also confronted technical university students, and sometimes we have won against them. With that huge ammount of new knowledge we have decided not to build a new robot, but two robots, so we could confront them and see clearly all the bad aspects. (Facing the new version of CałkaBot with the old one is less objective, and the new one almost always wins). Unfortunately the pandemic and studies stopped our plans, but I hope that at least CałkaBot 3k0 (k stands for ‘Kivi’) will show up at some competitions in the future. 
+
+                        </p>
+                    </div>
+                    <div class="video">
+                        <div class="video__youtube" data-youtube>
+                            <img src="https://i.ytimg.com/vi/Yt9VWj_V268/maxresdefault.jpg" class="video__placeholder" />
+                            <button class="video__button" data-youtube-button="https://www.youtube.com/embed/Yt9VWj_V268"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- ARA Modal -->
+        <div class="modal fade" id="portfolio-modal-7" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-7">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">ARA<a href="https://github.com/JakubKivi/ARA_2.0" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>Abandoned</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                    <span class="tooltiptext">C++</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:sfml"></span>
+                                    <span class="tooltiptext">SFML</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Jan 2019
+                        </div>  
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/ara/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            ARA is a game, made by me and my friends during winter holiday in 2019 as a challenge to make a game in C++ and SFML library in only two weeks (it was one of our first projects). It's a turn-based game similar to chess seemingly, but has huge twists, like different figures' moves, removal of the map or two moves each turn. The rules might be strange and tricky at first, but after a few games they start to make sense. After the winter holiday my friends practically abandoned the project. I've had a few attempts to finish the game (menu, saves system etc.), but each time I didn't have enough time or motivation to do so. Now it stays in the backlog, maybe when I will be out of new projects ideas I will come back and finish it.
+                        </p>
+                    </div>
+                    <div class="video">
+                        <div class="video__youtube" data-youtube>
+                            <img src="https://i.ytimg.com/vi/eQDRGEyHn6w/maxresdefault.jpg" class="video__placeholder" />
+                            <button class="video__button" data-youtube-button="https://www.youtube.com/embed/eQDRGEyHn6w"></button>
+                        </div>
+                    </div>
+                    <div class="modal-img-bottom-container">
+                        <img class="modal-img-bottom" src="assets/portfolio/ara/3.webp" alt="error">
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+         <!-- Lamp Modal -->
+         <div class="modal fade" id="portfolio-modal-8" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-8">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">Music Lamp<!--<a href="https://github.com/JakubKivi/jakubkivi.github.io" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>-->
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>DONE</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                    <span class="tooltiptext">C++</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                    <span class="tooltiptext">Electronics</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                    <span class="tooltiptext">Arduino</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Feb - May 2019
+                        </div>  
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/lamp/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            The Music Reactive Lamp is based on a DFRobot's analog sound sensor and an atmega328, connected to a ws2812 RGB LED strip. Depending on the noise level, the LEDs turn on and off or change colors. If music is quiet, the lamp shines in blue. After volume increases drastically, the lamp shines red, and if it is red for too long it smoothly changes to green. Sensitivity of the lamp is adjustable with a potentiometer (in case I want to use it both, in a domesticity and at a party). Everything is set up on my prototype board. A frame of the lamp is made with a jar plastered with a bath mat. The control unit is cased, and can be powered with USB or DC input, up to 12V. Three diodes show whether power is plugged, whether the logic part is powered, and whether the atmega works properly. Below you can see photos of the working stage and the inside of the case, but the main thing is a video that shows the Music Reactive Lamp working. Enjoy!
+                        </p>
+                        <div class="video">
+                            <div class="video__youtube" data-youtube>
+                                <img src="https://i.ytimg.com/vi/IsOpIA3cJoo/maxresdefault.jpg" class="video__placeholder" />
+                                <button class="video__button" data-youtube-button="https://www.youtube.com/embed/IsOpIA3cJoo"></button>
+                            </div>
+                        </div>
+                        <div class="modal-img-bottom-container">
+                            <img class="modal-img-bottom" src="assets/portfolio/lamp/3.webp" alt="error">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+         <!-- Pong Modal -->
+         <div class="modal fade" id="portfolio-modal-9" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-9">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">PingPong Display<a href="https://github.com/JakubKivi/PONG" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>Abandoned</span>
+                        </div>
+                        <div class="modal-stack">
+                             <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                    <span class="tooltiptext">C++</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                    <span class="tooltiptext">Electronics</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                    <span class="tooltiptext">Arduino</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Feb - Jun 2019
+                        </div>  
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/pong/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            This display is made with ping pong balls (actually halves of them), backlighted with ws2812 diodes. Usually, it shows actual time, which is loaded from a DS1307 timer module that has a small battery, so even if power is turned off, it knows what time it is. The display can also show simple animations that you can see on the videos below. I even programmed a simple Google dinosaur game. Everything is controlled by an atmega328. Controller box has 3 buttons for changing modes (the actual time, animations, a timer, dino-game), colors or brightness. After moving to a new flat I started making a new controller but once again, studies killed my free time.
+                        </p>
+                        <div class="video">
+                            <div class="video__youtube" data-youtube>
+                                <img src="https://i.ytimg.com/vi/eWEsYZAgbfc/maxresdefault.jpg" class="video__placeholder" />
+                                <button class="video__button" data-youtube-button="https://www.youtube.com/embed/eWEsYZAgbfc"></button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
             </div>
         </div>
-        <!-- Jack Modal-->
-        <div class="portfolio-modal modal fade" id="jackModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+        <!-- Jack Modal -->
+        <div class="modal fade" id="portfolio-modal-10" tabindex="-1" role="dialog">
+           <div class="modal-dialog modal-lg" role="document">
+           <div class="modal-content"  id="modal-10">
+               <div class="modal-header">
+                   <div class="modal-title ml-auto">Jack<a href="https://github.com/JakubKivi/Jack" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
+                   </div>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       &#xd7;
+                   </button>
+               </div>
+               <div class="subtitle-shadow">
+                   <div class="subtitle">
+                       <div class="modal-status">
+                           Status: <span>Abandoned</span>
+                       </div>
+                       <div class="modal-stack">
+                            <div class="icons">
+                               <div class="portfolio-icon">
+                                   <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                   <span class="tooltiptext">C++</span> 
+                               </div>
+                               <div class="portfolio-icon">
+                                   <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                   <span class="tooltiptext">Electronics</span> 
+                               </div>
+                               <div class="portfolio-icon">
+                                   <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                   <span class="tooltiptext">Arduino</span> 
+                               </div>
+                           </div>
+                       </div>
+                       <div class="modal-time">
+                           Feb - Jun 2019
+                       </div>  
+                   </div>
+               </div>
+               <div class="modal-body">
+                   <div class="">
+                       <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/jack/1.webp" alt="error">
+                       </div>
+                       <p class="portfolio-text">
+                            The idea of the Jack project was to make my own home assistant. I made the first model that could control sockets and lights, when logged in. There were also a bunch of sensors and displays... Too much to write about, just watch the video below if you want, but be careful, my English wasn't so fluent back then.
+                       </p>
+                       <div class="video">
+                           <div class="video__youtube" data-youtube>
+                               <img src="https://i.ytimg.com/vi/JsVWjif12rM/maxresdefault.jpg" class="video__placeholder" />
+                               <button class="video__button" data-youtube-button="https://www.youtube.com/embed/JsVWjif12rM"></button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+           </div>
+           </div>
+       </div>
+       <!-- zasilacz modal -->
+       <div class="modal fade" id="portfolio-modal-11" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-11">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">Custom Power Supply
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
                     </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Jack - Inteligentny asystent</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/Jack" target="_blank">
-                                            <i class="fab fa-fw fa-github"></i>
-                                        </a>
-                                        <div class="divider-custom-line"></div>
-                                    </div><h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: Październik 2019</h6>
-                                    <h6 class="text-secondary text-uppercase mb-0">Zakończenie: Zawieszony</h6><br>
-                                    
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid-jack rounded mb-5" src="assets/img/portfolio/jack/1.jpg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Jack wydawał mi się moim największym projekt jak dotąd, a na pewno był wówczas najbardziej złożony. Moim głównym celem było stworzenie własnego asystenta kontrolującego gniazdka, światła oraz większość moich wcześniejszych projektów. Dużo by pisać, lepiej spojrzeć na video i zobaczyć znaczną część pierwszego modelu demonstracyjnego. Wszystko było w fazie testów i rozwoju, ale niestety przeprowadzka wstrzymała projekt i teraz jest on w zasadzie zawieszony. Niemniej jednak, nauczyłem się przy nim niesamowicie dużo.</p>
-                                    
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-                                    src="https://www.youtube.com/embed/JsVWjif12rM?enablejsapi=1">>
-                                    </iframe>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>Finished</span>
+                        </div>
+                        <div class="modal-stack">
+                            <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                    <span class="tooltiptext">Electronics</span> 
                                 </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            Jan - Feb 2019
+                        </div>  
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/powersup/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            This project is purely about electronics and mechanics. No coding involved (except for optional control by Jack in the past). I used two old power supplies. Better one is a real power supply -12V, 3.3V, 5V, 12V. From the second one I used just a case, which I cut as I wanted. It contains banana connectors, screw connectors and speaker connectors, but its main value is an adjustable voltage regulator made with LM2569. I have also added a small fan which I have used for soldering, but it didn't survive relocation.
+                        </p>
+                        <div class="video">
+                            <div class="video__youtube" data-youtube>
+                                <img src="https://i.ytimg.com/vi/x3YOLtF39Sc/maxresdefault.jpg" class="video__placeholder" />
+                                <button class="video__button" data-youtube-button="https://www.youtube.com/embed/x3YOLtF39Sc"></button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
             </div>
         </div>
-        <!--Wysw Modal-->
-        <div class="portfolio-modal modal fade" id="wyswModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Wyświetlacz Ping-Pong LED</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/PONG" target="_blank">
-                                			<i class="fab fa-fw fa-github"></i>
-                                		</a>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: luty 2019</h6>
-                                    <h6 class="text-secondary text-uppercase mb-0">Zakończenie: czerwiec 2019</h6><br>
-                                    
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/wysw/1.jpg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/PingPong/Clock1.jpg" alt="">
-									
-									
-									<p class="mb-5">Wyświetlacz jest zrobiony z piłeczek ping-pongowych (w zasadzie z połówek), podświetlonych diodami ws2812. Zwykle pokazuje aktualny czas, który pobiera z zegaru DS1307. Moduł ma małą baterię, więc nawet gdy nie jest podłączony do zasilania, wie którą mamy godzinę. Wyświetlacz może pokazywać także proste animacje (zobacz video). Próbowałem nawet zaprogramować prostą grę (podobną do googlowego dinozaura), ale jest jeszcze nie dokończona. Wszystko jest kontrolowane przez atmege328. Pudełko z jednostką centralną ma 3 przyciski zmianiające tryb pracy (zegarek, animacje, stoper, gra), kolory i jasność. W przyszłości, chcę żeby ten projekt był połączony z <a href="" data-dismiss="modal" data-toggle="modal" data-target="#jackModal">Jackiem</a>.
-									</p>
-									<iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-									src="https://www.youtube.com/embed/eWEsYZAgbfc?enablejsapi=1">>
-									</iframe>
-									<button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
-                                </div>
+       <!-- modal grzes -->
+       <div class="modal fade" id="portfolio-modal-12" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"  id="modal-12">
+            <div class="modal-header">
+                <div class="modal-title ml-auto">Grzesiek Robot<a href="https://github.com/JakubKivi/Grzesiek" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    &#xd7;
+                </button>
+            </div>
+            <div class="subtitle-shadow">
+                <div class="subtitle">
+                    <div class="modal-status">
+                        Status: <span>Abandoned</span>
+                    </div>
+                    <div class="modal-stack">
+                        <div class="icons">
+                            <div class="portfolio-icon">
+                                <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                <span class="tooltiptext">C++</span> 
+                            </div>
+                            <div class="portfolio-icon">
+                                <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                <span class="tooltiptext">Electronics</span> 
+                            </div>
+                            <div class="portfolio-icon">
+                                <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                <span class="tooltiptext">Arduino</span> 
                             </div>
                         </div>
                     </div>
+                    <div class="modal-time">
+                        Apr 2017 - May 2018
+                    </div>  
                 </div>
             </div>
-        </div>
-        <!-- Calk Modal -->
-        <div class="portfolio-modal modal fade" id="calkModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
-                                    	CałkaBoty
-                                    </h2>
-                                    
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon">
-                                        	<a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/CalkaBot" target="_blank">
-                                    			<i class="fab fa-fw fa-github"></i>
-                                    		</a>
-                                    	</div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: kwiecień 2018</h6>
-                                    <br>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/calk/1.jpg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">
-                                    	CałkaBoty to roboty <a href="https://pl.wikipedia.org/wiki/Minisumo">minisumo</a> stworzone przeze mnie i mojego przyjaciela <a href="https://www.facebook.com/delicatK" target="_blank">Jakuba Delicata</a>. Pierwszy, CałkaBot 1.0 został stworzony w 2018 na <a href="http://roboty.utp.edu.pl" target="_blank">zawody miniSUMO </a> na UTP w Bydgoszczy. Byliśmy uczniami pierwszej klasy liceum i nie mieliśmy wielkiego doświadczenia, więc było dla nas wielkim zaskoczeniem, kiedy dostaliśmy się do półfinałów. Drugi robot, CałkaBot 2.0, stworzony następnego roku, wygrał nagordę specjalną w Bydgoszczy. Zostaliśmy docenieni za postęp i za płytkę PCB projektu <a href="https://github.com/delipl/CalkaBot" target="_blank">Deliego</a>. Z obydwoma robotami, ulepszonymi do wersji 1.1 i 2.1, pojechaliśmy na <a href="https://balticrobo.eu" target="_blank">Bałtyckie Bitwy Robotów</a>, aby zmierzyć się ze studentami. Nie byliśmy zaskoczen, kiedy przegrywaliśmy wiele walk, ale CałkaBoty często były godnymi przeciwnikami. Udało nam się nawet wygrać kilka walk przeciwko studentom z politechnik.
-                                    	<br><br>
-                                    	<b>CałkaBoty 3d0 i 3k0 nadchodzą.</b>
-                                    </p>
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
-                                    	CałkaBot 1.0
-                                    </h2>
-                                	<div class="divider-custom">
-					                    <div class="divider-custom-line"></div>
-					                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-					                    <div class="divider-custom-line"></div>
-					                </div>
-                                    <h6 class="text-secondary text-uppercase mb-0">kwiecień 2018</h6>
-                                    <br>
-						            <p class="mb-5">
-                                    	Ale po kolei, CałkaBot 1.0 był głównie zasponsorowany przez <a href="http://orion.loiv.torun.pl" target="_blank">IV Liceum im. Tadeusza Kościuszki w Toruniu</a>. Użyliśmy najpopularniejszych silników pololu i, jak każdy robot miniSUMO, czujników zbliżeniowych na podczerwień i transoptorów do widzenia krawędzi pola walki. Wszystko kontrolowane przez mikrokontroler atmega328p i sterownik silników L298n. Rama robota jest zrobiona z płytek miedzianych. Naszą główną przewagą miało być posiadanie 4 kół i dwóch przodów. Kiedy dojeżdżamy do krawędzi planszy, nie musimy się odwracać, po prostu jedziemy w tył, który jest teraz nowym przodem.
-                                    	<br><br>
-                                    	Jak zauważyliśmy na zawodach, nasz robot był dość dobry. Były to zawody szkolne, więc uczestnicy często mieli dziwne problemy, jak np. nie dostrzeganie przeciwnika czy krawędzi. My również napotkaliśmy nieprzyjemny problem, który był spowodowany małym doświadczeniem (wtedy) w programowaniu mikrokontrolerów. Teraz plujemy sobie w brodę za nie dodanie kondensatorów filtrujących pomiędzy masą a rezonatorem, oraz nie dodanie rezystora podciągającego reset do 5V. Po mocnym uderzeniu, albo nawet czasem szybkim zrywie, nasz robot restartował się. Jednak nawet z tym problemem udało nam się dostać do grupy półfinałowej, w której niefortunnie skończyliśmy na drugim miejscu. Była to wielka lekcja, a z nową wiedzą, wiedzieliśmy że damy z siebie wszystko za rok.
-                                    </p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/calk/2.jpg" alt="" />
-                                    <p class="mb-5">
-                                    	CałkaBot 1.0 i faza budowy, powyżej.<br>
-                                    	Pierwsze dwie walki CałkaBota 1.0, stoczone w Bydgoszczy, poniżej. Przeciwsko pierwszemu przeciwnikowi CałkaBot jest bliżej kamery, przeciwko drugiemu, dalej.
-                                    </p>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-									src="https://www.youtube.com/embed/9eViPKT_Y0Y?mute=1?enablejsapi=1">>
-									</iframe>
-									<h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
-                                    	CałkaBot 2.0
-                                    </h2>
-									<div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <h6 class="text-secondary text-uppercase mb-0">kwiecień 2019</h6>
-                                    <br>
-                                    <p class="mb-5">
-                                    	Naszego drugiego robota mini sumo zdecydowaliśmy się nazwać CałkaBot 2.0 aby uhonorować jego poprzednika. Tym razem zdecydowaliśmy się stworzyć własną płytkę PCB, co zrobił Deli. Nie zmieniliśmy silników, czujników zbliżeniowych i ramy. Zdecydowaliśmy się jednak zmienić czujniki podłoża, co okazało się być złą decyzją (CNY70 były znacznie lepsze). Większość rzeczy, było znów zasponsorowane przez szkołę. Tym razem, jako, że zauważyliśmy, że CałkaBot 1.0 był zbyt lekki, dołożyliśmmy ołowiu na górę robota, jako dodatkowe obciążenie. Nasz robot ważył dokładnie 500g (to jest maksymalna waga dla robotów mini sumo). Po kilku walkach między Całkabotami, zrozumieliśmy, że ten nowy jest o wiele silniejszy.
-                                    	<br><br>
-                                    	Podczas zawodów w Bydgoszczy, natknęliśmy się na nieprzyjemny problem. Mówiąc krótko, kiedy nasz robot został zbyt mocno uderzony podskakiwał, przez co myślał, że przeciwnik jest za nim (błąd podczas mocowania czujników), więc sam wyjeżdżał za ring, przez co przegrał kilka walk. Nie udało nam się wyjść z grupy, ale nasze starania zostały docenione przez głównego sponsora zawdodów, więc wygraliśmy nagrodę specjalną. CałkaBot 2.0 wałczył bardzo dobrze w niektórych walkach więc zdecydowaliśmy się ulepszyć, i jego, i CałkaBot 1.0 i pojechać na Bałtyckie Bitwy Robotów. Tam poznaliśmy wielu nowych ludzi i zdobyliśmy mase doświadczenia. Starliśmy się także z studentami z politechnik i czasem udało nam się z nimi wygrać. Z taką ilością nowej wiedzy zdecydowaliśmy się nie budować kolejnego robota, a dwa roboty, tak aby mogły walczyć między sobą, a my widzieć dokładnie ich słabe aspekty (walka między nowym a starym CałkaBotem była mało obiektywna, bo nowy zawsze wygrywał i wydawał się lepszy).
-                                    </p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/calk/3.jpg" alt="" />
-                                    <p class="mb-5">
-                                        CałkaBot 2.0 i faza budowy powyżej.<br>
-                                    	Jedna z walk CałkaBota 2.0 w Bydgoszczy. CałkaBot startuje bliżej kamerzysty.
-                                    </p>
-                                    	<br><br>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-									src="https://www.youtube.com/embed/Yt9VWj_V268?mute=1?enablejsapi=1">>
-									</iframe>
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
-                                    	CałkaBot 3k0
-                                    </h2>
-									<div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-									<p class="mb-5">
-										<br><br>Zdecydowaliśmy się zbudować 2 roboty w tym roku, jeden zrobiony przeze mnie, nazwany 3k0 (jak 3.0, ale autorstwa Kiviego, stąd k), jeden przez Deliego, nazwany 3d0. Tutaj będę publikował informacje o moim, więc szykujcie się.<br>
-										<b>CałkaBot 3k0 nadchodzi!</b>
-									</p>
-									<p class="mb-5">
-										<br>
-										Więcej informacji:<br>
-										<a href="http://orion.loiv.torun.pl/?p=5896">http://orion.loiv.torun.pl/?p=5896</a><br>
-										<a href="http://tfnis.mat.umk.pl/calkabot.html">http://tfnis.mat.umk.pl/calkabot.html</a><br>
-										<a href="http://orion.loiv.torun.pl/?p=7985">http://orion.loiv.torun.pl/?p=7985</a><br>
-										<a href="https://www.facebook.com/ivlotorun/posts/2173269109393374">https://www.facebook.com/ivlotorun/posts/2173269109393374</a><br>
-										<a href="http://roboty.utp.edu.pl/?page_id=2232">http://roboty.utp.edu.pl/?page_id=2232</a><br>
-										<a href="https://github.com/JakubKivi/CalkaBot">https://github.com/JakubKivi/CalkaBot</a><br>
-
-
-									</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
-                                </div>
-                            </div>
+            <div class="modal-body">
+                <div class="">
+                    <div class="img-container">
+                        <img class="img-fluid" src="assets/portfolio/grzes/1.webp" alt="error">
+                    </div>
+                    <p class="portfolio-text">
+                        Check Grzesiek is my first real project. With him by my side I have fallen in love with robotics, electronics and programming. There were actually two versions of the robot. First one I have made in 2017 as a middle school project, that I have on diploma. There is nothing to boast about. I was 16, I didn't know anything about proper programming or soldering, so the code is crap and the robot looks unprofessional as it actually is. But videos are cute and memorable. Second version I started right after middle school but I had other projects back then so I abandoned him. Actually used his part in other things. Maybe someday I will resurrect him.
+                    </p>
+                    <div class="video">
+                        <div class="video__youtube" data-youtube>
+                            <img src="https://i.ytimg.com/vi/sQb5kxLiFd0/maxresdefault.jpg" class="video__placeholder" />
+                            <button class="video__button" data-youtube-button="https://www.youtube.com/embed/sQb5kxLiFd0"></button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Zasi Modal -->
-        <div class="portfolio-modal modal fade" id="zasiModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Zasilacz warsztatowy</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: styczeń 2019</h6>
-                                    <h6 class="text-secondary text-uppercase mb-0">Zakończenie: luty 2019</h6><br>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid-ara rounded mb-5" src="assets/img/portfolio/zasi/1.jpg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Ten projekt jest w zasadzie bardziej elektroniczno mechaniczny niż programistyczny (był jedynie podłączony do <a href="" data-dismiss="modal" data-toggle="modal" data-target="#jackModal">Jacka</a>). Zasilacz zrobiłem przez przerobienie dwóch zasilaczy komputerowych. Jednego użyłem jako generatora napięcia (-12V, 3,3V, 5V, 12V), drugiego wybebeszyłem i użyłem tylko ramy, którą pociąłem szlifierką. Zasilacz jest wyposażony w złącza bananowe, złącza śrubowe i  złącza głośnikowe. Najważniejszą funkcją jest regulowane (przez potencjometr) napięcie, zrobione przy użyciu przetwornicy LM2569. Zrobiłem też mały wiatraczek (z włącznikiem), żeby zdmuchiwać opary podczas lutowania. Wszystko może być włączane ręcznie lub wcześniej mogło także przez <a href="" data-dismiss="modal" data-toggle="modal" data-target="#jackModal">Jacka</a>.</p>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-									src="https://www.youtube.com/embed/x3YOLtF39Sc?enablejsapi=1">>
-									</iframe>
-
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
-
-                                </div>
-                            </div>
-                        </div>
+                    <div class="modal-img-bottom-container">
+                        <img class="modal-img-bottom" src="assets/portfolio/grzes/2.webp" alt="error">
                     </div>
+                    
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
-        <!-- Ara Modal -->
-        <div class="portfolio-modal modal fade" id="araModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">ARA - szachopodobna gra</h2>
-
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/ara" target="_blank">
-                                			<i class="fab fa-fw fa-github"></i>
-                                		</a>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: styczeń 2019</h6>
-                                    <h6 class="text-secondary text-uppercase mb-0">Zakończenie: grudzień 2021(?)</h6><br>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid-ara rounded mb-5" src="assets/img/portfolio/ara/1.png" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">
-                                    Ara to gra napisana w C++ z użyicem biblioteki SFML, zrobiona przez grupę znajomych podczas ferii w 2019, jako wyzwanie do zrobienia gry w zaledwie dwa tygodnie. Jest to gra turowa, podobna do szachów na pierwszy rzut oka, ale ma wielkie różnice, takie jak inne ruchy figur, znikanie mapy czy dwa ruchy na turę. Zasady mogą wydawać się dziwne i zawiłe na początku, ale po kilku grach zaczynają mieć dużo sensu i można niesamowicie dobrze się bawić. Po feriach moi znajomi praktycznie porzucili projekt. Staram się dodawać nowe grafiki stworzone przez naszego grafika i wciąż kiedy mam nadmiar wolnego czasu poprawiam kilka rzeczy. Mam nadzieję, że gra będzie grywalna i dostępna do pobrania pod koniec 2020.
-                                    </p>
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-									src="https://www.youtube.com/embed/eQDRGEyHn6w?enablejsapi=1">>
-									</iframe>
-                                    <p class="mb-5">
-                                    	<b>Aktualny główny programista:</b>
-                                    	<br>
-                                    	<a class="btn btn-outline-secondary btn-social mx-1" href="https://www.facebook.com/jakub.kivi.1"><i class="fab fa-fw fa-facebook-f"></i></a> Jakub Kuziemski <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi" target="_blank">
-                                			<i class="fab fa-fw fa-github"></i>
-                                		</a>
-                                		<br><br>
-                                    	<b>Wcześniejsi Programiści:</b>
-                                    	<br>
-                                    	<a class="btn btn-outline-secondary btn-social mx-1" href="https://www.facebook.com/delicatK"><i class="fab fa-fw fa-facebook-f"></i></a> Jakub Delicat <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/delipl" target="_blank">
-                                			<i class="fab fa-fw fa-github"></i>
-                                		</a>
-                                		<br>
-                                    	
-                                    	<a class="btn btn-outline-secondary btn-social mx-1" href="https://www.facebook.com/profile.php?id=100011873343122"><i class="fab fa-fw fa-facebook-f"></i></a> Paweł Knut <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/BankWatykanu/" target="_blank">
-                                			<i class="fab fa-fw fa-github"></i>
-                                		</a>
-                                		<br>
-                                    	<a class="btn btn-outline-secondary btn-social mx-1" href="https://www.facebook.com/adam.wieczarek"><i class="fab fa-fw fa-facebook-f"></i></a> Adam Wieczarek <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/AWieczarek" target="_blank">
-                                			<i class="fab fa-fw fa-github"></i>
-                                		</a>
-                                		<br><br>
-                                		<b>Aktualny główny grafik:</b><br>
-                                		<a class="btn btn-outline-secondary btn-social mx-1" href="https://www.facebook.com/kamamias"><i class="fab fa-fw fa-facebook-f"></i></a> Asia Butkiewicz <a class="btn btn-outline-secondary btn-social mx-1" href="https://www.instagram.com/priestoov" target="_blank">
-                                			<i class="fab fa-fw fa-instagram"></i>
-                                		</a>
-                                		<br><br>
-                                		<b>Wcześniejsi Graficy:</b><br>
-                                		<a class="btn btn-outline-secondary btn-social mx-1" href="https://www.facebook.com/profile.php?id=100010544086036"><i class="fab fa-fw fa-facebook-f"></i></a> Antonina Smoktunowicz <a class="btn btn-outline-secondary btn-social mx-1" href="https://www.instagram.com/chce_latac/" target="_blank">
-                                			<i class="fab fa-fw fa-instagram"></i>
-                                		</a><br>
-                                		<a class="btn btn-outline-secondary btn-social mx-1" href="https://www.facebook.com/profile.php?id=100003038920732"><i class="fab fa-fw fa-facebook-f"></i></a> Julia Ciechanowska <a class="btn btn-outline-secondary btn-social mx-1" href="https://www.instagram.com/julastian" target="_blank">
-                                			<i class="fab fa-fw fa-instagram"></i>
-                                		</a><br>
-                                    </p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/ara/3.png" alt="" />
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+    </div>
+        
+    <!-- modal notebook -->
+    <div class="modal fade" id="notebook-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"  id="modal-notebook">
+            <div class="modal-header">
+                <div class="modal-title ml-auto">Personal notebook
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    &#xd7;
+                </button>
+            </div>
+            <div class="subtitle-shadow">
+                <div class="subtitle">
+                    <div class="modal-status notebook-status">
+                        Topic: <span>How to finish a project</span>
                     </div>
+                    <div class="modal-time notebook-time">
+                        16.05.2023
+                    </div>  
                 </div>
             </div>
-        </div>
-        <!-- Grzes Modal -->
-        <div class="portfolio-modal modal fade" id="grzesModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Grzesiek - mój pierwszy robot</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <a class="btn btn-outline-secondary btn-social mx-1" href="https://github.com/JakubKivi/Grzesiek" target="_blank">
-                                            <i class="fab fa-fw fa-github"></i>
-                                        </a>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <h6 class="text-secondary text-uppercase mb-0">Rozpoczęty: kwiecien 2017</h6>
-                                    <h6 class="text-secondary text-uppercase mb-0">Zakończenie: maj 2018</h6><br>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/grzes/2.jpg" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Grzesiek to mój pierwszy projekt. Z nim zakochałem się w robotyce, elektronice i programowaniu. Były w zasadzie 2 wersje robota. Pierwszego zrobiłem w 2017 na zakończenie gimnazjum (mam go nawet wpisanego na świadectwie). Nie ma się czym przechwalać, bo miałem 16 lat, a program jest paskudny patrząc z perspektywy czasu. Ale nagrania są urocze i przywołują wspomnienia. Druga wersja Grześka została porzucona (rozebrany i zamkniety w pudełku), ale mam nadziej, że kiedyś znajde czas by go wskrzesić.
-                                    <br><br>
-                                    Najstarsza wersja Grześka na dole, a najnowsza u góry.
-                                    </p>
-                                    
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/grzes/1.jpg" alt="" />
-
-                                    <iframe width="4000" height="3150" class="vid-fluid rounded mb-5"
-                                    src="https://www.youtube.com/embed/sQb5kxLiFd0?enablejsapi=1">>
-                                    </iframe>
-
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="modal-body">
+                <div class="">
+                    <p class="portfolio-text">
+                        I will write something in the future... When I will finish a project xD
+                    </p>
                 </div>
             </div>
-        </div>
-        <!-- Login Modal-->
-        <div class="portfolio-modal modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Ciekawe miejsca</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Zamknij</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        </div>
+    </div>
+        <!-- Bootstrap and jquerry-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+        <script src="js/navbar.js"></script> 
+        <script src="js/typing.js"></script> 
+        <script src="js/portfolio.js"></script> 
+        <script src="js/onLoad.js"></script> 
+        <script src="js/aboutText.js"></script> 
+        <script src="js/aboutTextScript.js"></script> 
     </body>
 </html>
-<script src="js/closingModal.js"></script>

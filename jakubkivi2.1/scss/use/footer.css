@@ -1,0 +1,48 @@
+.footer-custom {
+  background-color: var(--gradient-color-1) !important;
+  color: var(--gradient-color-12) !important;
+  font-weight: bold;
+}
+.footer-custom .footer-text-custom .copyright {
+  display: inline-block;
+}
+.footer-custom .footer-text-custom .copyright:hover {
+  cursor: none;
+  animation: rotation-custom 0.3s linear forwards 999;
+}
+@keyframes rotation-custom {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+.footer-custom div section a {
+  color: var(--gradient-color-12) !important;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2666666667);
+  border: solid 2px var(--gradient-color-12);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.footer-custom div section a:hover {
+  background-color: var(--gradient-color-12) !important;
+  border-radius: 5px;
+  transition: 0.5s;
+  color: var(--gradient-color-1) !important;
+}
+
+.wave-footer {
+  transform: rotate(180deg);
+  color: #fff;
+}
+.wave-footer svg {
+  height: 30px;
+  position: relative;
+  left: -5%;
+  display: block;
+  width: 110%;
+}
+.wave-footer svg .shape-fill {
+  fill: var(--navbar-bg-color);
+}/*# sourceMappingURL=footer.css.map */

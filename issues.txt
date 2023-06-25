@@ -1,3 +1,0 @@
- - youtube video does not pause when modal is closed. 
- - return key on smartphone does not close modal
- - login does not work

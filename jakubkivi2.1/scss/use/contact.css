@@ -1,0 +1,29 @@
+.form-group input {
+  background-color: var(--gradient-color-11) !important;
+  border: none;
+  box-shadow: inset -2px 2px 8px rgba(0, 0, 0, 0.2666666667);
+}
+.form-group input:focus {
+  box-shadow: inset -2px 2px 8px rgba(0, 0, 0, 0.2666666667);
+}
+.form-group .form-control {
+  color: white;
+}
+.form-group .form-control::-moz-placeholder {
+  color: white !important;
+  box-shadow: inset -2px 2px 8px rgba(0, 0, 0, 0.2666666667);
+  opacity: 0.5;
+}
+.form-group .form-control::placeholder {
+  color: white !important;
+  box-shadow: inset -2px 2px 8px rgba(0, 0, 0, 0.2666666667);
+  opacity: 0.5;
+}
+.form-group textarea {
+  background-color: var(--gradient-color-11) !important;
+  border: none;
+  box-shadow: inset -2px 2px 8px rgba(0, 0, 0, 0.2666666667);
+}
+.form-group textarea:focus {
+  box-shadow: inset -2px 2px 8px rgba(0, 0, 0, 0.2666666667);
+}/*# sourceMappingURL=contact.css.map */

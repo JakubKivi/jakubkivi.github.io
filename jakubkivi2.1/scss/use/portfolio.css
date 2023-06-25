@@ -1,0 +1,50 @@
+.slider-container {
+  padding-left: 4vw;
+}
+.slider-container .portfolio-img {
+  width: 20vw;
+  height: 100%;
+  filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.2666666667));
+}
+.slider-container .portfolio-img img {
+  width: 100%;
+}
+.slider-container .year-inner {
+  height: 100% !important;
+}
+.slider-container .year-inner p {
+  background-color: var(--gradient-color-11);
+  filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.2666666667));
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 2.2vw;
+  margin: 0 !important;
+  padding: 0.7vw;
+  height: 100%;
+  text-align: center;
+}
+
+.slider-container .controls {
+  height: 0;
+}
+.slider-container .controls:focus {
+  outline: none;
+}
+.slider-container .controls .but {
+  display: inline-block;
+  position: relative;
+  top: 5vw;
+}
+.slider-container .controls .prev {
+  left: -4vw;
+}
+.slider-container .controls .next {
+  float: right;
+  right: -4vw;
+}
+.slider-container .controls i {
+  font-size: 7vw;
+}
+.slider-container .controls .but:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=portfolio.css.map */

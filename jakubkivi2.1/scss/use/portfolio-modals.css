@@ -1,0 +1,37 @@
+.modal-content {
+  background-color: var(--gradient-color-10);
+  color: var(--main-font-color) !important;
+}
+.modal-content .close {
+  padding: 0.5rem 0.8rem;
+  color: var(--main-font-color);
+  margin-left: auto;
+}
+.modal-content .portfolio-modal-title {
+  color: var(--main-font-color) !important;
+}
+.modal-content .divider-custom {
+  margin: 0.2rem 0rem;
+}
+.modal-content i {
+  color: var(--main-font-color) !important;
+}
+.modal-content iframe {
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  max-height: 80vh;
+}
+.modal-content p {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0;
+}
+.modal-content a {
+  color: var(--gradient-color-1) !important;
+}
+.modal-content a:hover {
+  color: var(--gradient-color-2) !important;
+  text-decoration: none !important;
+}/*# sourceMappingURL=portfolio-modals.css.map */

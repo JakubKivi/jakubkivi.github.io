@@ -1,0 +1,114 @@
+
+
+.header-custom{
+    height: 100vh;
+    text-align: center;
+}
+
+.avatar{
+    height: 40vh;
+    filter: drop-shadow(-2px 2px 2px #0004);
+}
+
+.header-text-custom{
+    font-size: 7vh;
+    text-shadow: -2px 2px 2px #0004;
+}
+
+.divider-custom {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divider-custom .divider-custom-line {
+  width: 100%;
+  max-width: 5rem;
+  height: 0.15rem;
+  background-color: var(--main-font-color);
+  border-radius: 1rem;
+  border-color: var(--main-font-color) !important;
+}
+.divider-custom .divider-custom-line:first-child {
+  margin-right: 1rem;
+}
+.divider-custom .divider-custom-line:last-child {
+  margin-left: 1rem;
+}
+.divider-custom .divider-custom-icon {
+  font-size: 5vh;
+}
+.divider-custom.divider-light .divider-custom-line {
+  color:  var(--main-font-color);
+}
+
+.fa-kiwi-bird{
+   color: var(--main-font-color);
+}
+
+.subheader-text-custom {
+  font-size: 3vh;
+  text-shadow: -2px 2px 2px #0004;
+}
+
+/* Arrow & Hover Animation */
+#more-arrows {
+  width: 75px;
+  height: 65px;
+  filter: drop-shadow(-2px 2px 2px #0004);
+}
+#more-arrows:hover{
+  cursor: pointer;
+}
+#more-arrows:hover polygon {
+
+  fill: var(--main-font-color);
+  transition: all 0.5s ease-out;
+}
+#more-arrows:hover polygon.arrow-bottom {
+  transform: translateY(-18px);
+}
+#more-arrows:hover polygon.arrow-top {
+  transform: translateY(18px);
+}
+  
+.arrows-container{
+    text-align: center;
+}
+
+polygon {
+  fill: var(--main-font-color);
+  transition: all .5s ease-out;    
+} 
+.arrow-middle {
+  opacity: 0.75;
+  text-shadow: -2px 2px 2px #0004;
+}
+.arrow-top {
+  opacity: 0.5;
+  text-shadow: -2px 2px 2px #0004;
+}
+ 
+.blob{
+    position:  absolute;
+    left: -5%;
+    top: 50px;
+    z-index: -1;
+    width: 110%;
+    height: 105%;
+}
+
+/*----smartphones--*/
+
+@media only screen and (max-width: 768px) {
+    .header-text-custom{
+        font-size: 5vh;
+    }
+    .subheader-text-custom {
+      font-size: 2vh;
+    }
+    .divider-custom .divider-custom-icon {
+      font-size: 3vh;
+    }
+}
