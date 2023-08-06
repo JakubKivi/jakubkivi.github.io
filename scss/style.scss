@@ -444,6 +444,14 @@ nav{
             left: 1rem;
             transform: rotate(180deg);
         }
+        .arrow-inactive{
+            &:hover{
+                animation: none;
+                cursor: default;
+                color: $font-shadow;
+                text-shadow: none;
+            }
+        }
         
         opacity: 1;
         transition: opacity .8s;

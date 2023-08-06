@@ -427,6 +427,12 @@ nav .navbar-toggler i {
   left: 1rem;
   transform: rotate(180deg);
 }
+.about .about-left .arrow-inactive:hover {
+  animation: none;
+  cursor: default;
+  color: rgba(192, 77, 0, 0.7450980392);
+  text-shadow: none;
+}
 .about .hiding {
   opacity: 0;
   transition: opacity 0.8s;

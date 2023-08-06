@@ -1,4 +1,3 @@
-
 var showPage=0;
 var aboutContainer = document.getElementById("about-left");
 
@@ -15,6 +14,10 @@ function lArrow(){
     if(showPage>0){
         showPage-=1;
         aboutTextInsert();
+        document.getElementsByClassName("arrow")[0].classList.remove("arrow-inactive");
+        if(showPage==0){
+            document.getElementsByClassName("arrow-left")[0].classList.add("arrow-inactive");
+        }
     }
 }
 
@@ -22,5 +25,9 @@ function rArrow(){
     if(showPage<5){
         showPage+=1;
         aboutTextInsert();
+        document.getElementsByClassName("arrow-left")[0].classList.remove("arrow-inactive");
+        if(showPage==5){
+            document.getElementsByClassName("arrow")[0].classList.add("arrow-inactive");
+        }
     }    
 }
