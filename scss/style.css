@@ -1,3 +1,22 @@
+@keyframes firework {
+  0% {
+    opacity: 1;
+    transform: scale(0) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translate(var(--x), var(--y));
+  }
+}
+.firework {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, yellow, orange, red);
+  border-radius: 50%;
+  animation: firework 0.6s ease-out forwards;
+}
+
 @keyframes blinkShine {
   0% {
     color: rgba(192, 77, 0, 0.7450980392);
@@ -276,6 +295,25 @@ nav .navbar-toggler i {
 .start .starting-left-div .first-line text {
   font-size: 3vw;
 }
+.start .starting-left-div .first-line .inz {
+  background-color: #110505;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: none;
+  font-size: 1.5vw;
+  opacity: 1;
+  box-shadow: 0px 0px 4px rgba(192, 77, 0, 0.7450980392), 0px 0px 4px rgba(192, 77, 0, 0.7450980392), 0px 0px 4px rgba(192, 77, 0, 0.7450980392), 0px 0px 4px rgba(192, 77, 0, 0.7450980392);
+  border-radius: 3px;
+  transition: 0.5s ease-out, transform 0.5s ease-out;
+  transform: scale(0.9);
+}
+.start .starting-left-div .first-line .inz:hover {
+  cursor: pointer;
+}
+.start .starting-left-div .first-line .inz-clicked {
+  font-size: 1.5vw;
+  opacity: 1;
+  transform: scale(1);
+}
 @media only screen and (max-width: 769px) {
   .start .starting-left-div .first-line {
     font-size: 4vh;
@@ -284,6 +322,12 @@ nav .navbar-toggler i {
   .start .starting-left-div .first-line text {
     font-size: 4.5vh;
     font-size: 4.5svh;
+  }
+  .start .starting-left-div .first-line .inz {
+    font-size: 1.5vh;
+  }
+  .start .starting-left-div .first-line .inz-clicked {
+    font-size: 1.5vh;
   }
 }
 .start .starting-left-div .second-line {

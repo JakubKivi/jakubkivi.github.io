@@ -32,6 +32,27 @@ $modal-shadow: $font-shadow;
 
 $image-shadow: #110505b2;
 
+@keyframes firework {
+    0% {
+      opacity: 1;
+      transform: scale(0) translate(0, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.5) translate(var(--x), var(--y));
+    }
+  }
+  
+  .firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, yellow, orange, red);
+    border-radius: 50%;
+    animation: firework 0.6s ease-out forwards;
+  }
+
+
 @keyframes blinkShine {
     0%{
         color: $font-shadow;
@@ -302,12 +323,38 @@ nav{
             text{
                 font-size: 3vw;
             }
+            .inz{
+                background-color: #110505;
+                color: #00000000;
+                text-shadow: none;
+                font-size: 1.5vw;
+                opacity: 1;
+                box-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+                border-radius: 3px;
+
+                transition: 0.5s ease-out, transform 0.5s ease-out;
+                transform: scale(0.9); // Opcjonalne lekkie zmniejszenie
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .inz-clicked{
+                font-size: 1.5vw;
+                opacity: 1; // Stopniowe pojawianie się
+                transform: scale(1); // Powrót do normalnej wielkości
+            }
             @media only screen and (max-width: 769px) {
                 font-size: 4vh;
                 font-size: 4svh;
                 text{
                     font-size: 4.5vh;
                     font-size: 4.5svh;
+                }
+                .inz{
+                    font-size: 1.5vh;
+                }
+                .inz-clicked{
+                    font-size: 1.5vh;
                 }
             }
         }
