@@ -93,7 +93,8 @@
                             <div class="d-flex justify-content-center starting-left-div" >
                                 <div class="align-self-center justify-content-center ">
                                     <div class="text-uppercase first-line">
-                                        <span class="inz" onclick="inzClicked()">inż.</span> Jakub <text>Kivi</text> Kuziemski
+                                        <!-- <span class="inz" onclick="inzClicked()">inż.</span>  -->
+                                        Jakub <text>Kivi</text> Kuziemski
                                     </div> 
                                     <div class="text-uppercase second-line">
                                         <text id="second-line-text">
@@ -172,7 +173,7 @@
                     <div class="data-line">
                         
                         <a>
-                            <span data-toggle="modal" data-target="#portfolio-modal-13">Fryta</span>
+                            <span data-toggle="modal" data-target="#portfolio-modal-14">Fryta</span>
                         </a> 
                     </div>
                 </div>
@@ -244,6 +245,14 @@
                                             <div><img src="assets/portfolio/grzes/grzes.svg" alt="">
                                             </div> 
                                         </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="13">
+                                            <div><img src="assets/portfolio/ChairRorist/ChairRorist.svg" alt="">
+                                                </div>
+                                            </div>
+                                        <div class="col-4 col-lg-3 box-box" data-userid="14">
+                                            <div><img src="assets/portfolio/calk/calk3.svg" alt="">
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -326,6 +335,68 @@
                 </div>
             </div>
             
+        </div>
+        <!-- ChairRorist -->
+        <div class="modal fade" id="portfolio-modal-13" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"  id="modal-13">
+                <div class="modal-header">
+                    <div class="modal-title ml-auto">ChairRorist<a href="https://github.com/JakubKivi/ChairRorist" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        &#xd7;
+                    </button>
+                </div>
+                <div class="subtitle-shadow">
+                    <div class="subtitle">
+                        <div class="modal-status">
+                            Status: <span>V1.0 - DONE</span>
+                        </div>
+                        <div class="modal-stack">
+                            <div class="icons">
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="bxl:c-plus-plus"></span>
+                                    <span class="tooltiptext">C++</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="iconoir:electronics-chip"></span>
+                                    <span class="tooltiptext">Electronics</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:arduino"></span>
+                                    <span class="tooltiptext">Arduino</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="hugeicons:python"></span>
+                                    <span class="tooltiptext">Python</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-time">
+                            March 2025
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="">
+                        <div class="img-container">
+                            <img class="img-fluid" src="assets/portfolio/tafl/1.webp" alt="error">
+                        </div>
+                        <p class="portfolio-text">
+                            I have a height-adjustable desk, but I don’t use it as much as I should — mostly because I keep forgetting that standing is even an option. To fix that, I made a simple Python app that connects to an Arduino with a distance sensor mounted under the desk via USB. It can tell whether the desk is up (which means I’m standing) or down (so I’m sitting). The app runs in the background — starts with the system and sits quietly in the tray, showing how long I’ve been sitting. It reminds me every hour that maybe I should stand up... I mean, after an hour, because I stand up immediately after the first notification...<br><br>
+
+                            I also added a reset button, just in case I leave my desk... or, you know, for honest reasons only. For now, it just does what it needs to: tracks standing time and nudges me to stand every once in a while. In the future, I might throw in features like pausing the timer, changing the reminder interval, tracking progress, and such — depending on how much motivation/inspiration I’ve got lying around."<br><br>
+                        </p>
+                        <!-- <div class="modal-img-bottom-container">
+                            <img class="modal-img-bottom" src="assets/portfolio/tafl/2.webp" alt="error">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
         </div>
         <!-- Tafl Modal -->
         <div class="modal fade" id="portfolio-modal-0" tabindex="-1" role="dialog">
@@ -1139,9 +1210,9 @@
         </div>
     </div>
     <!-- modal fryta -->
-    <div class="modal fade" id="portfolio-modal-13" tabindex="-1" role="dialog">
+    <div class="modal fade" id="portfolio-modal-14" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content"  id="modal-13">
+        <div class="modal-content"  id="modal-14">
             <div class="modal-header">
                 <div class="modal-title ml-auto">Fryta<a href="https://github.com/JakubKivi/fryta" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                 </div>
@@ -1198,12 +1269,31 @@
             <div class="subtitle-shadow">
                 <div class="subtitle">
                     <div class="modal-status notebook-status">
+                        Topic: <span>Interesting encounter</span>
+                    </div>
+                    <div class="modal-time notebook-time">
+                        07.04.2025
+                    </div>  
+                </div>
+                
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <p class="portfolio-text">
+                        Totally forgot about this "notebook". If youre waiting for ending of the previous note, I am sorry. I have no answers... Neither do I have any specific note now, but I hope to come back here with some revelations in the future.
+                    </p>
+                </div>
+            </div>
+            <div class="subtitle-shadow">
+                <div class="subtitle">
+                    <div class="modal-status notebook-status">
                         Topic: <span>How to finish a project</span>
                     </div>
                     <div class="modal-time notebook-time">
                         25.06.2023
                     </div>  
                 </div>
+                
             </div>
             <div class="modal-body">
                 <div class="">

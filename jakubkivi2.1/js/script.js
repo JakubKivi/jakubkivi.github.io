@@ -4,6 +4,9 @@ var wave = document.getElementById("wave-navbar-collapse");
 var navbarFold = false;
 var moving = false;
 
+
+$('.alert').alert()
+
 navBtn.onclick =function(){
 	if(!navbarFold){
 		wave.classList.add("wave-navbar-collpase-unfold");
