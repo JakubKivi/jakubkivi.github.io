@@ -38,11 +38,23 @@ window.onbeforeunload = function () {
   
   var closedModalHashStateId = "#modalClosed";
   var openModalHashStateId = "#modalOpen";
+
+  $(document).ready(function() {
+    var modalId = window.location.hash; // Pobieramy hash z URL
+    
+    // Otwieramy modal na podstawie hash
+    if (modalId) {
+        console.log(modalId);
+        $(modalId).modal('show');
+    }
+});
   
-  window.location.hash = closedModalHashStateId;
+    if(window.location.hash == ""){
+        window.location.hash = closedModalHashStateId;
+    }
   
   $(window).on('popstate', this.handleBackPress);
-  document.addEventListener("backbutton", this.handleBackPress, false);
+  document.addEventListener("backbutton", this.handleBackPress, false);     // to otwiera modala po id
   
   $('.modal').on('show.bs.modal', function(e) {
     window.history.pushState('forward', null, './'+openModalHashStateId);
@@ -107,3 +119,5 @@ function ready() {
         document.addEventListener('DOMContentLoaded', lightweightYoutubePlayer.init);
     }
 }
+
+
