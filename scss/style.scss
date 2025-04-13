@@ -31,6 +31,13 @@ $modal-bg: $start-bg-2;
 $modal-shadow: $font-shadow;
 
 $image-shadow: #110505b2;
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 1px solid $font-select; 
+}
 
 @keyframes firework {
     0% {
@@ -813,11 +820,27 @@ nav{
     text-align: center;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    .iconify{
+        font-size: 3rem;
+        color: $font-shadow;
+        transition: .5s;
+        &:hover{
+            animation: blinkShine $blink-shine-animation-time;
+            color: $font;
+            text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+    .social-icons{
+        margin-top: .5rem;
+    }
     .copyright{
         margin-top: .5rem;
+        margin-bottom: .8rem; 
         color: $font-shadow;
         width: 100%;
-        span{
+        .c-circle{
             font-size: 1.3rem;
         }
         .hidden-button{
@@ -1049,7 +1072,7 @@ nav{
         .portfolio-text{
             margin-top: 0.2rem;
             text-align: justify;
-            color: $font-portfolio;
+            color: $font-portfolio !important;
             font-size: 1rem;
             width: 100%;
         }

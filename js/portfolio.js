@@ -1,7 +1,7 @@
 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
 var selector = document.getElementsByClassName("portfolio-selector")[0].children;
-var activeSelector="ChairRorist";
+var activeSelector="calk3";
 
 for (var i = 0; i < selector.length; i++) { 
     selector[i].addEventListener("click", onSelectorClicked);

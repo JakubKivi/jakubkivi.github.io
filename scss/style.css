@@ -1,3 +1,11 @@
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 1px solid rgba(230, 111, 27, 0.8549019608);
+}
+
 @keyframes firework {
   0% {
     opacity: 1;
@@ -786,12 +794,28 @@ nav .navbar-toggler i {
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
+.footer .iconify {
+  font-size: 3rem;
+  color: rgba(192, 77, 0, 0.7450980392);
+  transition: 0.5s;
+}
+.footer .iconify:hover {
+  animation: blinkShine 0.6s;
+  color: rgba(239, 136, 63, 0.8549019608);
+  text-shadow: 0px 0px 4px rgba(192, 77, 0, 0.7450980392), 0px 0px 4px rgba(192, 77, 0, 0.7450980392), 0px 0px 4px rgba(192, 77, 0, 0.7450980392), 0px 0px 4px rgba(192, 77, 0, 0.7450980392);
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer .social-icons {
+  margin-top: 0.5rem;
+}
 .footer .copyright {
   margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
   color: rgba(192, 77, 0, 0.7450980392);
   width: 100%;
 }
-.footer .copyright span {
+.footer .copyright .c-circle {
   font-size: 1.3rem;
 }
 .footer .copyright .hidden-button {
@@ -1025,7 +1049,7 @@ nav .navbar-toggler i {
 .modal .modal-content .portfolio-text {
   margin-top: 0.2rem;
   text-align: justify;
-  color: rgba(255, 159, 104, 0.567);
+  color: rgba(255, 159, 104, 0.567) !important;
   font-size: 1rem;
   width: 100%;
 }

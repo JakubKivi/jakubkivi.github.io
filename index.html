@@ -134,7 +134,7 @@
                     <div class="about-text-header about-text-header-right">
                         Quick info
                         <div class="data-line-date">
-                            Last update: 24 Feb 2024
+                            Last update: 13 Mar 2025
                         </div>
                     </div>
                     
@@ -173,7 +173,7 @@
                     <div class="data-line">
                         
                         <a>
-                            <span data-toggle="modal" data-target="#portfolio-modal-fryta">Fryta</span>
+                            <span data-toggle="modal" data-target="#portfolio-modal-KPillar">K-Pillar</span>
                         </a> 
                     </div>
                 </div>
@@ -193,7 +193,11 @@
                                         </div>
                                     </div>
                                     <div class="row portfolio-selector">
-                                                
+                                        
+                                        <div class="col-4 col-lg-3 box-box" data-userid="calk3">
+                                            <div><img src="assets/portfolio/calk/calk3.svg" alt="">
+                                                </div>
+                                            </div>        
                                         <div class="col-4 col-lg-3 box-box" data-userid="ChairRorist">
                                             <div><img src="assets/portfolio/ChairRorist/ChairRorist.svg" alt="">
                                                 </div>
@@ -249,12 +253,10 @@
                                         <div class="col-4 col-lg-3 box-box" data-userid="grzes">
                                             <div><img src="assets/portfolio/grzes/grzes.svg" alt="">
                                             </div> 
-                                         </div>      <!--   data-userid=14 - fryta   -->
-                                        <!-- <div class="col-4 col-lg-3 box-box" data-userid="calk3">
-                                            <div><img src="assets/portfolio/calk/calk3.svg" alt="">
-                                                </div>
-                                            </div>
-                                        <div class="col-4 col-lg-3 box-box" data-userid="KPillar">
+                                         </div>      
+                                         <!--   data-userid=14 - fryta   -->
+
+                                        <!-- <div class="col-4 col-lg-3 box-box" data-userid="KPillar">
                                             <div><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Noun_290606_ccXinhStudio_flowerpot.svg" alt="">
                                                 </div>
                                             </div> -->
@@ -322,22 +324,39 @@
                 </div>
             </section>
             <div class="footer">
-                <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/jakubkivi/" target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="https://github.com/JakubKivi" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <div class="copyright">
-                    <span class="" data-toggle="modal" data-target="#notebook-modal">©</span>
-                     2023 Jakub Kuziemski
+
+                <div class="container">
+                    <div class="row text-center align-items-center">
+                        <div class="col-md-4">
+                            <span class="iconify" data-icon="mdi:lightbulb-on-outline" data-toggle="modal" data-target="#modal-ideas"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="social-icons">
+                                <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/jakubkivi/" target="_blank">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="https://github.com/JakubKivi" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                            <div class="copyright">
+                                <span class="c-circle">©</span> 2023 <span style="cursor:pointer;" data-toggle="modal" data-target="#modal-notebook">Jakub Kuziemski</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="iconify" data-icon="tabler:grave-2" data-toggle="modal" data-target="#modal-graveyard"></span>
+                        </div>
+                    </div>
                 </div>
+                
+
+                
             </div>
             
         </div>
@@ -370,6 +389,10 @@
                                     <span class="iconify" data-icon="simple-icons:arduino"></span>
                                     <span class="tooltiptext">Arduino</span> 
                                 </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="file-icons:kicad"></span>
+                                    <span class="tooltiptext">KiCad</span> 
+                                </div>
                             </div>
                         </div>
                         <div class="modal-time">
@@ -380,11 +403,11 @@
                 
                 <div class="modal-body">
                     <div class="">
-                        <div class="img-container">
+                        <!-- <div class="img-container">
                             <img class="img-fluid" src="assets/portfolio/tafl/1.webp" alt="error">
-                        </div>
+                        </div> -->
                         <p class="portfolio-text">
-                            K-Pillar is...
+                            K-Pillar is a project that will turn my room green. More info coming soon.
                         </p>
                         <!-- <div class="modal-img-bottom-container">
                             <img class="modal-img-bottom" src="assets/portfolio/tafl/2.webp" alt="error">
@@ -449,7 +472,13 @@
                             For now, ChairRorist does what it’s supposed to: tracks my standing time and nudges me to stand periodically. In the future, I might add features like pausing the timer, changing the reminder interval, tracking progress, and more — depending on how much motivation or inspiration I have at the time.
                         </p>
                         <div class="modal-img-bottom-container">
-                            <img class="modal-img-bottom" src="assets/portfolio/ChairRorist/chairRorist.webp" alt="error">
+                            <img class="modal-img-bottom" src="assets/portfolio/ChairRorist/chairRorist1.webp" alt="error">
+                        </div>
+                        <div class="modal-img-bottom-container">
+                            <img class="modal-img-bottom" src="assets/portfolio/ChairRorist/chairRorist2.webp" alt="error">
+                        </div>
+                        <div class="modal-img-bottom-container">
+                            <img class="modal-img-bottom" src="assets/portfolio/ChairRorist/chairRorist3.webp" alt="error">
                         </div>
                     </div>
                 </div>
@@ -488,7 +517,14 @@
                                     <span class="iconify" data-icon="simple-icons:arduino"></span>
                                     <span class="tooltiptext">Arduino</span> 
                                 </div>
-                                dopisać tu jeszcze
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="file-icons:kicad"></span>
+                                    <span class="tooltiptext">KiCad</span> 
+                                </div>
+                                <div class="portfolio-icon">
+                                    <span class="iconify" data-icon="simple-icons:siemens"></span>
+                                    <span class="tooltiptext">Siemens NX CAD</span> 
+                                </div>
                             </div>
                         </div>
                         <div class="modal-time">
@@ -500,14 +536,24 @@
                 <div class="modal-body">
                     <div class="">
                         <div class="img-container">
-                            <img class="img-fluid" src="assets/portfolio/tafl/1.webp" alt="error">
+                            <img class="img-fluid" src="assets/portfolio/calk/calk3_1.webp" alt="error">
                         </div>
                         <p class="portfolio-text">
-                            CałkaBot 3k0 is....
+                            Całkabot 3k0 is a mini-sumo robot equipped with arms designed to lift the opponent. Taking advantage of the lack of size restrictions after the round begins, this beauty you see in the picture unfolds its lifting arms. In the photo, it's already in the fully deployed position. The arms rotate thanks to built-in motors, and as shown in the video below, if an opponent gets caught between them, the arms will lift them. This reduces their traction, making it easier to push them out of the ring.
+                            <br><br>
+                            Of course, apart from that, the robot is equipped with distance sensors, line sensors, and other components typical for mini-sumo robots. The project was developed as part of my engineering thesis, so I’ll spare the lengthy explanations - if you're curious, you can find 40 pages about it below. After running it through a translator (unless you speak Polish), you’ll learn all about the components used, the combat strategies, and more.
+                            <br><br>
+                            The robot took part in two competitions: EastROBO 2025 in Białystok and Robotic Tournament in Rybnik. Unfortunately, it failed to make it past the group stage in both cases. In the first competition, due to a sensor malfunction, the robot managed to drive out of the ring on its own. As for the second one — it went in with one arm held together by super glue. To this day, I have no idea what determined the controversial thickness of the arm in that critical spot, but hey — that’s a lesson for the future.
+                            <br><br>
+                            Undoubtedly, it is possible to lift an opponent using arm-equipped robots, so I’m not ruling out a refined version of the design—3k1—featuring a number of improvements over its predecessor.
                         </p>
-                        <!-- <div class="modal-img-bottom-container">
-                            <img class="modal-img-bottom" src="assets/portfolio/tafl/2.webp" alt="error">
-                        </div> -->
+                        
+                        <div class="video">
+                            <div class="video__youtube" data-youtube>
+                                <img src="https://i.ytimg.com/vi/Yt9VWj_V268/maxresdefault.jpg" class="video__placeholder" />
+                                <button class="video__button" data-youtube-button="https://www.youtube.com/embed/fEF-GhYptnI"></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1379,9 +1425,107 @@
         </div>
         </div>
     </div>
+    <!-- modal ideas -->
+    <div class="modal fade" id="modal-ideas" tabindex="-1" role="dialog">ż
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"  id="modal-ideas">
+            <div class="modal-header">
+                <div class="modal-title ml-auto">Project ideas
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    &#xd7;
+                </button>
+            </div>
+            <div class="subtitle-shadow">
+                <div class="subtitle">
+                    <div class="modal-status">
+                        List of project ideas for <span>the future</span>.
+                    </div>
+                    <div class="modal-stack">
+                        <div class="icons">
+                            <div class="portfolio-icon">
+                                <span class="iconify" data-icon="mdi:lightbulb-on-outline"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-time">
+                        Unordered
+                    </div>  
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <!-- <div class="img-container">
+                        <img class="img-fluid" src="assets/portfolio/grzes/1.webp" alt="error">
+                    </div> -->
+                    <div class="portfolio-text">
+                        <ul>
+                            <li><strong>CałkaBot 4k0</strong> - A Minisumo robot with either no brain (everything operates on logic gates to increase speed) or with a huge brain (one that computes its position on the ring using accelerometers, encoders, and programming). </li>
+                            <li><strong>CałkaBot 3k1</strong> – An improved version of <a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk3')">CałkaBot 3k0</a> with a metal front, better rollers, and a new board, which covers the mistakes made during the first iteration.</li>
+                            <li><strong>Spider</strong> – I don't know many details, but I feel like building this kind of robot in the future to learn 3D printing and apply some of the inverse kinematics techniques we learned at university.</li>
+                            <li><strong>Void</strong> – A Unity game about a future civilization discovered by astronauts on the dark side of the moon.</li>
+                            <li><strong>Dancing on your own</strong> – ESP and accelerometers on each hand, plus some code to generate levels based on a given song. You earn points for dancing in rhythm. The idea is not to force users into specific moves like other dancing apps, but to let them move freely—as long as they stay in rhythm.</li>
+                          </ul>
+                        </div>                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- modal graveyard -->
+    <div class="modal fade" id="modal-graveyard" tabindex="-1" role="dialog">ż
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"  id="modal-graveyard">
+            <div class="modal-header">
+                <div class="modal-title ml-auto">Projects Graveyard
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    &#xd7;
+                </button>
+            </div>
+            <div class="subtitle-shadow">
+                <div class="subtitle">
+                    <div class="modal-status">
+                        List of abandoned projects from <span>the past</span>.
+                    </div>
+                    <div class="modal-stack">
+                        <div class="icons">
+                            <div class="portfolio-icon">
+                                <span class="iconify" data-icon="tabler:grave-2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-time">
+                        Revivable
+                    </div>  
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <!-- <div class="img-container">
+                        <img class="img-fluid" src="assets/portfolio/grzes/1.webp" alt="error">
+                    </div> -->
+                    <div class="portfolio-text">
+                        <ul>
+                            <li><strong>LED Cube</strong> - 8x8x8 LED Cube project didn’t work out because of cheap LEDs conducting in the reverse direction—about 1 in 15 was faulty. Still have a controller. Highly revivable. </li>
+                            <li><strong>CałkaBot 2.5</strong> - After <a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk2')">CałkaBot 2.0</a>, I attempted to build a minisumo robot using more of a hackathon-style approach. I didn’t manage to finish it within a week.</li>
+                            <li><strong>JacksCompass</strong> - A box with compass, that will point you to either random direction or one of oyur saved directions. Didn't make it in time. </li>
+                          </ul>
+                        </div>                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
         
     <!-- modal notebook -->
-    <div class="modal fade" id="notebook-modal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="modal-notebook" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content"  id="modal-notebook">
             <div class="modal-header">
@@ -1390,6 +1534,24 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     &#xd7;
                 </button>
+            </div>
+            <div class="subtitle-shadow">
+                <div class="subtitle">
+                    <div class="modal-status notebook-status">
+                        Topic: <span>Procrastination</span>
+                    </div>
+                    <div class="modal-time notebook-time">
+                        13.04.2025
+                    </div>  
+                </div>
+                
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <p class="portfolio-text">
+                        Procrastination doesn’t necessarily mean something bad. It all depends on your redirection vector — you can even use it as a weapon. My thesis supervisor calls it the "virtual work method": you clean the whole house just to avoid finishing a school project. As long as you’re not wasting time thinking about procrastination itself, you can use it to complete tasks that suit you better in the moment. Just like I’m updating the website right now.
+                    </p>
+                </div>
             </div>
             <div class="subtitle-shadow">
                 <div class="subtitle">
