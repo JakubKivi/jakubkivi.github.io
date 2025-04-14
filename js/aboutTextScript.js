@@ -22,11 +22,11 @@ function lArrow(){
 }
 
 function rArrow(){
-    if(showPage<5){
+    if(showPage<4){
         showPage+=1;
         aboutTextInsert();
         document.getElementsByClassName("arrow-left")[0].classList.remove("arrow-inactive");
-        if(showPage==5){
+        if(showPage==4){
             document.getElementsByClassName("arrow")[0].classList.add("arrow-inactive");
         }
     }    
