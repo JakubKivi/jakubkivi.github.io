@@ -4,11 +4,39 @@ onLoad();
 function onLoad(){
     onSelectorClicked();
 }
+
+
+  window.addEventListener('load', () => {
+    // 2) Sprawdź, czy URL ma hash (np. ? #contact)
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    // 3) Zaraz po load wyrzuć przeglądarkę na górę strony
+    window.scrollTo(0, 0);
+
+    // 4) Czekaj 2 sekundy (czas trwania animacji na #hero)
+    setTimeout(() => {
+      // 5) Dopiero teraz płynnie przewiń do docelowej sekcji
+      const targetEl = document.querySelector(hash);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 2000); // 2000 ms = 2 s
+  });
+
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   }
 
   window.addEventListener('load', function () {
+
+    window.scrollTo(0, 0);
+
     document.getElementsByClassName('load-container')[0].style.width =
         (document.getElementsByClassName('img-me')[0].offsetWidth.toString()+"px");
 
@@ -18,6 +46,23 @@ window.onbeforeunload = function () {
             document.getElementsByClassName('loading')[0].style.display = "none";
         }, 500);
     }, animationTime);
+
+    var modalId = window.location.hash; // Pobieramy hash z URL
+    setTimeout(() => {
+        // 5) Dopiero teraz płynnie przewiń do docelowej sekcji
+        // Otwieramy modal na podstawie hash
+        if (modalId && $(modalId).length > 0 && $(modalId).hasClass('modal')) {
+            $(modalId).modal('show');
+        }
+      }, animationTime);
+
+    setTimeout(() => {
+        // 5) Dopiero teraz płynnie przewiń do docelowej sekcji
+        const targetEl = document.querySelector(hash);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, animationTime);
 
     var loads = document.getElementsByClassName("load");
     loads[0].classList.add("top");
@@ -39,15 +84,6 @@ window.onbeforeunload = function () {
   var closedModalHashStateId = "#modalClosed";
   var openModalHashStateId = "#modalOpen";
 
-  $(document).ready(function() {
-    var modalId = window.location.hash; // Pobieramy hash z URL
-    
-
-    // Otwieramy modal na podstawie hash
-    if (modalId && $(modalId).length > 0 && $(modalId).hasClass('modal')) {
-        $(modalId).modal('show');
-    }
-});
   
     if(window.location.hash == ""){
         window.location.hash = closedModalHashStateId;
