@@ -42,9 +42,9 @@ window.onbeforeunload = function () {
   $(document).ready(function() {
     var modalId = window.location.hash; // Pobieramy hash z URL
     
+
     // Otwieramy modal na podstawie hash
-    if (modalId) {
-        console.log(modalId);
+    if (modalId && $(modalId).length > 0 && $(modalId).hasClass('modal')) {
         $(modalId).modal('show');
     }
 });
