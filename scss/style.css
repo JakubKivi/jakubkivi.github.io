@@ -3,7 +3,7 @@ a:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 1px solid rgba(230, 111, 27, 0.8549019608);
+  outline: none;
 }
 
 @keyframes firework {
@@ -529,11 +529,20 @@ nav .navbar-toggler i {
   font-size: 1.1rem;
 }
 .about .data-line {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.95rem;
   text-align: center;
   font-size: 1rem;
 }
+.about .data-line .data-line-addition {
+  color: rgba(255, 159, 104, 0.567);
+  font-weight: bold;
+  font-size: 0.95rem;
+  display: inline-block;
+  vertical-align: middle;
+}
 .about .data-line a {
+  display: inline-block;
+  vertical-align: middle;
   color: rgba(192, 77, 0, 0.7450980392);
   font-size: 1.15rem;
   font-weight: bold;

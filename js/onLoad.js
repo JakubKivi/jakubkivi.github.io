@@ -156,4 +156,19 @@ function ready() {
     }
 }
 
+// Błagam nie zabijaj mnie za bałagan Kubusiu z przyszłości
+// to niżej to żeby się zamykało menu po kliknięciu w nawigacji na telefonie
 
+document.addEventListener('DOMContentLoaded', function () {
+    var navbarCollapse = document.getElementById('navbarSupportedContent');
+    var navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        // jeśli navbar jest rozwinięty, zwijamy go po kliknięciu
+        if (navbarCollapse.classList.contains('show')) {
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
+  });
