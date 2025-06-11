@@ -851,8 +851,21 @@ nav{
         margin-bottom: .8rem; 
         color: $font-shadow;
         width: 100%;
+        .line{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .year{
+            margin-right: 0.5rem;
+        }
         .c-circle{
             font-size: 1.3rem;
+            margin-right: 0.5rem;
+        }
+        .arts{
+            font-size: .8rem;
+            margin-right: 0.5rem;
         }
         .hidden-button{
             color: $nav;

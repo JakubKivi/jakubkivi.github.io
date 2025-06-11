@@ -824,8 +824,21 @@ nav .navbar-toggler i {
   color: rgba(192, 77, 0, 0.7450980392);
   width: 100%;
 }
+.footer .copyright .line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .copyright .year {
+  margin-right: 0.5rem;
+}
 .footer .copyright .c-circle {
   font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+.footer .copyright .arts {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
 }
 .footer .copyright .hidden-button {
   color: #110505;
