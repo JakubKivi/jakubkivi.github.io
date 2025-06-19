@@ -461,8 +461,8 @@ nav{
             float: left;
             max-width: 20rem;
             max-height: 30rem;
-            margin-left: 1.5rem;
-            margin-right: 1.5rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
             overflow: hidden;
             img{
                 display: block;
@@ -472,8 +472,8 @@ nav{
             
         }
         .about-text{
-            margin-left: 1rem;
-            margin-right: 1rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
             text-align: justify;
             color: $font-portfolio;
             margin-bottom:3.5rem;
@@ -619,7 +619,9 @@ nav{
     .portfolio-col{
         padding-top: 4.5rem;
         .box{
-            padding: 1rem;
+            padding-top: 1rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
             background-image: linear-gradient(225deg, $notes-bg-2, $notes-bg-1);
             border-radius: 0.5rem;
             box-shadow: inset 0px 0px 7px 3px $font-shadow;
@@ -740,8 +742,9 @@ nav{
         border-radius: 0.5rem;
         box-shadow: inset 0px 0px 7px 3px $font-shadow;
         padding-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: .1rem;
         .contact-header{
             margin-bottom: 0.8rem;
             text-align: center;

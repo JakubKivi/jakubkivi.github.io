@@ -443,8 +443,8 @@ nav .navbar-toggler i {
   float: left;
   max-width: 20rem;
   max-height: 30rem;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   overflow: hidden;
 }
 .about .about-left .about-img img {
@@ -453,8 +453,8 @@ nav .navbar-toggler i {
   height: 100%;
 }
 .about .about-left .about-text {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   text-align: justify;
   color: rgba(255, 159, 104, 0.567);
   margin-bottom: 3.5rem;
@@ -597,7 +597,9 @@ nav .navbar-toggler i {
   padding-top: 4.5rem;
 }
 .portfolio .portfolio-col .box {
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-image: linear-gradient(225deg, #331111, #110505);
   border-radius: 0.5rem;
   box-shadow: inset 0px 0px 7px 3px rgba(192, 77, 0, 0.7450980392);
@@ -717,8 +719,9 @@ nav .navbar-toggler i {
   border-radius: 0.5rem;
   box-shadow: inset 0px 0px 7px 3px rgba(192, 77, 0, 0.7450980392);
   padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 0.1rem;
 }
 .contact .contact-container .contact-header {
   margin-bottom: 0.8rem;
