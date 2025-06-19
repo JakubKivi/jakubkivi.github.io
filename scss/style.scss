@@ -854,8 +854,21 @@ nav{
         margin-bottom: .8rem; 
         color: $font-shadow;
         width: 100%;
+        .line{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .year{
+            margin-right: 0.5rem;
+        }
         .c-circle{
             font-size: 1.3rem;
+            margin-right: 0.5rem;
+        }
+        .arts{
+            font-size: .8rem;
+            margin-right: 0.5rem;
         }
         .hidden-button{
             color: $nav;
@@ -1106,7 +1119,19 @@ nav{
                 &:hover{
                     color: $font;
                     transition: .5s;  
+                    box-shadow: 0px 0px 10px 4px $font-shadow;
                 }
+                &:active{
+                    color: $font;
+                    background-color: $font-shadow;
+                    box-shadow: 0px 0px 10px 2px $font-shadow !important;
+                    border: none !important;
+                    outline: none !important;
+                }
+                &:focus {
+                    outline: none !important;
+                }
+
             }
         }
     }
