@@ -829,7 +829,7 @@ nav .navbar-toggler i {
 }
 .footer .copyright .line {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
 }
 .footer .copyright .year {
@@ -842,6 +842,7 @@ nav .navbar-toggler i {
 .footer .copyright .arts {
   font-size: 0.8rem;
   margin-right: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 .footer .copyright .hidden-button {
   color: #110505;
