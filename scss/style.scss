@@ -205,8 +205,8 @@ body{
         @media only screen and (max-width: 769px) {
             max-height: 40vh;
             max-height: 40svh;
-            margin-top: 20vh;
-            margin-top: 20svh;
+            margin-top: 10vh;
+            margin-top: 10svh;
         }
     }
     .load{
@@ -436,6 +436,7 @@ nav{
     padding-top: 4.5rem;
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
 
     @media only screen and (max-width: 769px) {
         flex-direction: column-reverse;
@@ -446,7 +447,7 @@ nav{
         margin-left: 5vw;
         padding-bottom: 4vw;
         width: 59vw;
-        height: 100%;
+        // height: 100%;
         background-image: linear-gradient(-135deg, $start-bg-2, $start-bg-1);
         box-shadow: inset 0px 0px 7px 3px $font-shadow;
         border-radius: .5rem;
@@ -518,11 +519,14 @@ nav{
     .about-right{
         margin-left: 2vw;
         width: 29vw;
+        height: 100%;
         background-image: linear-gradient(135deg, $start-bg-2, $start-bg-1);
         box-shadow: inset 0px 0px 7px 3px $font-shadow;
         border-radius: .5rem;
-        padding: 1rem;
-        padding-bottom: 3rem;
+        padding: 2rem;
+        padding-top: 1rem;
+        // display: table-cell;
+        // padding-bottom: 3rem;
         margin-bottom: auto;
         @media only screen and (max-width: 769px) {
             flex-direction: column-reverse;
@@ -687,9 +691,10 @@ nav{
             margin-right: 0;
             display: block;
             padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 3rem;
             
             overflow: hidden;
-            padding-right: 2rem;
             @media only screen and (max-width: 769px) {
                 display: none;
             }
@@ -704,6 +709,27 @@ nav{
                     border-radius: 3px;
                     box-shadow: 0px 0px 15px 6px $image-shadow;
                     object-fit: contain;
+                     // Default (xs)
+                    max-width: 100%;
+                    max-height: 10rem;
+
+                    // Medium (≥768px)
+                    @media (min-width: 768px) {
+                        max-width: 11rem;
+                        max-height: 11rem;
+                    }
+
+                    // Large (≥992px)
+                    @media (min-width: 992px) {
+                        max-width: 13rem;
+                        max-height: 13rem;
+                    }
+
+                    // Extra large (≥1200px)
+                    @media (min-width: 1200px) {
+                        max-width: 16rem;
+                        max-height: 16rem;
+                    }
                 }
             }
             
@@ -722,6 +748,28 @@ nav{
                         text-shadow: 0 0 3px $font-shadow;
                         transition: .5s;
                         text-decoration: none;
+                    }
+                }
+            }
+            .button-container{
+                display: flex;
+                justify-content: center;
+                margin-top: 1.5rem;
+                width: 100%;
+                button{
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: auto;
+                    background-color: #fff0;
+                    border:none;
+                    box-shadow: 0px 0px 10px 2px $font-shadow;
+                    color: $font-shadow;
+                    font-weight: bold;
+                    padding: 0.1rem 0.4rem 0.3rem 0.4rem;
+                    transition: .5s;
+                    &:hover{
+                        color: $font;
+                        transition: .5s;
                     }
                 }
             }
@@ -865,6 +913,7 @@ nav{
         .c-circle{
             font-size: 1.3rem;
             margin-right: 0.5rem;
+            margin-bottom: -0.15rem;
         }
         .arts{
             font-size: .8rem;

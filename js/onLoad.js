@@ -16,6 +16,8 @@ function onLoad(){
 
     // 4) Czekaj 2 sekundy (czas trwania animacji na #hero)
     setTimeout(() => {
+      
+      matchHeights();
       // 5) Dopiero teraz płynnie przewiń do docelowej sekcji
       const targetEl = document.querySelector(hash);
       if (targetEl) {
@@ -49,15 +51,12 @@ window.onbeforeunload = function () {
 
     var modalId = window.location.hash; // Pobieramy hash z URL
     setTimeout(() => {
-        // 5) Dopiero teraz płynnie przewiń do docelowej sekcji
-        // Otwieramy modal na podstawie hash
         if (modalId && $(modalId).length > 0 && $(modalId).hasClass('modal')) {
             $(modalId).modal('show');
         }
       }, animationTime);
 
     setTimeout(() => {
-        // 5) Dopiero teraz płynnie przewiń do docelowej sekcji
         const targetEl = document.querySelector(hash);
         if (targetEl) {
           targetEl.scrollIntoView({ behavior: 'smooth' });
@@ -172,3 +171,43 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+
+window.addEventListener('resize', matchHeights);
+
+
+function matchHeights() {
+
+  const left = document.querySelector('.about-left');
+  const right = document.querySelector('.about-right');
+
+  if (window.matchMedia('(max-width: 769px)').matches) {
+    // Don't apply height sync on mobile layout
+    right.style.height = 'auto';
+    return;
+  }else{
+    matchPortfolioHeights();
+  }
+
+
+  right.style.height = 'auto'; // reset height first
+  right.style.height = left.offsetHeight + 'px';
+
+  
+}
+
+function matchPortfolioHeights() {
+
+  const left = document.querySelector('.box-left');
+  const right = document.querySelector('.right-box');
+
+  if (window.matchMedia('(max-width: 769px)').matches) {
+    // Don't apply height sync on mobile layout
+    right.style.height = 'auto';
+    return;
+  }
+
+
+  right.style.height = 'auto'; // reset height first
+  right.style.height = left.offsetHeight + 'px';
+}
