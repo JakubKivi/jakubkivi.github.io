@@ -3,6 +3,7 @@ var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 var selector = document.getElementsByClassName("portfolio-selector")[0].children;
 var activeSelector="calk3";
 
+
 for (var i = 0; i < selector.length; i++) { 
     selector[i].addEventListener("click", onSelectorClicked);
 }
@@ -49,12 +50,80 @@ async function onSelectorClicked(element){
     
 }
 
+function fits(text, place, container) {
+  place.innerHTML = text + '...';
+  place.offsetHeight; 
+  return container.scrollHeight <= container.clientHeight;
+}
+
+function findMaxFittingText(text, place, container) {
+  let low = 0;
+  let high = text.length;
+  let result = '';
+
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2);
+    const substr = text.slice(0, mid);
+    if (fits(substr, place, container)) {
+      result = substr;
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+  return result;
+}
+
+function isOverflowing(element) {
+  return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}
+
+function startOverflowWatcher(containerSelector) {
+  const container = document.getElementById(containerSelector);
+
+  if (!container) {
+    console.error(`Container '${containerSelector}' not found.`);
+    return;
+  }
+
+  setInterval(() => {
+    if (isOverflowing(container)) {
+      ChangePortfolioContent(activeSelector, container);
+    }
+  }, 1000);
+}
+
+startOverflowWatcher('right-column');
+
+var containerLeft = document.getElementById("box-left-id");
+var rightColumn = document.getElementById("right-column");
+let lastHeight = containerLeft.clientHeight;
+
+function watchContainerHeight() {
+  const newHeight = containerLeft.clientHeight;
+  if (newHeight !== lastHeight) {
+    lastHeight = newHeight;
+    ChangePortfolioContent(activeSelector, rightColumn);
+  }
+  requestAnimationFrame(watchContainerHeight);
+}
+
+watchContainerHeight();
+
 function ChangePortfolioContent(a, r){
     var myModal = document.getElementById("modal-"+a);
-    document.getElementById("portfolio-text").innerHTML = 
-    myModal.getElementsByClassName("portfolio-text")[0].innerHTML.slice(0, 900 *width/1536) + "... " +
-    "<a href=\"\" data-toggle=\"modal\" data-target=\"#portfolio-modal-"+a+"\">Read more. </a>";
-    //width/1536 is screen width coefficient to trim text more on smaller screens ;)
+
+    var textPlace = document.getElementById("portfolio-text");
+    var container = document.getElementById("right-column");
+
+    var fullText = myModal.getElementsByClassName("portfolio-text")[0].innerHTML;
+    var fittingText = findMaxFittingText(fullText, textPlace, container);
+
+    var isTruncated = fittingText.length < fullText.length;
+
+    textPlace.innerHTML = isTruncated ? fittingText + '...' : fullText;
+
+    document.getElementById("readMore").setAttribute("data-target", "#portfolio-modal-"+a );
     
     document.getElementById("portfolio-image").innerHTML = 
     myModal.getElementsByClassName("img-container")[0].innerHTML;
