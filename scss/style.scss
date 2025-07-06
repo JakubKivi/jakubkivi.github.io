@@ -1027,6 +1027,10 @@ nav{
                 }
                 .notebook-status{
                     width: 66.6%;
+                     @media only screen and (max-width: 769px) {
+                        
+                        width: 100%;
+                    } 
                 }
             }
             .modal-stack{
