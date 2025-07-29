@@ -96,7 +96,11 @@ body{
 
         }
     }
-    animation: body-loading $animation-time;
+    // animation: body-loading $animation-time;
+}
+
+.loading-img{
+    background-color: lime;
 }
 
 .loading{

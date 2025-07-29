@@ -47,7 +47,14 @@ async function onSelectorClicked(element){
         var modalName = '#portfolio-modal-'+id;
         $(modalName).modal();
     }
-    
+    console.log("dupksko");
+    $(".img-"+id).each(function() {
+        const $img = $(this);
+        $img.attr("src", $img.data("img")).on("load", function() {
+            $img.removeClass("loading-img");
+        });
+    });
+
 }
 
 function fits(text, place, container) {
