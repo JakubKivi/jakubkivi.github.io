@@ -202,6 +202,12 @@ body{
         border-radius: .3rem;
         max-height: 60vh;
         max-height: 60svh;
+        @media only screen and (min-width: 769px) and (max-width: 991.98px){
+            margin-top: 5vh;
+            margin-top: 5svh;
+            max-height: 50vh !important;
+            max-height: 50svh !important;
+        }
         @media only screen and (max-width: 769px) {
             max-height: 40vh;
             max-height: 40svh;
@@ -1027,6 +1033,10 @@ nav{
                 }
                 .notebook-status{
                     width: 66.6%;
+                     @media only screen and (max-width: 769px) {
+                        
+                        width: 100%;
+                    } 
                 }
             }
             .modal-stack{
