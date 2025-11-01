@@ -156,7 +156,7 @@ function ready() {
 }
 
 // Błagam nie zabijaj mnie za bałagan Kubusiu z przyszłości
-// to niżej to żeby się zamykało menu po kliknięciu w nawigacji na telefonie
+// to niżej to żeby się zamykało menu po kliknięciu w nawigacji na telefonie   //wybaczam. Schizofrenia
 
 document.addEventListener('DOMContentLoaded', function () {
     var navbarCollapse = document.getElementById('navbarSupportedContent');
