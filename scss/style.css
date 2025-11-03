@@ -228,7 +228,8 @@ body {
   height: 100%;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: rgba(230, 111, 27, 0.8549019608);
   background: rgba(239, 136, 63, 0.3490196078);
 }
@@ -487,10 +488,13 @@ nav .navbar-toggler i {
   left: 1rem;
   transform: rotate(180deg);
 }
+.about .about-left .arrow-inactive {
+  color: #331111;
+}
 .about .about-left .arrow-inactive:hover {
   animation: none;
   cursor: default;
-  color: rgba(192, 77, 0, 0.7450980392);
+  color: #331111;
   text-shadow: none;
 }
 .about .hiding {
