@@ -93,7 +93,7 @@
                             <div class="d-flex justify-content-center starting-left-div" >
                                 <div class="align-self-center justify-content-center ">
                                     <div class="text-uppercase first-line">
-                                        <!-- <span class="inz" onclick="inzClicked()">inż.</span>  -->
+                                        <!-- <span class="inz" onclick="inzClicked()">Eng.</span>  -->
                                         Jakub <text>Kivi</text> Kuziemski
                                     </div> 
                                     <div class="text-uppercase second-line">
@@ -265,12 +265,6 @@
                                             <div><img src="assets/portfolio/grzes/grzes.svg" alt="">
                                             </div> 
                                          </div>      
-                                         <!--   data-userid=14 - fryta   -->
-
-                                        <!-- <div class="col-4 col-lg-3 box-box" data-userid="KPillar">
-                                            <div><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Noun_290606_ccXinhStudio_flowerpot.svg" alt="">
-                                                </div>
-                                            </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -342,7 +336,7 @@
                 <div class="container">
                     <div class="row text-center align-items-center">
                         <div class="col-md-4">
-                            <span class="iconify" data-icon="mdi:lightbulb-on-outline" data-toggle="modal" data-target="#modal-ideas"></span>
+                            <span class="iconify" id="ideas-button" data-icon="mdi:lightbulb-on-outline" data-toggle="modal" data-target="#modal-ideas"></span>
                         </div>
                         <div class="col-md-4">
                             <div class="social-icons">
@@ -361,7 +355,7 @@
                             </div>
                             <div class="copyright">
                                 <div class="line">
-                                    <span class="c-circle">©</span> <span class="year"> 2023 </span> <a style="cursor:pointer;" data-toggle="modal" data-target="#modal-notebook">Jakub Kuziemski</a>
+                                    <span class="c-circle">©</span> <span class="year"> 2023 </span> <a id="notebook-button" style="cursor:pointer;" data-toggle="modal" data-target="#modal-notebook">Jakub Kuziemski</a>
                                 </div>                                
                                 <div class="line">
                                     <span class="arts">Arts & Design Advice</span>  <a href="https://www.instagram.com/_baba.shoe_/" target="_blank">Joanna Butkiewicz</a>
@@ -370,7 +364,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <span class="iconify" data-icon="tabler:grave-2" data-toggle="modal" data-target="#modal-graveyard"></span>
+                            <span class="iconify" id="graveyard-button" data-icon="tabler:grave-2" data-toggle="modal" data-target="#modal-graveyard"></span>
                         </div>
                     </div>
                 </div>
@@ -384,6 +378,10 @@
         <div class="modal fade" id="portfolio-modal-swiatowid" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-swiatowid">
+                <div id="swiatowid-loader">
+
+                </div>
+                <template id="swiatowid-notebook">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">Swiatowid
                         <!-- <a href="https://github.com/JakubKivi/VisualVoid" target="_blank">
@@ -451,6 +449,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -458,6 +457,10 @@
         <div class="modal fade" id="portfolio-modal-void" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-void">
+                <div id="void-loader">
+
+                </div>
+                <template id="template-void">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">Visual Void<a href="https://github.com/JakubKivi/VisualVoid" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -503,6 +506,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -510,6 +514,10 @@
         <div class="modal fade" id="portfolio-modal-k-pillar" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-k-pillar">
+                <div id="k-pillar-loader">
+                    
+                </div>
+                <template id="template-k-pillar">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">K-Pillar<a href="https://github.com/JakubKivi/K-Pillar" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -576,6 +584,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -583,6 +592,10 @@
         <div class="modal fade" id="portfolio-modal-ChairRorist" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-ChairRorist">
+                <div id="ChairRorist-loader">
+
+                </div>
+                <template id="template-ChairRorist">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">ChairRorist<a href="https://github.com/JakubKivi/ChairRorist" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -644,6 +657,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -651,6 +665,10 @@
         <div class="modal fade" id="portfolio-modal-calk4" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-calk4">
+                <div id="calk4-loader">
+
+                </div>
+                <template id="template-calk4">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">CalkaBot 4k0<a href="https://github.com/JakubKivi/CalkaBot4K0" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -702,6 +720,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -709,6 +728,10 @@
         <div class="modal fade" id="portfolio-modal-calk3" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-calk3">
+                <div id="calk3-loader">
+
+                </div>
+                <template id="template-calk3">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">CalkaBot 3k0<a href="https://github.com/JakubKivi/CalkaBot3K0" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -778,6 +801,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -785,6 +809,10 @@
         <div class="modal fade" id="portfolio-modal-tafl" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-tafl">
+                <div id="tafl-loader">
+
+                </div>
+                <template id="template-tafl">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">Tafl Games<a href="https://github.com/JakubKivi/Tafl-Games" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -836,6 +864,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -843,6 +872,10 @@
         <div class="modal fade" id="portfolio-modal-bzone" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-bzone">
+                <div id="bzone-loader">
+
+                </div>
+                <template id="template-bzone">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">BZone</div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -896,6 +929,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -904,6 +938,10 @@
         <div class="modal fade" id="portfolio-modal-robocode" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-robocode">
+                <div id="robocode-loader">
+
+                </div>
+                <template id="template-robocode">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">Robocode<a href="https://github.com/JakubKivi/StudentsGames" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -980,6 +1018,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -988,6 +1027,10 @@
         <div class="modal fade" id="portfolio-modal-pierog" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-pierog">
+                <div id="pierog-loader">
+
+                </div>
+                <template id="template-pierog">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">Pierogi Game
                         <!-- <a href="https://github.com/JakubKivi/CalkaBot" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a> -->
@@ -1044,6 +1087,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1052,6 +1096,10 @@
         <div class="modal fade" id="portfolio-modal-jakubkivi" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-jakubkivi">
+                <div id="jakubkivi-loader">
+
+                </div>
+                <template id="template-jakubkivi">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">My personal website<a href="https://github.com/JakubKivi/jakubkivi.github.io" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                     </div>
@@ -1123,6 +1171,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1131,6 +1180,10 @@
         <div class="modal fade" id="portfolio-modal-calk" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-calk">
+                <div id="calk-loader">
+
+                </div>
+                <template id="template-calk">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">CalkaBot 1.0<a href="https://github.com/JakubKivi/CalkaBot" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                     </div>
@@ -1194,6 +1247,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1202,6 +1256,10 @@
         <div class="modal fade" id="portfolio-modal-calk2" tabindex="-2" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-calk2">
+                <div id="calk2-loader">
+
+                </div>
+                <template id="template-calk2">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">CalkaBot 2.0<a href="https://github.com/JakubKivi/CalkaBot" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                     </div>
@@ -1256,6 +1314,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1264,6 +1323,10 @@
         <div class="modal fade" id="portfolio-modal-ara" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-ara">
+                <div id="ara-loader">
+
+                </div>
+                <template id="template-ara">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">ARA<a href="https://github.com/JakubKivi/ARA_2.0" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                     </div>
@@ -1316,6 +1379,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1324,6 +1388,10 @@
          <div class="modal fade" id="portfolio-modal-lamp" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-lamp">
+                <div id="lamp-loader">
+
+                </div>
+                <template id="template-lamp">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">Music Lamp<a href="https://github.com/JakubKivi/MusicReactiveLamp/" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                     </div>
@@ -1381,6 +1449,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1389,6 +1458,10 @@
          <div class="modal fade" id="portfolio-modal-pong" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-pong">
+                <div id="pong-loader">
+
+                </div>
+                <template id="template-pong">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">PingPong Display<a href="https://github.com/JakubKivi/PONG" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                     </div>
@@ -1447,6 +1520,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1454,6 +1528,10 @@
         <div class="modal fade" id="portfolio-modal-jack" tabindex="-1" role="dialog">
            <div class="modal-dialog modal-lg" role="document">
            <div class="modal-content"  id="modal-jack">
+                <div id="jack-loader">
+
+                </div>
+                <template id="template-jack">
                <div class="modal-header">
                    <div class="modal-title ml-auto">Jack<a href="https://github.com/JakubKivi/Jack" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                    </div>
@@ -1506,6 +1584,7 @@
                <div class="modal-footer">
                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                </div>
+                </template>
            </div>
            </div>
        </div>
@@ -1513,6 +1592,10 @@
        <div class="modal fade" id="portfolio-modal-powersup" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content"  id="modal-powersup">
+                <div id="powersup-loader">
+
+                </div>
+                <template id="template-powersup">
                 <div class="modal-header">
                     <div class="modal-title ml-auto">Custom Power Supply
                     </div>
@@ -1557,6 +1640,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
+                </template>
             </div>
             </div>
         </div>
@@ -1564,6 +1648,10 @@
        <div class="modal fade" id="portfolio-modal-grzes" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content"  id="modal-grzes">
+            <div id="grzes-loader">
+
+                </div>
+                <template id="template-grzes">
             <div class="modal-header">
                 <div class="modal-title ml-auto">Grzesiek Robot<a href="https://github.com/JakubKivi/Grzesiek" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                 </div>
@@ -1620,13 +1708,18 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+            </template>
         </div>
         </div>
     </div>
     <!-- modal fryta -->
-    <div class="modal fade" id="portfolio-modal-fryta" tabindex="-1" role="dialog">ż
+    <div class="modal fade" id="portfolio-modal-fryta" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content"  id="modal-fryta">
+            <div id="fryta-loader">
+
+                </div>
+                <template id="template-fryta">
             <div class="modal-header">
                 <div class="modal-title ml-auto">Fryta<a href="https://github.com/JakubKivi/fryta" target="_blank"><i class="fa-brands fa-github ml-3 clickable-icon-neon"></i></a>
                 </div>
@@ -1665,13 +1758,18 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+            </template>
         </div>
         </div>
     </div>
     <!-- modal ideas -->
-    <div class="modal fade" id="modal-ideas" tabindex="-1" role="dialog">ż
+    <div class="modal fade" id="modal-ideas" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content"  id="modal-ideas">
+            <div id="ideas-loader">
+
+                </div>
+                <template id="template-ideas">
             <div class="modal-header">
                 <div class="modal-title ml-auto">Project ideas
                 </div>
@@ -1715,13 +1813,18 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+            </template>
         </div>
         </div>
     </div>
     <!-- modal graveyard -->
-    <div class="modal fade" id="modal-graveyard" tabindex="-1" role="dialog">ż
+    <div class="modal fade" id="modal-graveyard" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content"  id="modal-graveyard">
+            <div id="graveyard-loader">
+
+                </div>
+                <template id="template-graveyard">
             <div class="modal-header">
                 <div class="modal-title ml-auto">Projects Graveyard
                 </div>
@@ -1764,6 +1867,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+            </template>
         </div>
         </div>
     </div>
@@ -1772,6 +1876,10 @@
     <div class="modal fade" id="modal-notebook" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content"  id="modal-notebook">
+            <div id="notebook-loader">
+
+            </div>
+            <template id="template-notebook">
             <div class="modal-header">
                 <div class="modal-title ml-auto">Personal notebook
                 </div>
@@ -1909,6 +2017,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+            </template>
         </div>
         </div>
     </div>

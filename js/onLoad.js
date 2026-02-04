@@ -102,32 +102,31 @@ $(".modal").on("hide.bs.modal", function (e) {
   window.code = window.code || {};
 
   window.code.lightweightYoutubePlayer = function () {
-    var dataYoutubeVideos = "[data-youtube]";
-
-    var youtubeVideos = [...document.querySelectorAll(dataYoutubeVideos)];
+    var buttonSelector = "[data-youtube-button]";
 
     function init() {
-      youtubeVideos.forEach(function (element) {
-        bindYoutubeVideoEvent(element);
+      // Use event delegation to handle elements loaded dynamically (e.g., from <template>)
+      document.body.addEventListener("click", function (event) {
+        // Check if the clicked element or its parent matches the selector
+        var button = event.target.closest(buttonSelector);
+
+        if (button) {
+          createIframe(button);
+        }
       });
     }
 
-    function bindYoutubeVideoEvent(element) {
-      var button = element.querySelector("[data-youtube-button]");
-
-      button.addEventListener("click", createIframe);
-    }
-
-    function createIframe(event) {
-      var url = event.target.dataset.youtubeButton;
-      var youtubePlaceholder = event.target.parentNode;
+    function createIframe(button) {
+      var url = button.dataset.youtubeButton;
+      // The placeholder is the direct parent of the button
+      var youtubePlaceholder = button.parentNode;
 
       var htmlString =
         '<div class="video__youtube"> <iframe class="video__iframe" src="' +
         url +
         '?autoplay=1" frameborder="0" allowfullscreen></iframe></div>';
 
-      youtubePlaceholder.style.display = "none";
+      // Insert the iframe and remove the placeholder
       youtubePlaceholder.insertAdjacentHTML("beforebegin", htmlString);
       youtubePlaceholder.parentNode.removeChild(youtubePlaceholder);
     }
@@ -201,3 +200,35 @@ function matchPortfolioHeights() {
   right.style.height = "auto"; // reset height first
   right.style.height = left.offsetHeight + "px";
 }
+
+document.getElementById("notebook-button").addEventListener("click", () => {
+  const template = document.getElementById("template-notebook");
+  const container = document.getElementById("notebook-loader");
+  if (container.innerHTML.trim() == "") {
+    // Clone template content and append to DOM
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+  }
+});
+
+document.getElementById("graveyard-button").addEventListener("click", () => {
+  const template = document.getElementById("template-graveyard");
+  const container = document.getElementById("graveyard-loader");
+
+  if (container.innerHTML.trim() == "") {
+    // Clone template content and append to DOM
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+  }
+});
+
+document.getElementById("ideas-button").addEventListener("click", () => {
+  const template = document.getElementById("template-ideas");
+  const container = document.getElementById("ideas-loader");
+
+  if (container.innerHTML.trim() == "") {
+    // Clone template content and append to DOM
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+  }
+});
