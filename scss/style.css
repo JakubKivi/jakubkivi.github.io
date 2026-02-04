@@ -1,3 +1,4 @@
+@charset "UTF-8";
 button:focus,
 a:focus,
 input:focus,
@@ -688,8 +689,18 @@ nav .navbar-toggler i {
 }
 .portfolio .portfolio-col .right-box .img-container {
   float: left;
+  min-width: 200px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .portfolio .portfolio-col .right-box .img-container img {
+  z-index: 2;
+  position: relative;
+  opacity: 0; /* Niewidoczny na starcie */
+  transform: scale(0.98); /* Opcjonalnie: lekko pomniejszony */
+  transition: opacity 0.5s ease, transform 0.5s ease;
   margin-top: 0.6rem;
   max-width: 20rem;
   max-height: 15rem;
@@ -701,6 +712,10 @@ nav .navbar-toggler i {
      object-fit: contain;
   max-width: 100%;
   max-height: 10rem;
+}
+.portfolio .portfolio-col .right-box .img-container img.loaded {
+  opacity: 1;
+  transform: scale(1);
 }
 @media (min-width: 768px) {
   .portfolio .portfolio-col .right-box .img-container img {
@@ -1123,6 +1138,24 @@ nav .navbar-toggler i {
   transition: 0.5s;
   text-decoration: none;
 }
+.modal .modal-content .modal-body .img-container {
+  min-width: 200px;
+  min-height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content .modal-body .img-container img {
+  z-index: 2;
+  opacity: 0; /* Niewidoczny na starcie */
+  transform: scale(0.98); /* Opcjonalnie: lekko pomniejszony */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.modal .modal-content .modal-body .img-container img.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
 .modal .modal-content .modal-body .modal-img-bottom-container {
   display: flex;
   align-items: center;
@@ -1264,4 +1297,25 @@ body.modal-open .no-modal-content {
 .video__button:hover:before {
   background: url(../assets/youtube/youtube-red.svg) no-repeat center center;
   background-size: 10%;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(239, 136, 63, 0.3490196078); /* Kolor kółka */
+  border-top: 4px solid rgba(239, 136, 63, 0.8549019608); /* Kolor kręcącej się części */
+  box-shadow: 0px -2px 5px 3px rgba(192, 77, 0, 0.7450980392);
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+  z-index: 1;
+  position: absolute; /* Siedzi pod obrazkiem */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=style.css.map */

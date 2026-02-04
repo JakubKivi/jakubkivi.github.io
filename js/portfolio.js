@@ -1,5 +1,3 @@
-var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-
 var selector =
   document.getElementsByClassName("portfolio-selector")[0].children;
 var activeSelector = "calk3";
@@ -15,6 +13,7 @@ async function onSelectorClicked(element) {
     var id = activeSelector;
     var firstLoad = true;
   }
+  const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
   if (width > 769) {
     //na szerokich ekranach zaznaczamy
     if (id != activeSelector || firstLoad) {
@@ -54,6 +53,9 @@ async function onSelectorClicked(element) {
       // Clone template content and append to DOM
       const clone = template.content.cloneNode(true);
       loaderContainer.appendChild(clone);
+      loaderContainer.innerHTML = loaderContainer.innerHTML;
+
+      attachImageLoaders(loaderContainer);
     }
     var modalName = "#portfolio-modal-" + id;
     $(modalName).modal();
@@ -131,6 +133,8 @@ function ChangePortfolioContent(a, r) {
     // Clone template content and append to DOM
     const clone = template.content.cloneNode(true);
     loaderContainer.appendChild(clone);
+
+    attachImageLoaders(loaderContainer);
   }
 
   var myModal = document.getElementById("modal-" + a);
@@ -150,12 +154,15 @@ function ChangePortfolioContent(a, r) {
     .setAttribute("data-target", "#portfolio-modal-" + a);
 
   document.getElementById("portfolio-image").innerHTML =
+    '<div class="loader"></div>' +
     myModal.getElementsByClassName("img-container")[0].innerHTML;
 
   document.getElementById("portfolio-title").innerHTML =
     myModal.getElementsByClassName("modal-title")[0].innerHTML;
 
   r.style.opacity = 1;
+
+  attachImageLoaders(document);
 }
 
 async function switchModal(targetModalId) {
@@ -174,4 +181,23 @@ async function switchModal(targetModalId) {
   } else {
     console.error(`Modal with ID "${targetModalId}" not found.`);
   }
+}
+
+function attachImageLoaders(container) {
+  const images = container.querySelectorAll("img");
+
+  images.forEach((img) => {
+    // 1. Check if image is already loaded (e.g., from cache)
+    const onImageLoaded = () => {
+      img.classList.add("loaded");
+    };
+
+    // Check if image is already loaded from cache
+    if (img.complete) {
+      onImageLoaded();
+    } else {
+      // Wait for the load event
+      img.addEventListener("load", onImageLoaded);
+    }
+  });
 }

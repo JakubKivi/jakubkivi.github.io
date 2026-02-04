@@ -68,8 +68,11 @@ select:focus {
   }
   20% {
     color: $font;
-    text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-      0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
   }
   30% {
     color: $font-shadow;
@@ -77,8 +80,11 @@ select:focus {
   }
   90% {
     color: $font;
-    text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-      0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
   }
   95% {
     color: $font-shadow;
@@ -86,8 +92,11 @@ select:focus {
   }
   100% {
     color: $font;
-    text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-      0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
   }
 }
 body {
@@ -296,15 +305,21 @@ nav {
     &:hover {
       animation: blinkShine $blink-shine-animation-time;
       color: $font;
-      text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-        0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+      text-shadow:
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow;
     }
   }
 
   .active {
     color: $font;
-    text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-      0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
   }
 
   span.navbar-toggler-icon {
@@ -316,7 +331,9 @@ nav {
     box-shadow: 0px 0px 4px 3px $font-shadow;
     i {
       color: $font;
-      text-shadow: 0px 0px 3px $font-shadow, 0px 0px 3px $font-shadow;
+      text-shadow:
+        0px 0px 3px $font-shadow,
+        0px 0px 3px $font-shadow;
     }
   }
 
@@ -338,8 +355,11 @@ nav {
     }
     color: $font;
     text-align: center;
-    text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-      0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
     .first-line {
       font-weight: bolder;
       font-size: 2.5vw;
@@ -352,11 +372,16 @@ nav {
         text-shadow: none;
         font-size: 1.5vw;
         opacity: 1;
-        box-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        box-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
         border-radius: 3px;
 
-        transition: 0.5s ease-out, transform 0.5s ease-out;
+        transition:
+          0.5s ease-out,
+          transform 0.5s ease-out;
         transform: scale(0.9); // Opcjonalne lekkie zmniejszenie
         &:hover {
           cursor: pointer;
@@ -507,8 +532,11 @@ nav {
         cursor: pointer;
         text-decoration: none;
         color: $font;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
       }
     }
     .arrow-left {
@@ -556,8 +584,11 @@ nav {
     color: $font;
     font-weight: bold;
     font-size: 1.4rem;
-    text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-      0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
     .data-line-date {
       color: $font-portfolio;
       font-size: 0.8rem;
@@ -595,8 +626,11 @@ nav {
       &:hover {
         color: $font;
         animation: blinkShine $blink-shine-animation-time;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
         cursor: pointer;
         text-decoration: none;
       }
@@ -653,8 +687,11 @@ nav {
         color: $font;
         font-weight: bold;
         font-size: 1.4rem;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
       }
 
       .row {
@@ -721,7 +758,19 @@ nav {
       }
       .img-container {
         float: left;
+        min-width: 200px;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img {
+          z-index: 2;
+          position: relative;
+          opacity: 0; /* Niewidoczny na starcie */
+          transform: scale(0.98); /* Opcjonalnie: lekko pomniejszony */
+          transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
           margin-top: 0.6rem;
           max-width: 20rem;
           max-height: 15rem;
@@ -733,6 +782,11 @@ nav {
           // Default (xs)
           max-width: 100%;
           max-height: 10rem;
+
+          &.loaded {
+            opacity: 1;
+            transform: scale(1);
+          }
 
           // Medium (≥768px)
           @media (min-width: 768px) {
@@ -820,8 +874,11 @@ nav {
       color: $font;
       font-weight: bold;
       font-size: 1.4rem;
-      text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-        0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+      text-shadow:
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow;
     }
 
     .data-line-contact {
@@ -854,20 +911,29 @@ nav {
       #name:focus-visible ~ #nameLabel {
         transition: 0.5s;
         color: $font;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
       }
       #email:focus-visible ~ #emailLabel {
         transition: 0.5s;
         color: $font;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
       }
       #message:focus-visible ~ #messageLabel {
         transition: 0.5s;
         color: $font;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
       }
     }
 
@@ -911,8 +977,11 @@ nav {
     &:hover {
       animation: blinkShine $blink-shine-animation-time;
       color: $font;
-      text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-        0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+      text-shadow:
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow;
       cursor: pointer;
       text-decoration: none;
     }
@@ -954,8 +1023,11 @@ nav {
     &:hover {
       animation: blinkShine $blink-shine-animation-time;
       color: $font;
-      text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-        0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+      text-shadow:
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow;
       cursor: pointer;
       text-decoration: none;
     }
@@ -984,8 +1056,11 @@ nav {
       color: $font;
       font-weight: bolder !important;
       font-size: 1.4rem;
-      text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-        0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+      text-shadow:
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow,
+        0px 0px 4px $font-shadow;
       border-bottom: $font 0rem solid;
       box-shadow: inset 0px 0px 2px 1px $font-shadow;
     }
@@ -1017,8 +1092,11 @@ nav {
         opacity: 1;
         animation: blinkShine $blink-shine-animation-time;
         color: $font;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-          0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
       }
       &:focus {
         outline: 0;
@@ -1043,7 +1121,9 @@ nav {
           justify-content: center;
           span {
             margin-left: 0.3rem;
-            text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+            text-shadow:
+              0px 0px 4px $font-shadow,
+              0px 0px 4px $font-shadow;
           }
           @media only screen and (max-width: 769px) {
             margin-top: 0.5rem;
@@ -1088,8 +1168,11 @@ nav {
               height: 2rem;
               width: 2rem;
               &:hover {
-                text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-                  0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+                text-shadow:
+                  0px 0px 4px $font-shadow,
+                  0px 0px 4px $font-shadow,
+                  0px 0px 4px $font-shadow,
+                  0px 0px 4px $font-shadow;
               }
             }
             .tooltiptext {
@@ -1119,7 +1202,9 @@ nav {
       }
       .modal-time {
         color: $font;
-        text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+        text-shadow:
+          0px 0px 4px $font-shadow,
+          0px 0px 4px $font-shadow;
         // font-weight: bold;
         width: 33.3%;
         display: flex;
@@ -1159,6 +1244,27 @@ nav {
           text-shadow: 0 0 3px $font-shadow;
           transition: 0.5s;
           text-decoration: none;
+        }
+      }
+
+      .img-container {
+        min-width: 200px;
+        min-height: 200px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          z-index: 2;
+          opacity: 0; /* Niewidoczny na starcie */
+          transform: scale(0.98); /* Opcjonalnie: lekko pomniejszony */
+          transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+          &.loaded {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
       }
       .modal-img-bottom-container {
@@ -1234,8 +1340,11 @@ body.modal-open .no-modal-content {
   &:hover {
     color: $font;
     animation: blinkShine $blink-shine-animation-time;
-    text-shadow: 0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow,
-      0px 0px 4px $font-shadow, 0px 0px 4px $font-shadow;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
   }
 }
 
@@ -1309,4 +1418,26 @@ body.modal-open .no-modal-content {
 .video__button:hover:before {
   background: url(../assets/youtube/youtube-red.svg) no-repeat center center;
   background-size: 10%;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid $font-select-bg; /* Kolor kółka */
+  border-top: 4px solid $font; /* Kolor kręcącej się części */
+
+  box-shadow: 0px -2px 5px 3px $font-shadow;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+  z-index: 1;
+  position: absolute; /* Siedzi pod obrazkiem */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
