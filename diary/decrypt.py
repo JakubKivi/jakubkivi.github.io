@@ -1,9 +1,22 @@
 import base64
 import json
-import getpass
+import tkinter as tk
+from tkinter import simpledialog
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
+def get_password_gui(prompt_text):
+    root = tk.Tk()
+    root.withdraw()
+    password = simpledialog.askstring("Password Required", prompt_text, show='*')
+    root.destroy()
+    
+    if not password:
+        print("Password input canceled.")
+        exit()
+        
+    return password.strip().encode('utf-8')
 
 def decrypt_from_json(input_json_filename):
     try:
@@ -13,14 +26,12 @@ def decrypt_from_json(input_json_filename):
         print(f"Error: {input_json_filename} not found.")
         return
 
-    # Decode Base64 strings back to bytes
     salt = base64.b64decode(data['salt'])
     iv = base64.b64decode(data['iv'])
     ciphertext = base64.b64decode(data['ciphertext'])
 
-    password = getpass.getpass("Enter decryption password: ").encode()
+    password = get_password_gui("Enter decryption password:")
 
-    # Re-derive the same key
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         length=32,
@@ -29,7 +40,6 @@ def decrypt_from_json(input_json_filename):
     )
     key = kdf.derive(password)
 
-    # AES-GCM Decryption
     aesgcm = AESGCM(key)
     try:
         plaintext = aesgcm.decrypt(iv, ciphertext, None)
@@ -40,9 +50,8 @@ def decrypt_from_json(input_json_filename):
         print(f"Success! Content saved to: {output_filename}")
         
     except Exception:
-        print("Decryption failed! Likely a wrong password.")
+        print("Decryption failed! Wrong password or corrupted data.")
 
 if __name__ == "__main__":
-    # Update this filename to match your generated JSON file
-    target_file = input("Enter the name of the JSON file to decrypt (e.g., 2026-02-24.json): ")
+    target_file = input("Enter JSON filename (e.g., 2026-02-24.json): ")
     decrypt_from_json(target_file)

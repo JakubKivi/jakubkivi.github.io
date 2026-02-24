@@ -232,3 +232,12 @@ document.getElementById("ideas-button").addEventListener("click", () => {
     container.appendChild(clone);
   }
 });
+
+const today = new Date().toISOString().split("T")[0];
+
+// Znajdujemy input i przypisujemy wartość do atrybutu max
+const dateInput = document.getElementById("journalDate");
+dateInput.setAttribute("max", today);
+
+// Opcjonalnie: ustawiamy domyślną wartość na dzisiaj
+dateInput.value = today;

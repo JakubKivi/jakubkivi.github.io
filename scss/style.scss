@@ -1018,7 +1018,7 @@ nav {
     }
   }
   a {
-    color: $font-shadow;
+    color: $font-shadow !important;
     transition: 0.5s;
     &:hover {
       animation: blinkShine $blink-shine-animation-time;
@@ -1134,6 +1134,77 @@ nav {
           width: 66.6%;
           @media only screen and (max-width: 769px) {
             width: 100%;
+          }
+        }
+        input {
+          background-color: $start-bg-1;
+          border: none;
+          color: $font-portfolio;
+          border-radius: 0.2rem;
+          box-shadow: inset 0px 0px 4px 1px $font-shadow;
+          padding: 0.5rem;
+          outline: none;
+          margin-top: 0.7rem;
+          margin-bottom: 0.7rem;
+          transition: box-shadow 0.5s;
+          &:focus-visible {
+            transition: box-shadow 0.5s;
+            outline: 0px solid $font;
+            box-shadow: inset 0px 0px 4px 3px $font-shadow;
+          }
+          &::-webkit-calendar-picker-indicator {
+            filter: invert(72%) sepia(21%) saturate(2364%) hue-rotate(326deg)
+              brightness(101%) contrast(101%);
+            opacity: 0.567;
+            cursor: pointer;
+          }
+        }
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-color: $start-bg-1;
+          border: none;
+          color: $font-portfolio;
+          border-radius: 0.2rem;
+          box-shadow: inset 0px 0px 4px 1px $font-shadow;
+          padding: 0.5rem;
+          padding-right: 1.5rem;
+          outline: none;
+          margin-top: 0.7rem;
+          margin-bottom: 0.7rem;
+          transition: box-shadow 0.5s;
+          background-repeat: no-repeat;
+          background-position: right 0.5rem center;
+          background-size: 0.8rem;
+          &:focus-visible {
+            transition: box-shadow 0.5s;
+            outline: 0px solid $font;
+            box-shadow: inset 0px 0px 4px 3px $font-shadow;
+          }
+        }
+        button {
+          background-color: #fff0;
+          border: none;
+          box-shadow: 0px 0px 10px 2px $font-shadow;
+          color: $font-shadow;
+          font-weight: bold;
+          padding: 0.1rem 0.4rem 0.3rem 0.4rem;
+          transition: 0.5s;
+          &:hover {
+            color: $font;
+            transition: 0.5s;
+            box-shadow: 0px 0px 10px 4px $font-shadow;
+          }
+          &:active {
+            color: $font;
+            background-color: $font-shadow;
+            box-shadow: 0px 0px 10px 2px $font-shadow !important;
+            border: none !important;
+            outline: none !important;
+          }
+          &:focus {
+            outline: none !important;
           }
         }
       }
@@ -1287,6 +1358,14 @@ nav {
       color: $font-portfolio !important;
       font-size: 1rem;
       width: 100%;
+    }
+
+    .journalText {
+      white-space: pre-wrap;
+
+      /* Tutaj nadajesz własny styl, by nie wyglądał jak <pre> */
+      font-family: inherit; /* Używa tej samej czcionki co reszta strony */
+      word-break: break-word;
     }
 
     .modal-footer {
