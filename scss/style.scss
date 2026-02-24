@@ -1255,6 +1255,7 @@ nav {
         justify-content: center;
         align-items: center;
         img {
+          position: relative;
           z-index: 2;
           opacity: 0; /* Niewidoczny na starcie */
           transform: scale(0.98); /* Opcjonalnie: lekko pomniejszony */
