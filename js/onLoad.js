@@ -3,20 +3,31 @@ var animationTime = 1500;
 onLoad();
 function onLoad() {
   onSelectorClicked();
+
+  const today = new Date().toISOString().split("T")[0];
+
+  // Znajdujemy input i przypisujemy wartość do atrybutu max
+  const dateInput = document.getElementById("journalDate");
+  dateInput.setAttribute("max", today);
+
+  // Opcjonalnie: ustawiamy domyślną wartość na dzisiaj
+  dateInput.value = today;
 }
 
+//========================Scrollowanie do dobrego hasha
+
 window.addEventListener("load", () => {
-  // 2) Sprawdź, czy URL ma hash (np. ? #contact)
+  // Sprawdź, czy URL ma hash (np. ? #contact)
   const hash = window.location.hash;
   if (!hash) return;
 
-  // 3) Zaraz po load wyrzuć przeglądarkę na górę strony
+  // Zaraz po load wyrzuć przeglądarkę na górę strony
   window.scrollTo(0, 0);
 
-  // 4) Czekaj 2 sekundy (czas trwania animacji na #hero)
+  // Czekaj 2 sekundy (czas trwania animacji na #hero)
   setTimeout(() => {
     matchHeights();
-    // 5) Dopiero teraz płynnie przewiń do docelowej sekcji
+    // Dopiero teraz płynnie przewiń do docelowej sekcji
     const targetEl = document.querySelector(hash);
     if (targetEl) {
       targetEl.scrollIntoView({ behavior: "smooth" });
@@ -27,6 +38,8 @@ window.addEventListener("load", () => {
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
+
+//============ Animacja i otwieranie popupów
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
@@ -70,31 +83,40 @@ window.addEventListener("load", function () {
   document.getElementsByClassName("load-container")[0].classList.add("mx-auto");
 });
 
-function handleBackPress(event) {
-  event.preventDefault();
-  event.stopPropagation();
-  $(".modal").modal("hide");
-  $(".modal-backdrop").remove();
-}
+// ========== cofanie żeby zamykało modala na telefonie i w przeglądarce
 
-var closedModalHashStateId = "#modalClosed";
-var openModalHashStateId = "#modalOpen";
-
-if (window.location.hash == "") {
-  window.location.hash = closedModalHashStateId;
-}
-
-$(window).on("popstate", this.handleBackPress);
-document.addEventListener("backbutton", this.handleBackPress, false); // to otwiera modala po id
-
-$(".modal").on("show.bs.modal", function (e) {
-  window.history.pushState("forward", null, "./" + openModalHashStateId);
+// Close modal on back navigation
+$(window).on("popstate", function () {
+  if (window.location.hash !== "#modalOpen") {
+    $(".modal").modal("hide");
+  }
 });
 
-$(".modal").on("hide.bs.modal", function (e) {
-  window.history.back();
-  // $(".modal iframe").attr("src", $(".modal iframe").attr("src"));
+// Push state when modal opens
+$(".modal").on("show.bs.modal", function () {
+  window.history.pushState(null, null, "#modalOpen");
 });
+
+// Revert history if modal is closed via UI
+$(".modal").on("hide.bs.modal", function () {
+  if (window.location.hash === "#modalOpen") {
+    window.history.back();
+  }
+});
+
+// Cordova/PhoneGap support
+document.addEventListener(
+  "backbutton",
+  function (event) {
+    if ($(".modal").hasClass("show") || $(".modal").hasClass("in")) {
+      event.preventDefault();
+      $(".modal").modal("hide");
+    }
+  },
+  false,
+);
+
+// ======================== Do youtube'a żeby załadował dopiero po kliknięciu
 
 (function (window) {
   "use strict";
@@ -152,8 +174,7 @@ function ready() {
   }
 }
 
-// Błagam nie zabijaj mnie za bałagan Kubusiu z przyszłości
-// to niżej to żeby się zamykało menu po kliknięciu w nawigacji na telefonie   //wybaczam. Schizofrenia
+// Żeby się zamykało menu dropdown po kliknięciu w konkretny section (na wąskim ekranie)
 
 document.addEventListener("DOMContentLoaded", function () {
   var navbarCollapse = document.getElementById("navbarSupportedContent");
@@ -168,6 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// ====== To żeby się ładnie responsywnie dostosowywało nawet w locie
 
 window.addEventListener("resize", matchHeights);
 
@@ -201,6 +224,8 @@ function matchPortfolioHeights() {
   right.style.height = left.offsetHeight + "px";
 }
 
+// ========= to żeby się ładowały modale po kliknięciu <=== do poprawienia wygląda jak gówno xd
+
 document.getElementById("notebook-button").addEventListener("click", () => {
   const template = document.getElementById("template-notebook");
   const container = document.getElementById("notebook-loader");
@@ -233,11 +258,24 @@ document.getElementById("ideas-button").addEventListener("click", () => {
   }
 });
 
-const today = new Date().toISOString().split("T")[0];
+document.getElementById("swiatowid-button").addEventListener("click", () => {
+  const template = document.getElementById("template-swiatowid");
+  const container = document.getElementById("swiatowid-loader");
 
-// Znajdujemy input i przypisujemy wartość do atrybutu max
-const dateInput = document.getElementById("journalDate");
-dateInput.setAttribute("max", today);
+  if (container.innerHTML.trim() == "") {
+    // Clone template content and append to DOM
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+  }
+});
 
-// Opcjonalnie: ustawiamy domyślną wartość na dzisiaj
-dateInput.value = today;
+document.getElementById("calk4-button").addEventListener("click", () => {
+  const template = document.getElementById("template-calk4");
+  const container = document.getElementById("calk4-loader");
+
+  if (container.innerHTML.trim() == "") {
+    // Clone template content and append to DOM
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+  }
+});
