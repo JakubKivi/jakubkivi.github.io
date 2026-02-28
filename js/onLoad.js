@@ -1,4 +1,4 @@
-var animationTime = 1500;
+var animationTime = 1500; //for dev set to 0  remember to change in css too
 
 onLoad();
 function onLoad() {

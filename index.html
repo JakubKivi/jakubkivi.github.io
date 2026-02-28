@@ -348,7 +348,7 @@
                                 <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
                                     <i class="fa-brands fa-instagram"></i>
                                 </a>
-                                <a href="https://www.instagram.com/jakub_kivi/" target="_blank">
+                                <a href="https://www.facebook.com/Jakub.Kivi.Kuziemski/" target="_blank">
                                     <i class="fa-brands fa-facebook-f"></i>
                                 </a>
                                 <a data-toggle="modal" data-target="#modal-diary">
@@ -2060,8 +2060,16 @@
                     <div class="modal-status">
                         <input class="input-field" type="password" id="journalPwd" placeholder="Password">
                     </div>
-                    <div class="modal-time">
-                        <input class="input-field" type="date" id="journalDate" min="2026-02-24">
+                    <div class="diary-subtitle">
+                        <div onclick="arrowDiary(0)" class="arrow arrow-left" id="diaryArrowLeft">
+                            &#x27A4;
+                        </div>
+                        <div class="modal-time diary-time">
+                            <input class="input-field" type="date" id="journalDate" min="2026-02-24" onchange="onChangeDateDiary()">
+                        </div>
+                        <div onclick="arrowDiary(1)" class="arrow arrow-inactive"  id="diaryArrowRight">
+                            &#x27A4;
+                        </div>
                     </div>
                     <div class="modal-stack">  
                     <button onclick="decryptEntry()">Decrypt</button>
@@ -2091,6 +2099,6 @@
         <script src="js/onLoad.js"></script> 
         <script src="js/aboutText.js"></script> 
         <script src="js/aboutTextScript.js"></script> 
-        <script src="js/encryption.js"></script> 
+        <script src="js/diary.js"></script> 
     </body>
 </html>

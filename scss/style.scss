@@ -8,7 +8,7 @@ $font-select: #e66f1bda;
 $font-select-bg: #ef883f59;
 
 $animation-color: #ef883fff;
-$animation-time: 1.5s; //remember to change variable in onLoad.js as well
+$animation-time: 1.5s; // for dev set to 0 remember to change variable in onLoad.js as well
 $animation-ratio: math.div(
   2,
   4
@@ -1115,7 +1115,6 @@ nav {
         color: $font;
         .modal-status {
           width: 33.3%;
-          display: inline-block;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1207,6 +1206,39 @@ nav {
             outline: none !important;
           }
         }
+        .arrow {
+          color: $font-shadow;
+          font-size: 1.5rem;
+          width: 2rem;
+          transition: 0.5s;
+          -webkit-user-select: none; /* Safari */ //to do niezaznacznia
+          -ms-user-select: none; /* IE 10+ i Edge */
+          user-select: none; /* Standardowa składnia */
+
+          &:hover {
+            animation: blinkShine $blink-shine-animation-time;
+            cursor: pointer;
+            text-decoration: none;
+            color: $font;
+            text-shadow:
+              0px 0px 4px $font-shadow,
+              0px 0px 4px $font-shadow,
+              0px 0px 4px $font-shadow,
+              0px 0px 4px $font-shadow;
+          }
+        }
+        .arrow-left {
+          transform: rotate(180deg);
+        }
+        .arrow-inactive {
+          color: $notes-bg-2;
+          &:hover {
+            animation: none;
+            cursor: default;
+            color: $notes-bg-2;
+            text-shadow: none;
+          }
+        }
       }
       .modal-stack {
         width: 33.3%;
@@ -1284,6 +1316,19 @@ nav {
         @media only screen and (max-width: 769px) {
           width: 100%;
           margin-bottom: 0.5rem;
+        }
+      }
+
+      .diary-time {
+        margin: 0 2rem 0 2rem !important;
+      }
+      .diary-subtitle {
+        display: flex;
+        width: 33.3%;
+        align-items: center;
+        justify-content: center;
+        @media only screen and (max-width: 769px) {
+          width: 100%;
         }
       }
     }
