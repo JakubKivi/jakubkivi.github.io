@@ -60,6 +60,7 @@ window.addEventListener("load", function () {
 
   var modalId = window.location.hash; // Pobieramy hash z URL
   setTimeout(() => {
+    matchPortfolioHeights();
     if (modalId && $(modalId).length > 0 && $(modalId).hasClass("modal")) {
       $(modalId).modal("show");
     }
