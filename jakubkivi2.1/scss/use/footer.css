@@ -8,7 +8,6 @@
 }
 .footer-custom .footer-text-custom .copyright:hover {
   cursor: none;
-  animation: rotation-custom 0.3s linear forwards 999;
 }
 @keyframes rotation-custom {
   0% {
@@ -17,6 +16,9 @@
   100% {
     -webkit-transform: rotateZ(360deg);
   }
+}
+.footer-custom .footer-text-custom .copyright:hover {
+  animation: rotation-custom 0.3s linear forwards 999;
 }
 .footer-custom div section a {
   color: var(--gradient-color-12) !important;

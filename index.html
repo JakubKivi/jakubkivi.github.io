@@ -1313,7 +1313,7 @@
                             <div><img class="img-fluid" src="assets/portfolio/calk/3.webp" alt="error"></div>
                         </div>
                         <p class="portfolio-text">
-                            Our second mini sumo robot was named CalkaBot 2.0 to honor its predecessor (<a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk')">see backstory.</a>). This time, we decided to create our own PCB board, and <a href="https://github.com/delipl" target="_blank">Deli</a> did a great job. We chose not to change the motors, proximity sensors, or the frame. However, we did change the floor sensor, which turned out to be a bad decision (the CNY70 would have been a better option). This time, we noticed that CalkaBot 1.0 was not heavy enough, so we added some lead on top as extra weight. Our robot weighs exactly 500g (the maximum weight for a mini sumo). After a few test fights between our CalkaBots, we realized that the new one performed better.
+                            Our second mini sumo robot was named CalkaBot 2.0 to honor its predecessor (<a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk','calk')">see backstory.</a>). This time, we decided to create our own PCB board, and <a href="https://github.com/delipl" target="_blank">Deli</a> did a great job. We chose not to change the motors, proximity sensors, or the frame. However, we did change the floor sensor, which turned out to be a bad decision (the CNY70 would have been a better option). This time, we noticed that CalkaBot 1.0 was not heavy enough, so we added some lead on top as extra weight. Our robot weighs exactly 500g (the maximum weight for a mini sumo). After a few test fights between our CalkaBots, we realized that the new one performed better.
                             <br><br>
                             During the competition in Bydgoszcz, we encountered a major issue. Long story short, when our robot was hit hard, it bobbed, and as a result, it thought the enemy was behind it (due to a mistake in sensor strapping), causing it to run out of the ring on its own and lose a few battles. We didn't make it past the group stage, but our effort was appreciated by the main sponsor of the competition, and we won a special prize. CalkaBot 2.0 performed really well in several of its fights, so we decided to improve both it and CalkaBot 1.0 and head to the Baltic Robo Battles. There, we met many new people and gained a lot of experience. We even faced off against technical university students and sometimes won. With all the new knowledge we gained, we decided not to build a new robot, but two robots so we could compare them and clearly identify all the shortcomings. (Facing the new version of CalkaBot with the old one is less objective, as the new one almost always wins). Unfortunately, the pandemic and studies stopped our plans, but I hope that at least CalkaBot 3k0 (the "k" stands for 'Kivi') will make an appearance at some competitions in the future.
                         </p>
@@ -1823,7 +1823,7 @@
                     </div> -->
                     <div class="portfolio-text">
                         <ul>
-                            <li><strong>CalkaBot 3k1</strong> – An improved version of <a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk3')">CalkaBot 3k1</a> with a metal front, better rollers, and a new board, which covers the mistakes made during the first iteration.</li>
+                            <li><strong>CalkaBot 3k1</strong> – An improved version of <a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk3', 'calk3')">CalkaBot 3k1</a> with a metal front, better rollers, and a new board, which covers the mistakes made during the first iteration.</li>
                             <li><strong>Spider</strong> – I don't know many details, but I feel like building this kind of robot in the future to learn 3D printing and apply some of the inverse kinematics techniques we learned at university.</li>
                             <li><strong>Chesswall</strong> – Chess hanging on a wall with nucleo senses moves, AI opponent, game recording, teaching/best moves.</li>
                             <li><strong>Dancing on your own</strong> – ESP and accelerometers on each hand, plus some code to generate levels based on a given song. You earn points for dancing in rhythm. The idea is not to force users into specific moves like other dancing apps, but to let them move freely—as long as they stay in rhythm.</li>
@@ -1881,7 +1881,7 @@
                         <ul>
                             <li><strong>Albatrus</strong> - An app my friends and I built to keep track of who has been to which countries. It was a great weekend project and worked, though with some gaps and bugs. Hopefully, we’ll polish it up someday. </li>
                             <li><strong>LED Cube</strong> - 8x8x8 LED Cube project didn’t work out because of cheap LEDs conducting in the reverse direction—about 1 in 15 was faulty. Still have a controller. Highly revivable. </li>
-                            <li><strong>CalkaBot 2.5</strong> - After <a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk2')">CalkaBot 2.0</a>, I attempted to build a minisumo robot using more of a hackathon-style approach. I didn’t manage to finish it within a week.</li>
+                            <li><strong>CalkaBot 2.5</strong> - After <a style="cursor: pointer;" onclick="switchModal('portfolio-modal-calk2','calk2')">CalkaBot 2.0</a>, I attempted to build a minisumo robot using more of a hackathon-style approach. I didn’t manage to finish it within a week.</li>
                             <li><strong>JacksCompass</strong> - A box with compass, that will point you to either random direction or one of your saved directions. Didn't make it in time. </li>
                           </ul>
                         </div>                    
@@ -2078,8 +2078,18 @@
                 
             </div>
             <div class="modal-body">
-                <p class="portfolio-text journalText" id="journalOutput">
-                    Select a date and enter the password to see the diary entry for that day.
+                <p class="portfolio-text journalText journalTextInfo" id="journalOutput">Pick a date, provide the key, and peek inside.</p>
+            </div>
+                
+            <div class="modal-body" id="diary-description">
+                <p class="portfolio-text" >
+                    This is my private encrypted diary. For now, the only thing available to see is whether or not I kept my word and posted every day. Everything else is hidden by some "salty" cryptographic magic. <br/>
+                    <br/>   
+                    I hope to use it to challenge my own thoughts from the past, but one day, when I pass away, the diary will open to the public... Well, 'public' is probably too big of a word, buuut everyone has their own "Day of the Wacko".<br/>
+                    <br/>
+                    And yes, I also like Github's green squares coming with this idea.<br/>
+                    <br/>
+                    You can read <a  style="cursor: pointer;" onclick="switchModal('modal-notebook', 'notebook')"> this</a> instead.
                 </p>
             </div>
             <div class="modal-footer">

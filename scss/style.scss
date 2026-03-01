@@ -99,6 +99,49 @@ select:focus {
       0px 0px 4px $font-shadow;
   }
 }
+
+@keyframes blinkShineToOff {
+  0% {
+    color: $font-shadow;
+  }
+  20% {
+    color: $font;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
+  }
+  30% {
+    color: $font-shadow;
+    text-shadow: none;
+  }
+  90% {
+    color: $font;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
+  }
+  95% {
+    color: $font-shadow;
+    text-shadow: none;
+  }
+  98% {
+    color: $font;
+    text-shadow:
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow,
+      0px 0px 4px $font-shadow;
+  }
+  100% {
+    color: $font-shadow;
+    text-shadow: none;
+  }
+}
+
 body {
   @keyframes body-loading {
     0% {
@@ -1321,6 +1364,9 @@ nav {
 
       .diary-time {
         margin: 0 2rem 0 2rem !important;
+        @media only screen and (max-width: 769px) {
+          width: auto !important;
+        }
       }
       .diary-subtitle {
         display: flex;
@@ -1411,6 +1457,12 @@ nav {
       /* Tutaj nadajesz własny styl, by nie wyglądał jak <pre> */
       font-family: inherit; /* Używa tej samej czcionki co reszta strony */
       word-break: break-word;
+    }
+    .journalTextInfo {
+      text-align: center;
+    }
+    .journalTextInfoBlink {
+      animation: blinkShine $blink-shine-animation-time;
     }
 
     .modal-footer {

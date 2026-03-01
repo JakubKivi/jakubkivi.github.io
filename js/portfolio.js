@@ -165,13 +165,21 @@ function ChangePortfolioContent(a, r) {
   attachImageLoaders(document);
 }
 
-async function switchModal(targetModalId) {
+async function switchModal(targetModalId, targetModalName) {
   const openModalEl = document.querySelector(".modal.show");
   const targetModalEl = document.getElementById(targetModalId);
 
   // Zamykanie obecnie otwartego modala
   if (openModalEl) {
     $(openModalEl).modal("hide");
+  }
+
+  const template = document.getElementById("template-" + targetModalName);
+  const container = document.getElementById(targetModalName + "-loader");
+  if (container.innerHTML.trim() == "") {
+    // Clone template content and append to DOM
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
   }
 
   await new Promise((r) => setTimeout(r, 500));

@@ -15,6 +15,13 @@ async function decryptEntry() {
 
     if (!res.ok) {
       out.textContent = "No entry for a given date";
+      if (!out.classList.contains("journalTextInfoBlink")) {
+        out.classList.add("journalTextInfoBlink");
+      } else {
+        out.classList.remove("journalTextInfoBlink");
+        void out.offsetWidth;
+        out.classList.add("journalTextInfoBlink");
+      }
       return;
     }
 
@@ -51,15 +58,24 @@ async function decryptEntry() {
     );
 
     out.textContent = new TextDecoder().decode(decrypted);
+    out.classList.remove("journalTextInfo");
     logged = true;
+    document.getElementById("diary-description").style.display = "none";
   } catch (e) {
     out.textContent = "Invalid password";
+    if (!out.classList.contains("journalTextInfoBlink")) {
+      out.classList.add("journalTextInfoBlink");
+    } else {
+      out.classList.remove("journalTextInfoBlink");
+      void out.offsetWidth;
+      out.classList.add("journalTextInfoBlink");
+    }
     logged = false;
   }
 }
 
 function onChangeDateDiary() {
-  if (logged) {
+  if (logged || document.getElementById("journalPwd").value != "") {
     decryptEntry();
   }
 }
@@ -98,7 +114,7 @@ function arrowDiary(direction) {
     dateInput.stepUp(1);
   }
 
-  if (logged) {
+  if (logged || document.getElementById("journalPwd").value != "") {
     decryptEntry();
   }
 }
