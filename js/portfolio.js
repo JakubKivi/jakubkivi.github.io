@@ -130,21 +130,17 @@ function ChangePortfolioContent(a, r) {
   const loaderContainer = document.getElementById(a + "-loader");
 
   if (loaderContainer.innerHTML.trim() == "") {
-    // Clone template content and append to DOM
     const clone = template.content.cloneNode(true);
     loaderContainer.appendChild(clone);
-
-    attachImageLoaders(loaderContainer);
+    // Removed duplicate attachImageLoaders call
   }
 
   var myModal = document.getElementById("modal-" + a);
-
   var textPlace = document.getElementById("portfolio-text");
   var container = document.getElementById("right-column");
 
   var fullText = myModal.getElementsByClassName("portfolio-text")[0].innerHTML;
   var fittingText = findMaxFittingText(fullText, textPlace, container);
-
   var isTruncated = fittingText.length < fullText.length;
 
   textPlace.innerHTML = isTruncated ? fittingText + "..." : fullText;
@@ -162,6 +158,7 @@ function ChangePortfolioContent(a, r) {
 
   r.style.opacity = 1;
 
+  // Initialize loaders for all newly added elements
   attachImageLoaders(document);
 }
 
