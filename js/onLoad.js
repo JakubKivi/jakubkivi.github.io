@@ -61,7 +61,17 @@ window.addEventListener("load", function () {
   var modalId = window.location.hash; // Pobieramy hash z URL
   setTimeout(() => {
     matchPortfolioHeights();
+
     if (modalId && $(modalId).length > 0 && $(modalId).hasClass("modal")) {
+      targetModalName = modalId.slice(17, 65);
+      const template = document.getElementById("template-" + targetModalName);
+      const container = document.getElementById(targetModalName + "-loader");
+      if (container.innerHTML.trim() == "") {
+        // Clone template content and append to DOM
+        const clone = template.content.cloneNode(true);
+        container.appendChild(clone);
+      }
+
       $(modalId).modal("show");
     }
   }, animationTime);
