@@ -1,3 +1,4 @@
 node_modules/
 
 diary/text.txt
+diary/decrypted_entry.txt

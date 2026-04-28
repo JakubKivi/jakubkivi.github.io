@@ -3,13 +3,21 @@ import sys
 import base64
 import json
 import tkinter as tk
+from tkinter import messagebox
 from datetime import datetime
+
+# Handle missing dependencies before the main app initializes
+def show_fatal_error(msg):
+    root = tk.Tk()
+    root.withdraw()
+    messagebox.showerror("Dependency Error", msg)
+    root.destroy()
+    sys.exit()
 
 try:
     from tkcalendar import Calendar
 except ImportError:
-    print("pip install tkcalendar")
-    sys.exit()
+    show_fatal_error("Missing dependency. Please run:\npip install tkcalendar")
 
 try:
     from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
@@ -17,8 +25,7 @@ try:
     from cryptography.hazmat.primitives.ciphers.aead import AESGCM
     from cryptography.exceptions import InvalidTag
 except ImportError:
-    print("pip install cryptography")
-    sys.exit()
+    show_fatal_error("Missing dependency. Please run:\npip install cryptography")
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -54,7 +61,7 @@ class EncryptorApp:
     def validate_password(self, password_bytes):
         validate_path = os.path.join(SCRIPT_DIR, "validate.json")
         
-        # Create validation file if it doesn't exist yet
+        # Init validation file if missing
         if not os.path.exists(validate_path):
             salt = os.urandom(16)
             iv = os.urandom(12)
@@ -95,23 +102,22 @@ class EncryptorApp:
         try:
             aesgcm.decrypt(iv, ciphertext, None)
             return True
-        except InvalidTag:
-            return False
-        except Exception:
+        except (InvalidTag, Exception):
             return False
 
     def submit_password(self):
         pw = self.pw_entry.get().strip()
-        if pw:
-            password_bytes = pw.encode('utf-8')
-            if self.validate_password(password_bytes):
-                self.password = password_bytes
-                self.root.unbind('<Return>')
-                self.show_main_screen()
-            else:
-                self.show_message_screen("Incorrect password.", self.show_password_screen)
-        else:
+        if not pw:
             self.show_message_screen("Password cannot be empty.", self.show_password_screen)
+            return
+
+        password_bytes = pw.encode('utf-8')
+        if self.validate_password(password_bytes):
+            self.password = password_bytes
+            self.root.unbind('<Return>')
+            self.show_main_screen()
+        else:
+            self.show_message_screen("Incorrect password.", self.show_password_screen)
 
     def show_main_screen(self):
         self.clear_window()
@@ -157,7 +163,7 @@ class EncryptorApp:
 
         if os.path.exists(self.output_path):
             self.show_confirmation_screen(
-                f"{self.output_path} already exists. Overwrite?",
+                f"The file {date_str}.json already exists.\nDo you want to overwrite it?",
                 self.execute_encryption,
                 self.show_main_screen
             )
@@ -197,10 +203,22 @@ class EncryptorApp:
             with open(self.output_path, 'w') as f:
                 json.dump(output_data, f, indent=4)
             
-            self.show_message_screen(f"Success! Encrypted JSON saved as:\n{self.output_path}", self.show_main_screen)
+            self.show_confirmation_screen(
+                f"Encrypted JSON saved successfully.\n\nDo you want to clear the contents of the original text.txt file?",
+                self.clear_input_file,
+                self.show_main_screen
+            )
             
         except Exception as e:
             self.show_message_screen(f"An error occurred:\n{str(e)}", self.show_main_screen)
+
+    def clear_input_file(self):
+        try:
+            # Clear contents by opening in write mode and immediately closing
+            open(self.input_path, 'w').close()
+            self.show_message_screen("The text.txt file has been cleared.", self.show_main_screen)
+        except Exception as e:
+            self.show_message_screen(f"Failed to clear file:\n{str(e)}", self.show_main_screen)
 
 if __name__ == "__main__":
     root = tk.Tk()
