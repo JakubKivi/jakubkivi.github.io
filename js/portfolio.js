@@ -177,6 +177,8 @@ async function switchModal(targetModalId, targetModalName) {
     // Clone template content and append to DOM
     const clone = template.content.cloneNode(true);
     container.appendChild(clone);
+    // Initialize image loaders for newly added images
+    attachImageLoaders(container);
   }
 
   await new Promise((r) => setTimeout(r, 500));
